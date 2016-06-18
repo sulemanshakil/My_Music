@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         songList = new ArrayList<>();
         getSongList();
-        populateSongs();  //populat
+        populateSongs();  //populate
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             populateSongs();
         } else if (id == R.id.nav_Artist) {
 
-            final ArrayList<String> artistList = new ArrayList<String>();
+            final ArrayList<String> artistList = new ArrayList<>();
             for (Song song:songList){
                 if(!artistList.contains(song.getArtist())) {
                     artistList.add(song.getArtist());
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_Albums) {
 
-            final ArrayList<String> albumList = new ArrayList<String>();
+            final ArrayList<String> albumList = new ArrayList<>();
             for (Song song:songList){
                 if(!albumList.contains(song.getAlbum())) {
                     albumList.add(song.getAlbum());
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_Genres) {
 
-            final ArrayList<String> genresList = new ArrayList<String>();
+            final ArrayList<String> genresList = new ArrayList<>();
             for (Song song:songList){
                 if(!genresList.contains(song.getGenres())) {
                     genresList.add(song.getGenres());
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     int position, long id) {
                 Log.d("Item Selected", List.get(position));
                 String selected_artist = List.get(position);
-                final ArrayList<String> selected_artist_songs = new ArrayList<String>();
+                final ArrayList<String> selected_artist_songs = new ArrayList<>();
 
                 for (Song song : songList) {
                     if (song.getArtist().equals(selected_artist)) {
