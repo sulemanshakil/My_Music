@@ -138,8 +138,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //    start++;
     }
 
-
-
     public boolean isServiceRunning(String serviceClassName){
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         final List<ActivityManager.RunningServiceInfo> services = activityManager.getRunningServices(Integer.MAX_VALUE);
