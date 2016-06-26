@@ -1,338 +1,58 @@
 [
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
     }
 ]

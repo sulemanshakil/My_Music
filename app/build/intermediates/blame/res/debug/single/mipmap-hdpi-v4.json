@@ -1,26 +1,6 @@
 [
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

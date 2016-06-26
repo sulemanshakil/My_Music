@@ -53,7 +53,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
-    private ArrayList<Song> songList;
+    private ArrayList<Song> songList_all;
+    int start = 0;
+    final String Artist_string= "Artist";
+    final String Albums_string= "Albums";
+    final String Genrs_string= "Genrs";
+
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -62,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        songList = new ArrayList<>();
+        songList_all = new ArrayList<>();
         getSongList();
         populateSongs();  //populate
 
@@ -123,10 +128,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
-        if (isServiceRunning(MusicService.class.getName())) {
-            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-        }
+
+     if (isServiceRunning(MusicService.class.getName())) {
+          mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+     }
+    //  if(start!=0){
+    //      mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+    //  }
+    //    start++;
     }
+
+
 
     public boolean isServiceRunning(String serviceClassName){
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -143,39 +155,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void populateSongs() {
         ListView listView = (ListView)findViewById(R.id.listView);
         final ArrayList<String> songNamesList = new ArrayList<String>();
-        for (Song song:songList){
+        for (Song song:songList_all){
          //   Log.d("Song names", song.getName());
             songNamesList.add(song.getTitle());
         }
 
         MovieListAdapter adapter = new MovieListAdapter(this, songNamesList);
         listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-                FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                fragmentB.play(songList, position);
-                FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-
-                fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
-                mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
-
-                //Song is played on selecting song from playlist
-                fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, final View view,
-                                            int position, long id) {
-                        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                        fragmentB.play(songList, position);
-                    }
-                });
-
-            }
-        });
-
+        setlistner(listView,songList_all);
 
     }
 
@@ -222,13 +209,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
-                    songList.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres));
+                    songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres));
                 }
             }
             while (musicCursor.moveToNext());
         }
         // order alphabetically
-        Collections.sort(songList, new Comparator<Song>() {
+        Collections.sort(songList_all, new Comparator<Song>() {
             public int compare(Song a, Song b) {
                 return a.getTitle().compareTo(b.getTitle());
             }
@@ -284,6 +271,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        ListView listView2 = (ListView) findViewById(R.id.listView2);
+        listView2.setVisibility(View.GONE);
+
 
         if (id == R.id.nav_all_songs) {
             // Handle the all songs action
@@ -291,35 +281,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_Artist) {
 
             final ArrayList<String> artistList = new ArrayList<>();
-            for (Song song:songList){
+            for (Song song:songList_all){
                 if(!artistList.contains(song.getArtist())) {
                     artistList.add(song.getArtist());
                 }
             }
             java.util.Collections.sort(artistList);
-            rePopulateList(artistList);
+            rePopulateList(artistList,Artist_string);
 
         } else if (id == R.id.nav_Albums) {
 
             final ArrayList<String> albumList = new ArrayList<>();
-            for (Song song:songList){
+            for (Song song:songList_all){
                 if(!albumList.contains(song.getAlbum())) {
                     albumList.add(song.getAlbum());
                 }
             }
             java.util.Collections.sort(albumList);
-            rePopulateList(albumList);
+            rePopulateList(albumList,Albums_string);
 
         } else if (id == R.id.nav_Genres) {
 
             final ArrayList<String> genresList = new ArrayList<>();
-            for (Song song:songList){
+            for (Song song:songList_all){
                 if(!genresList.contains(song.getGenres())) {
                     genresList.add(song.getGenres());
                 }
             }
             java.util.Collections.sort(genresList);
-            rePopulateList(genresList);
+            rePopulateList(genresList,Genrs_string);
 
         } else if (id == R.id.nav_My_Files) {
 
@@ -340,33 +330,92 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void rePopulateList(final ArrayList<String> List) {
+    private void rePopulateList(final ArrayList<String> List, final String Type) {
 
         ListView listView = (ListView)findViewById(R.id.listView);
         MovieListAdapter adapter = new MovieListAdapter(this, List);
         listView.setAdapter(adapter);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 Log.d("Item Selected", List.get(position));
-                String selected_artist = List.get(position);
-                final ArrayList<String> selected_artist_songs = new ArrayList<>();
+                String selection_inside_type = List.get(position);
+                final ArrayList<String> selected_type_songs = new ArrayList<>(); // Could be from artist,albums,Genre
+                ArrayList<Song> songList_type=new ArrayList<>();
 
-                for (Song song : songList) {
-                    if (song.getArtist().equals(selected_artist)) {
-                        selected_artist_songs.add(song.getTitle());
-                    }
+                switch (Type) {
+                    case Albums_string:
+                        for (Song song : songList_all) {
+                            if (song.getAlbum().equals(selection_inside_type)) {
+                                selected_type_songs.add(song.getTitle());
+                                songList_type.add(song);
+                            }
+                        }
+                        break;
+
+                    case Artist_string:
+                        for (Song song : songList_all) {
+                            if (song.getArtist().equals(selection_inside_type)) {
+                                selected_type_songs.add(song.getTitle());
+                                songList_type.add(song);
+                            }
+                        }
+                        break;
+
+                    case Genrs_string:
+                        for (Song song : songList_all) {
+                            if (song.getGenres().equals(selection_inside_type)) {
+                                selected_type_songs.add(song.getTitle());
+                                songList_type.add(song);
+                            }
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
                 ListView listView2 = (ListView) findViewById(R.id.listView2);
-                MovieListAdapter adapter2 = new MovieListAdapter(getApplication(), selected_artist_songs);
+                MovieListAdapter adapter2 = new MovieListAdapter(getApplication(), selected_type_songs);
                 listView2.setAdapter(adapter2);
                 listView2.setVisibility(View.VISIBLE);
+                setlistner(listView2,songList_type);
 
             }
         });
 
+
+    }
+
+    private void setlistner(ListView listView,final ArrayList<Song> songList){
+        MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
+        final ArrayList<String> songNamesList=adapter.getValues();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                fragmentB.play(songList, position);
+                FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+
+                fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
+                mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
+
+                //Song is played on selecting song from playlist
+                fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, final View view,
+                                            int position, long id) {
+                        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                        fragmentB.play(songList, position);
+                    }
+                });
+            }
+        });
 
     }
 }

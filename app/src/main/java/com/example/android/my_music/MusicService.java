@@ -101,7 +101,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
 
     public void clickNext(){
-        if(positon!=songList.size()-2) {  // need to check some how there is difference of two in pos and song list size
+        if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
             playSong(positon + 1);
         }
     }

@@ -1,26 +1,6 @@
 [
     {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/E:\\Google Drive\\Work\\Development\\Android Projects1\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\sulemanshakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/My_Music/C:\\Users\\Suleman Shakil\\Desktop\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/my_music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/color-v23/abc_color_highlight_material.xml"
+        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]
