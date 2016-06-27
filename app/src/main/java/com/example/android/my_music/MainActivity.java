@@ -1,33 +1,24 @@
 package com.example.android.my_music;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.Application;
-import android.app.Service;
-import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.media.AudioManager;
-import android.media.MediaMetadataRetriever;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.BoringLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,14 +29,13 @@ import android.widget.ListView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
-import com.example.android.my_music.MusicService.MusicBinder;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -55,9 +45,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ViewPagerAdapter viewPagerAdapter;
     private ArrayList<Song> songList_all;
     int start = 0;
-    final String Artist_string= "Artist";
-    final String Albums_string= "Albums";
-    final String Genrs_string= "Genrs";
+    private static final String Artist_string= "Artist";
+    private static final String Albums_string= "Albums";
+    private static final String Genres_string= "Genres";
+    ArrayList<String> saveList;
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -118,6 +109,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
 
+
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            saveList = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("playlist_data", ObjectSerializer.serialize(new ArrayList<String>())));
+
+            Log.wtf("savedList", "Retreived");
+            Log.wtf("savedList", saveList.size() + "" + saveList.get(0));
+
+     //   FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+     //   fragmentC.upDatePlayList(saveList);  // Set songs in Playlist fragment
+     //   mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
+
     }
 
     public void HidePanel() {
@@ -130,13 +132,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
 
      if (isServiceRunning(MusicService.class.getName())) {
-          mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+     //     mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
      }
-    //  if(start!=0){
-    //      mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-    //  }
-    //    start++;
     }
+
+
 
     public boolean isServiceRunning(String serviceClassName){
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         MovieListAdapter adapter = new MovieListAdapter(this, songNamesList);
         listView.setAdapter(adapter);
-        setlistner(listView,songList_all);
+        setlistner(listView, songList_all);
 
     }
 
@@ -307,7 +307,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
             java.util.Collections.sort(genresList);
-            rePopulateList(genresList,Genrs_string);
+            rePopulateList(genresList,Genres_string);
 
         } else if (id == R.id.nav_My_Files) {
 
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.d("Item Selected", List.get(position));
                 String selection_inside_type = List.get(position);
                 final ArrayList<String> selected_type_songs = new ArrayList<>(); // Could be from artist,albums,Genre
-                ArrayList<Song> songList_type=new ArrayList<>();
+                ArrayList<Song> songList_type = new ArrayList<>();
 
                 switch (Type) {
                     case Albums_string:
@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         }
                         break;
 
-                    case Genrs_string:
+                    case Genres_string:
                         for (Song song : songList_all) {
                             if (song.getGenres().equals(selection_inside_type)) {
                                 selected_type_songs.add(song.getTitle());
@@ -379,17 +379,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 MovieListAdapter adapter2 = new MovieListAdapter(getApplication(), selected_type_songs);
                 listView2.setAdapter(adapter2);
                 listView2.setVisibility(View.VISIBLE);
-                setlistner(listView2,songList_type);
+                setlistner(listView2, songList_type);
 
             }
         });
-
-
     }
 
     private void setlistner(ListView listView,final ArrayList<Song> songList){
-        MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
-        final ArrayList<String> songNamesList=adapter.getValues();
+      //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
+        final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -402,6 +401,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
                 mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
+
+
+            //  Log.wtf("savedList", songNamesList.size() + "" + songNamesList.get(0));
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("playlist_data", ObjectSerializer.serialize(songNamesList));
+                editor.commit();
 
                 //Song is played on selecting song from playlist
                 fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -416,4 +422,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        super.onSaveInstanceState(savedInstanceState);
+
+        // etc.
+    }
+
+
 }
