@@ -7,6 +7,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -108,32 +109,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
-
-
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-            saveList = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("playlist_data", ObjectSerializer.serialize(new ArrayList<String>())));
-
-            Log.wtf("savedList", "Retreived");
-            Log.wtf("savedList", saveList.size() + "" + saveList.get(0));
-
-     //   FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-     //   fragmentC.upDatePlayList(saveList);  // Set songs in Playlist fragment
-     //   mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
-
-    }
-
-    public void HidePanel() {
-        mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
     }
 
 
     @Override
     protected void onResume() {
         super.onResume();
-
-     if (isServiceRunning(MusicService.class.getName())) {
-     //     mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-     }
+        AudioManager manager = (AudioManager)this.getSystemService(Context.AUDIO_SERVICE);
+        if(manager.isMusicActive())
+        {
+            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+        }
     }
 
 
@@ -397,13 +383,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
-                FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
 
+                FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
                 fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
                 mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
 
-
-            //  Log.wtf("savedList", songNamesList.size() + "" + songNamesList.get(0));
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("playlist_data", ObjectSerializer.serialize(songNamesList));
