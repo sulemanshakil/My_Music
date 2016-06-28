@@ -400,6 +400,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                // TODO Auto-generated method stub
+
+                Log.e("long clicked","pos: " + pos);
+
+                return true;
+            }
+        });
+
     }
 
 
