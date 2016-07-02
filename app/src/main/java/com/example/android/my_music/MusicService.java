@@ -35,7 +35,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     Notification status;
     private final String LOG_TAG = "NotificationService";
     //media player
-    private MediaPlayer player;
+    public MediaPlayer player;
     ArrayList<Song> songList = new ArrayList<Song>();
     int positon;
     private final IBinder musicBind = new MusicBinder();
@@ -116,6 +116,8 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         return songList.get(positon).getTitle();
     }
 
+
+
     public void playSong(int position){
         //play a song
         //get song
@@ -142,6 +144,14 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
             Log.e("MUSIC SERVICE", "Error setting data source", e);
         }
         showNotification();
+
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                   clickNext();
+                sendBroadcast(Constants.ACTION.PLAY_ACTION);
+            }
+        });
     }
 
     //send broadcast from activity to all receivers listening to the action "ACTION_STRING_ACTIVITY"
@@ -264,7 +274,6 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     @Override
     public void onCompletion(MediaPlayer mp) {
-
     }
 
     @Override

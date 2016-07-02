@@ -8,12 +8,14 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,11 +34,13 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     private Intent playIntent;
     private boolean musicBound=false;
     ServiceConnection musicConnection;
+    private SeekBar seekBar_Music;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.fragment_b,container,false);
         toogleButton = (Button) rootView.findViewById(R.id.toggleButton);
+        seekBar_Music = (SeekBar) rootView.findViewById(R.id.seekBarMusic);
         backButton = (Button) rootView.findViewById(R.id.buttonBack);
         forwardButton = (Button) rootView.findViewById(R.id.buttonForward);
         toogleButton.setOnClickListener(this);
@@ -96,6 +100,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         musicSrv.setList(mySongsList);
         musicSrv.playSong(position);
         upDateToggleButton();
+
     }
 
     //STEP1: Create a broadcast receiver
@@ -109,6 +114,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                 case Constants.ACTION.PLAY_ACTION:
                     Log.i("Clicked Play", "Clicked Play");
                     upDateToggleButton();
+                    setup_seekbar_duration();
                     break;
                 case Constants.ACTION.STOPFOREGROUND_ACTION:
                     ((MainActivity)getActivity()).HidePanel();
@@ -143,6 +149,50 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         }
     }
 
+    public void setup_seekbar_duration(){
+        seekBar_Music.setMax(musicSrv.player.getDuration());
+
+    }
+
+    public void setup_Seekbar(){
+
+        setup_seekbar_duration();
+
+        final Handler mHandler = new Handler();
+//Make sure you update Seekbar on UI thread
+        getActivity().runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                if (musicSrv.player != null) {
+                    int mCurrentPosition = musicSrv.player.getCurrentPosition();
+                    seekBar_Music.setProgress(mCurrentPosition);
+                }
+                mHandler.postDelayed(this, 1000);
+            }
+        });
+
+        seekBar_Music.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (musicSrv.player != null && fromUser) {
+                    musicSrv.player.seekTo(progress);
+                }
+            }
+        });
+    }
+
     public void upDateToggleButton() {
 
         if(musicSrv!=null) {
@@ -156,6 +206,9 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                 TextView textView = (TextView) getView().findViewById(R.id.txtViewSongName);
                 textView.setText(musicSrv.getSongNamePlayed());
             }
+
+            setup_Seekbar();
+
         }
     }
 

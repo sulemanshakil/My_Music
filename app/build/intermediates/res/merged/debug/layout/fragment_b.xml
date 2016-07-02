@@ -21,6 +21,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <SeekBar
+            android:id="@+id/seekBarMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/buttonBack"
+            android:layout_marginTop="26dp"
+            android:max="100" >
+        </SeekBar>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
