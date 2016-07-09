@@ -25,13 +25,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
+
+import java.lang.reflect.Type;
+import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
     private ArrayList<Song> songList_all;
-    int start = 0;
     private static final String Artist_string= "Artist";
     private static final String Albums_string= "Albums";
     private static final String Genres_string= "Genres";
-    ArrayList<String> saveList;
-
+    private static final String Playlist_String = "Playlist";
+    private static final String Favourites = "Favourites";
+    private static final String Recently_Played = "Recently_Played";
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -104,8 +109,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
-    }
 
+    }
+    public void myFunc(final ArrayList<Song> songListSharePref){
+        FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+        mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
+
+
+        fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                fragmentB.play(songListSharePref, position);
+            }
+        });
+    }
 
     @Override
     protected void onResume() {
@@ -130,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return false;
     }
-    
+
     private void populateSongs() {
         ListView listView = (ListView)findViewById(R.id.listView);
         final ArrayList<String> songNamesList = new ArrayList<String>();
@@ -370,7 +389,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
       //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
         final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
@@ -383,9 +401,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
                 mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
 
+
+
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("playlist_data", ObjectSerializer.serialize(songNamesList));
+                Gson gson = new Gson();
+                String json = gson.toJson(songList);
+                editor.putString("playlist_data", json);
                 editor.commit();
 
                 //Song is played on selecting song from playlist

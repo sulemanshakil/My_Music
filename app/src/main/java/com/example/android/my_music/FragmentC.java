@@ -9,7 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Suleman Shakil on 29.11.2015.
@@ -20,12 +25,12 @@ public class FragmentC extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_c, container, false);
+        listView = (ListView)rootView.findViewById(R.id.listViewPlaylist);
 
         return rootView;
     }
 
     public void upDatePlayList(ArrayList<String> songNamesList) {
-        listView = (ListView)rootView.findViewById(R.id.listViewPlaylist);
         PlayList_Adapter adapter = new PlayList_Adapter(getActivity(), songNamesList);
         listView.setAdapter(adapter);
     }
@@ -33,9 +38,27 @@ public class FragmentC extends android.support.v4.app.Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ArrayList<String> sample;
+        ArrayList<String > songTitle=new ArrayList<>();
+        ArrayList<Song> songList =new ArrayList<>();
+
+
+        Gson gson = new Gson();
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        sample = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("playlist_data", ObjectSerializer.serialize(new ArrayList<String>())));
-        upDatePlayList(sample);
+        String jsonData = prefs.getString("playlist_data", "");
+        if(!jsonData.isEmpty()){
+            Type type = new TypeToken<ArrayList<Song>>(){}.getType();
+            songList = gson.fromJson(jsonData, type);
+        }
+        //   sample = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("playlist_data", ObjectSerializer.serialize(new ArrayList<String >())));
+
+
+        for (Song song:songList){
+            songTitle.add(song.getTitle());
+        }
+        upDatePlayList(songTitle);
+        MainActivity mainActivity = (MainActivity)getActivity();
+        mainActivity.myFunc(songList);
+
     }
 }
