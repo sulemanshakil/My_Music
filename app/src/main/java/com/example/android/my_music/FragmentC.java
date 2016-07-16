@@ -50,15 +50,12 @@ public class FragmentC extends android.support.v4.app.Fragment {
             Type type = new TypeToken<ArrayList<Song>>(){}.getType();
             songList = gson.fromJson(jsonData, type);
         }
-        //   sample = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("playlist_data", ObjectSerializer.serialize(new ArrayList<String >())));
-
 
         for (Song song:songList){
             songTitle.add(song.getTitle());
         }
-        upDatePlayList(songTitle);
         MainActivity mainActivity = (MainActivity)getActivity();
-        mainActivity.myFunc(songList);
+        mainActivity.addPlaylistClickListener(songTitle,songList);
 
     }
 }

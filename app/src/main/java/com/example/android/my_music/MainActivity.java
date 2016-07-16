@@ -25,12 +25,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
-
 import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -111,17 +109,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setOffscreenPageLimit(3);
 
     }
-    public void myFunc(final ArrayList<Song> songListSharePref){
+    public void addPlaylistClickListener(ArrayList<String> songTitle, final ArrayList<Song> songList){
         FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+        fragmentC.upDatePlayList(songTitle);  // Set songs in Playlist fragment
         mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
-
 
         fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                fragmentB.play(songListSharePref, position);
+                fragmentB.play(songList, position);
             }
         });
     }
@@ -135,8 +133,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
         }
     }
-
-
 
     public boolean isServiceRunning(String serviceClassName){
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -161,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MovieListAdapter adapter = new MovieListAdapter(this, songNamesList);
         listView.setAdapter(adapter);
         setlistner(listView, songList_all);
-
     }
 
 
@@ -397,11 +392,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
 
-                FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-                fragmentC.upDatePlayList(songNamesList);  // Set songs in Playlist fragment
-                mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
 
-
+                addPlaylistClickListener(songNamesList,songList);
 
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = prefs.edit();
@@ -410,15 +402,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.putString("playlist_data", json);
                 editor.commit();
 
-                //Song is played on selecting song from playlist
-                fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, final View view,
-                                            int position, long id) {
-                        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                        fragmentB.play(songList, position);
-                    }
-                });
             }
         });
 
@@ -435,7 +418,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
-
 
     public void HidePanel() {
         mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
