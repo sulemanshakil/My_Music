@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String Playlist_String = "Playlist";
     private static final String Favourites = "Favourites";
     private static final String Recently_Played = "Recently_Played";
+    private static final String SP_Tag_Recently_Played = "recent_playlist";
+    private static final String SP_Tag_Playlist = "playlist_data";
+
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -120,8 +123,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     int position, long id) {
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
+
+                storeAsRecentlyPlayed(songList.get(position));
             }
         });
+    }
+
+    public void storeAsRecentlyPlayed(Song song){
+
+        ArrayList<Song> recentlyPlayedList=getSharePref(SP_Tag_Recently_Played);
+        ArrayList<Song> recentlyPlayedList1=getSharePref(SP_Tag_Recently_Played);
+
+        int K=0;
+        for(Song songR:recentlyPlayedList1){
+
+           if( songR.getTitle().equals( song.getTitle())){
+               Log.e("RecentlyPlayed"+K,recentlyPlayedList.get(0).getTitle());
+                      recentlyPlayedList.remove(K);
+           }
+           K++;
+        }
+        recentlyPlayedList.add(0,song);
+        storeInSharePref(SP_Tag_Recently_Played, recentlyPlayedList);
+
+    }
+
+    public void storeInSharePref(String TagSP,ArrayList<Song> songListSharePref){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(songListSharePref);
+        editor.putString(TagSP, json);
+        editor.commit();
+    }
+
+    public ArrayList<Song> getSharePref(String TagSP){
+        Gson gson = new Gson();
+        ArrayList<Song> songList = new ArrayList<>();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String jsonData = prefs.getString(TagSP, "");
+        if(!jsonData.isEmpty()){
+            Type type = new TypeToken<ArrayList<Song>>(){}.getType();
+            songList = gson.fromJson(jsonData, type);
+        }
+        return songList ;
     }
 
     @Override
@@ -158,7 +203,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         listView.setAdapter(adapter);
         setlistner(listView, songList_all);
     }
+    private void populateRecentlyPayed(){
 
+        ListView listView = (ListView)findViewById(R.id.listView);
+        final ArrayList<String> songNamesList = new ArrayList<String>();
+        ArrayList<Song> sonList_recentlyPlayed = getSharePref(SP_Tag_Recently_Played);
+        for (Song song:sonList_recentlyPlayed){
+            //   Log.d("Song names", song.getName());
+            songNamesList.add(song.getTitle());
+        }
+
+        MovieListAdapter adapter = new MovieListAdapter(this, songNamesList);
+        listView.setAdapter(adapter);
+        setlistner(listView, sonList_recentlyPlayed);
+    }
 
     public void getSongList() {
         //retrieve song info
@@ -311,6 +369,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_Favourites) {
 
         }else if (id == R.id.nav_Recently_Played) {
+            populateRecentlyPayed();
 
         }else if (id == R.id.nav_Settings) {
 
@@ -391,17 +450,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
-
-
-                addPlaylistClickListener(songNamesList,songList);
-
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = prefs.edit();
-                Gson gson = new Gson();
-                String json = gson.toJson(songList);
-                editor.putString("playlist_data", json);
-                editor.commit();
-
+                addPlaylistClickListener(songNamesList, songList);
+                storeInSharePref(SP_Tag_Playlist, songList);
+                storeAsRecentlyPlayed(songList.get(position));
             }
         });
 
@@ -410,9 +461,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 // TODO Auto-generated method stub
-
                 Log.e("long clicked","pos: " + pos);
-
                 return true;
             }
         });
