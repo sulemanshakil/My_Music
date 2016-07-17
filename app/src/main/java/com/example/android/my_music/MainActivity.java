@@ -132,20 +132,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void storeAsRecentlyPlayed(Song song){
 
         ArrayList<Song> recentlyPlayedList=getSharePref(SP_Tag_Recently_Played);
-        ArrayList<Song> recentlyPlayedList1=getSharePref(SP_Tag_Recently_Played);
-
+        ArrayList<Song> recentlyPlayedList1 = new ArrayList<>(recentlyPlayedList);
         int K=0;
         for(Song songR:recentlyPlayedList1){
-
-           if( songR.getTitle().equals( song.getTitle())){
-               Log.e("RecentlyPlayed"+K,recentlyPlayedList.get(0).getTitle());
+           if(songR.getTitle().equals(song.getTitle())){
                       recentlyPlayedList.remove(K);
            }
            K++;
         }
         recentlyPlayedList.add(0,song);
+        if(recentlyPlayedList.size()>30){
+            recentlyPlayedList.remove(recentlyPlayedList.size()-1);
+        }
         storeInSharePref(SP_Tag_Recently_Played, recentlyPlayedList);
-
     }
 
     public void storeInSharePref(String TagSP,ArrayList<Song> songListSharePref){

@@ -17,6 +17,7 @@ public class Constants {
         public static String NEXT_ACTION = "com.marothiatechs.customnotification.action.next";
         public static String STARTFOREGROUND_ACTION = "com.marothiatechs.customnotification.action.startforeground";
         public static String STOPFOREGROUND_ACTION = "com.marothiatechs.customnotification.action.stopforeground";
+        public static String UPDATE_RECENTLY_PLAYLIST = "com.marothiatechs.customnotification.action.updaterecentlyplaylist";
 
     }
 

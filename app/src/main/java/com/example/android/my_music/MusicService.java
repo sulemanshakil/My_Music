@@ -49,23 +49,21 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if(intent==null){return START_STICKY;}
-
-        if(intent.getAction()==null){return START_STICKY;}
-
+       if(intent==null){return START_STICKY;}
+       if(intent.getAction()==null){return START_STICKY;}
        if (intent.getAction().equals(Constants.ACTION.PREV_ACTION)) {
          //   Toast.makeText(this, "Clicked Previous", Toast.LENGTH_SHORT).show();
              clickPrevious();
             sendBroadcast(Constants.ACTION.PLAY_ACTION);
-       } else if (intent.getAction().equals(Constants.ACTION.PLAY_ACTION)) {
-         //   Toast.makeText(this, "Clicked Play", Toast.LENGTH_SHORT).show();
+       }else if (intent.getAction().equals(Constants.ACTION.PLAY_ACTION)) {
             toggleSong();
             sendBroadcast(Constants.ACTION.PLAY_ACTION);
-        } else if (intent.getAction().equals(Constants.ACTION.NEXT_ACTION)) {
-          //  Toast.makeText(this, "Clicked Next", Toast.LENGTH_SHORT).show();
+       }else if (intent.getAction().equals(Constants.ACTION.NEXT_ACTION)) {
             clickNext();
             sendBroadcast(Constants.ACTION.PLAY_ACTION);   // Problem with next and previous action. Not Working
-       } else if (intent.getAction().equals(
+       }else if (intent.getAction().equals(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST)) {
+            sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);   // Problem with next and previous action. Not Working
+       }else if (intent.getAction().equals(
                 Constants.ACTION.STOPFOREGROUND_ACTION)) {
             Log.i(LOG_TAG, "Received Stop Foreground Intent");
             Toast.makeText(this, "Service Stoped", Toast.LENGTH_SHORT).show();
@@ -73,6 +71,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
             sendBroadcast(Constants.ACTION.STOPFOREGROUND_ACTION);
             player.stop();
         }
+
         return START_STICKY;
     }
 
@@ -103,12 +102,15 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     public void clickNext(){
         if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
             playSong(positon + 1);
+            sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
+
         }
     }
 
     public void clickPrevious(){
         if(positon!=0) {
             playSong(positon - 1);
+            sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
         }
     }
 
@@ -117,6 +119,9 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
 
 
+    public Song getCurrentSong(){
+        return songList.get(positon);
+    }
 
     public void playSong(int position){
         //play a song
@@ -205,6 +210,11 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         closeIntent.setAction(Constants.ACTION.STOPFOREGROUND_ACTION);
         PendingIntent pcloseIntent = PendingIntent.getService(this, 0,
                 closeIntent, 0);
+
+    //    Intent Update_Recently_Playlist_Intent = new Intent(this, MusicService.class);
+    //    closeIntent.setAction(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
+    //    PendingIntent pUpdate_Recently_Playlist_Intent = PendingIntent.getService(this, 0,
+    //            Update_Recently_Playlist_Intent, 0);
 
         views.setOnClickPendingIntent(R.id.status_bar_play, pplayIntent);
         bigViews.setOnClickPendingIntent(R.id.status_bar_play, pplayIntent);

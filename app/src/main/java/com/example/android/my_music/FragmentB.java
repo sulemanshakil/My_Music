@@ -76,11 +76,13 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         if (activityReceiver != null) {
         //Create an intent filter to listen to the broadcast sent with the action "ACTION_STRING_ACTIVITY"
             IntentFilter intentFilterPlayAction = new IntentFilter(Constants.ACTION.PLAY_ACTION);
+            IntentFilter intentFilterUpdatePlaylist = new IntentFilter(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
             IntentFilter intentFilterStopForeground = new IntentFilter(Constants.ACTION.STOPFOREGROUND_ACTION);
 
             //Map the intent filter to the receiver
             getActivity().registerReceiver(activityReceiver, intentFilterPlayAction);
             getActivity().registerReceiver(activityReceiver, intentFilterStopForeground);
+            getActivity().registerReceiver(activityReceiver, intentFilterUpdatePlaylist);
         }
     }
 
@@ -108,11 +110,8 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         @Override
         public void onReceive(Context context, Intent intent) {
             String Action = intent.getAction();
-            Log.i("Clicked ", Action);
-
             switch (Action){
                 case Constants.ACTION.PLAY_ACTION:
-                    Log.i("Clicked Play", "Clicked Play");
                     upDateToggleButton();
                     setup_seekbar_duration();
                     break;
@@ -120,18 +119,18 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                     ((MainActivity)getActivity()).HidePanel();
                     break;
                 case Constants.ACTION.NEXT_ACTION:
-                    Log.i("Clicked Next", "Clicked Next");
                     upDateToggleButton();
                     break;
                 case Constants.ACTION.PREV_ACTION:
-                    Log.i("Clicked Previous", "Clicked Previous");
                     upDateToggleButton();
+                    break;
+                case Constants.ACTION.UPDATE_RECENTLY_PLAYLIST:
+                    MainActivity mainActivity = (MainActivity)getActivity();
+                    mainActivity.storeAsRecentlyPlayed(musicSrv.getCurrentSong());
                     break;
                 default:
                     break;
             }
-         //   upDateToggleButton();
-
         }
     };
 
