@@ -2,10 +2,13 @@ package com.example.android.my_music;
 
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
@@ -20,10 +23,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
     private static final String Albums_string= "Albums";
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void addPlaylistClickListener(ArrayList<String> songTitle, final ArrayList<Song> songList){
-        FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+        final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
         fragmentC.upDatePlayList(songTitle);  // Set songs in Playlist fragment
         mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
 
@@ -123,8 +130,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     int position, long id) {
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
-
                 storeAsRecentlyPlayed(songList.get(position));
+                populateRecentlyPayed();
+            }
+        });
+        fragmentC.listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                // TODO Auto-generated method stub
+
+                //Log.e("long clicked", "pos: " + songList.get(pos).getTitle());
+                showAlertBoxListview(songList.get(pos));
+
+                return true;
             }
         });
     }
@@ -140,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            }
            K++;
         }
-        recentlyPlayedList.add(0,song);
+        recentlyPlayedList.add(0, song);
         if(recentlyPlayedList.size()>30){
             recentlyPlayedList.remove(recentlyPlayedList.size()-1);
         }
@@ -310,10 +329,79 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
+            showAlertBox();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showAlertBox() {
+
+        // get prompts.xml view
+        LayoutInflater li = LayoutInflater.from(getApplicationContext());
+        View promptsView = li.inflate(R.layout.prompts, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        final EditText userInput = (EditText) promptsView
+                .findViewById(R.id.editTextDialogUserInput);
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                            //    Log.e("Hello",userInput.getText().toString());
+                                MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                                musicDB.addPlaylist(userInput.getText().toString());
+                                ArrayList<String> playlist_List= musicDB.getPlaylists();
+                                java.util.Collections.sort(playlist_List);
+                                rePopulateList(playlist_List, Playlist_String);
+
+                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+    }
+
+    private void showAlertBoxListview(final Song song){
+
+        final MusicDbHelper MusicDb= new MusicDbHelper(getApplicationContext());
+        List<String> playList=MusicDb.getPlaylists();
+
+        //Create sequence of items
+        final CharSequence[] myPlayList = playList.toArray(new String[playList.size()]);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("PlayLists");
+        dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                String selectedText = myPlayList[item].toString();  //Selected item in listview
+                Log.e("log", selectedText);
+                MusicDb.addSongToPlaylist(song,selectedText);
+            }
+        });
+        //Create alert dialog object via builder
+        AlertDialog alertDialogObject = dialogBuilder.create();
+        //Show the dialog
+        alertDialogObject.show();
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -364,6 +452,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_My_Files) {
 
         } else if (id == R.id.nav_Playlist) {
+            MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
+//            mDbHelper.addPlaylist("Default");
+            ArrayList<String> playlist_List= mDbHelper.getPlaylists();
+            java.util.Collections.sort(playlist_List);
+            rePopulateList(playlist_List,Playlist_String);
+
 
         }else if (id == R.id.nav_Favourites) {
 
@@ -424,6 +518,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             }
                         }
                         break;
+                    case Playlist_String:
+                        MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                        musicDB.getSongsInPlaylist(selection_inside_type);
+
 
                     default:
                         break;

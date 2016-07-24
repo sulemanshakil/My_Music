@@ -22,6 +22,10 @@ public class PlayList_Adapter  extends ArrayAdapter<String> {
         this.values = values;
     }
 
+    public ArrayList<String> getValues(){
+        return this.values;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
