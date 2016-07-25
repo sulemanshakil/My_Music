@@ -37,7 +37,7 @@ public class Song {
     public String getAlbum(){return album;}
     public String getGenres(){return genres;}
 
-    public void setID(long id){this.id=id;}
+    public void setID(int id){this.id=(long)id;}
     public void setTitle(String title){ this.title= title;}
     public void setArtist(String artist){ this.artist=artist;}
     public void setduration(String duration){ this.duration=duration;}

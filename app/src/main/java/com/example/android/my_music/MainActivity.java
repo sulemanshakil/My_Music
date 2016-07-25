@@ -520,8 +520,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case Playlist_String:
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                        musicDB.getSongsInPlaylist(selection_inside_type);
-
+                        songList_type=musicDB.getSongsInPlaylist(selection_inside_type);
+                        for (Song song:songList_type){   //use pair class to avoid for loop.
+                            selected_type_songs.add(song.getTitle());
+                        }
 
                     default:
                         break;

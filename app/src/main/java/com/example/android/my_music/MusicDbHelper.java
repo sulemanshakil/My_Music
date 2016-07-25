@@ -135,13 +135,10 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                 });
     }
 
-    public void getSongsInPlaylist(String PlayListName){
+    public ArrayList<Song> getSongsInPlaylist(String PlayListName){
+        String  propertyId= getPlayListID(PlayListName);
+        return getSongsinPlayList(propertyId);
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        getAllSongsinPlayList();
-
-    //    int propertyId= getPlayListID(PlayListName);
-   //     Log.e("Db",""+propertyId);
 /*
         final String MY_QUERY = "SELECT * FROM "+ PlayListSongEntry.TABLE_NAME + " INNER JOIN "+ PlayListEntry.TABLE_NAME +
                 " ON " + PlayListSongEntry.COLUMN_PlayList_KEY + "=" + PlayListEntry._ID + " WHERE "+PlayListEntry._ID +"=?";
@@ -168,11 +165,21 @@ public class MusicDbHelper extends SQLiteOpenHelper {
 */
     }
 
-    public void getAllSongsinPlayList() {
-        String[] projection = {
-                PlayListSongEntry._ID,PlayListSongEntry.COLUMN_PlayList_KEY,PlayListSongEntry.Column_Song_Title
-        };
+    public ArrayList<Song> getSongsinPlayList(String playlist_id) {
 
+        String[] projection = {
+                PlayListSongEntry._ID,
+                PlayListSongEntry.COLUMN_PlayList_KEY,
+                PlayListSongEntry.Column_Song_Title,
+                PlayListSongEntry.Column_SongId,
+                PlayListSongEntry.Column_Song_Duration,
+                PlayListSongEntry.Column_Song_Albums,
+                PlayListSongEntry.Column_Song_Artist,
+                PlayListSongEntry.Column_Song_Genres
+        };
+        String[] where = {
+                playlist_id,
+        };
 
 // How you want the results sorted in the resulting Cursor
 
@@ -181,26 +188,33 @@ public class MusicDbHelper extends SQLiteOpenHelper {
         Cursor c = db.query(
                 PlayListSongEntry.TABLE_NAME,  // The table to query
                 projection,                               // The columns to return
-                null,       // The columns for the WHERE clause
-                null,                            // The values for the WHERE clause
+                PlayListSongEntry.COLUMN_PlayList_KEY + "=?",
+                where,
                 null,                                     // don't group the rows
                 null,                                     // don't filter by row groups
                 null                                 // The sort order
         );
 
+        ArrayList<Song> songArrayList = new  ArrayList<>();
+
         if (c.moveToFirst()) {
             do {
-                Log.e("",(c.getString(c.getColumnIndex(PlayListSongEntry._ID))));
-                Log.e("",(c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Title))));
-                Log.e("",(c.getString(c.getColumnIndex(PlayListSongEntry.COLUMN_PlayList_KEY))));
-
+                Song song = new Song();
+                song.setID(c.getInt((c.getColumnIndex(PlayListSongEntry.Column_SongId))));
+                song.setTitle((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Title))));
+                song.setAlbum((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Albums))));
+                song.setArtist((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Artist))));
+                song.setduration((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Duration))));
+                song.setGenres((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Genres))));
                 // adding to todo list
+                songArrayList.add(song);
             } while (c.moveToNext());
         }
+        return songArrayList;
     }
 
 
-    public int getPlayListID(String PlayListName){
+    public String  getPlayListID(String PlayListName){
         // Define a projection that specifies which columns from the database
 // you will actually use after this query.
         String[] projection = {
@@ -215,25 +229,20 @@ public class MusicDbHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor c = db.query(
-                PlayListEntry.TABLE_NAME,  // The table to query
-                projection,                               // The columns to return
-                null,       // The columns for the WHERE clause
-                null,                            // The values for the WHERE clause
-                null,                                     // don't group the rows
-                null,                                     // don't filter by row groups
-                null                                 // The sort order
-        );
+        Cursor c = db.query(true, PlayListEntry.TABLE_NAME,
+                projection,
+                PlayListEntry.COLUMN_PlayList_NAME + "=?",
+                where,
+                null, null, null, null);
 
+        String string = new String();
         if (c.moveToFirst()) {
             do {
                 Log.e("Db",c.getString(c.getColumnIndex(PlayListEntry.COLUMN_PlayList_NAME)));
-                Log.e("Db", c.getString(c.getColumnIndex(PlayListEntry._ID)));
-
-                // adding to todo list
+                 string = c.getString(c.getColumnIndex(PlayListEntry._ID));
+            //    Log.e("Db", id);
             } while (c.moveToNext());
         }
-
-        return 1;
+        return string;
     }
 }
