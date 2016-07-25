@@ -532,7 +532,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 MovieListAdapter adapter2 = new MovieListAdapter(getApplication(), selected_type_songs);
                 listView2.setAdapter(adapter2);
                 listView2.setVisibility(View.VISIBLE);
-                setlistner(listView2, songList_type)
+                setlistner(listView2, songList_type);
 
             }
         });
