@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.android.my_music.MusicContract.PlayListEntry;
 import com.example.android.my_music.MusicContract.PlayListSongEntry;
@@ -110,7 +111,15 @@ public class MusicDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addSongToPlaylist(Song song, String playlist_name) {
+    public Boolean addSongToPlaylist(Song song, String playlist_name) {
+        ArrayList<Song> SongsInPlayList=getSongsInPlaylist(playlist_name);
+
+        for (Song mSong:SongsInPlayList) {
+            if(mSong.getID()==song.getID()){
+                return false;
+            }
+        }
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.execSQL("INSERT INTO " + PlayListSongEntry.TABLE_NAME +
@@ -133,6 +142,7 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                 new Object[]{playlist_name, song.getID(), song.getTitle(), song.getArtist(),
                         song.getAlbum(), song.duration(), song.getGenres()
                 });
+        return true;
     }
 
     public ArrayList<Song> getSongsInPlaylist(String PlayListName){

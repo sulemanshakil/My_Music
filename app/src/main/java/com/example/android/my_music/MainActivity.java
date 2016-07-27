@@ -31,6 +31,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -368,7 +370,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         })
                 .setNegativeButton("Cancel",
                         new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
+                            public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                             }
                         });
@@ -393,8 +395,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 String selectedText = myPlayList[item].toString();  //Selected item in listview
-                Log.e("log", selectedText);
-                MusicDb.addSongToPlaylist(song,selectedText);
+                Boolean aBoolean = MusicDb.addSongToPlaylist(song, selectedText);
+                if (aBoolean == false) {
+                    Toast.makeText(getApplicationContext(),"Song Already in Selected Playlist",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         //Create alert dialog object via builder
