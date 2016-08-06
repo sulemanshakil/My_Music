@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ListView listView2 = (ListView) findViewById(R.id.listView2);
         listView2.setVisibility(View.GONE);
 
-
+//hello
         if (id == R.id.nav_all_songs) {
             // Handle the all songs action
             populateSongs();
