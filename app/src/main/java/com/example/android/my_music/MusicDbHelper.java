@@ -65,6 +65,10 @@ public class MusicDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_PlayList_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_PlayListSongs_TABLE);
 
+        ContentValues values = new ContentValues();
+        values.put(PlayListEntry.COLUMN_PlayList_NAME, "Favourites");
+        sqLiteDatabase.insert(PlayListEntry.TABLE_NAME, null, values);
+
     }
 
     @Override

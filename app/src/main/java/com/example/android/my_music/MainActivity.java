@@ -238,6 +238,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setlistner(listView, sonList_recentlyPlayed);
     }
 
+    private void populateFavouriteSongs(){
+        ListView listView = (ListView)findViewById(R.id.listView);
+        MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
+        ArrayList<Song> FavSongs =  mDbHelper.getSongsInPlaylist("Favourites");
+
+        final ArrayList<String> FavSongNamesList = new ArrayList<String>();
+
+        for (Song song:FavSongs){
+            //   Log.d("Song names", song.getName());
+            FavSongNamesList.add(song.getTitle());
+        }
+
+        MovieListAdapter adapter = new MovieListAdapter(this, FavSongNamesList);
+        listView.setAdapter(adapter);
+        setlistner(listView, FavSongs);
+    }
+
     public void getSongList() {
         //retrieve song info
         ContentResolver musicResolver = getContentResolver();
@@ -416,7 +433,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ListView listView2 = (ListView) findViewById(R.id.listView2);
         listView2.setVisibility(View.GONE);
 
-//hello
+
         if (id == R.id.nav_all_songs) {
             // Handle the all songs action
             populateSongs();
@@ -457,13 +474,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_Playlist) {
             MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
-//            mDbHelper.addPlaylist("Default");
             ArrayList<String> playlist_List= mDbHelper.getPlaylists();
             java.util.Collections.sort(playlist_List);
             rePopulateList(playlist_List,Playlist_String);
 
 
         }else if (id == R.id.nav_Favourites) {
+            populateFavouriteSongs();
 
         }else if (id == R.id.nav_Recently_Played) {
             populateRecentlyPayed();
