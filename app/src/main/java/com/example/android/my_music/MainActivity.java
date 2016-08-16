@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+    MenuItem mItem;
+    String PlaylistSelected;
 
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
     private static final String Albums_string= "Albums";
     private static final String Genres_string= "Genres";
     private static final String Playlist_String = "Playlist";
-    private static final String Favourites = "Favourites";
-    private static final String Recently_Played = "Recently_Played";
     private static final String SP_Tag_Recently_Played = "recent_playlist";
     private static final String SP_Tag_Playlist = "playlist_data";
 
@@ -144,7 +144,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 //Log.e("long clicked", "pos: " + songList.get(pos).getTitle());
                 showAlertBoxListview(songList.get(pos));
-
                 return true;
             }
         });
@@ -329,8 +328,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else {
             super.onBackPressed();
         }
-
-
     }
 
     @Override
@@ -361,8 +358,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         LayoutInflater li = LayoutInflater.from(getApplicationContext());
         View promptsView = li.inflate(R.layout.prompts, null);
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set prompts.xml to alertdialog builder
         alertDialogBuilder.setView(promptsView);
@@ -382,7 +378,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 ArrayList<String> playlist_List= musicDB.getPlaylists();
                                 java.util.Collections.sort(playlist_List);
                                 rePopulateList(playlist_List, Playlist_String);
-
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -394,7 +389,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // create alert dialog
         AlertDialog alertDialog = alertDialogBuilder.create();
-
         // show it
         alertDialog.show();
 
@@ -414,7 +408,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 String selectedText = myPlayList[item].toString();  //Selected item in listview
                 Boolean aBoolean = MusicDb.addSongToPlaylist(song, selectedText);
                 if (aBoolean == false) {
-                    Toast.makeText(getApplicationContext(),"Song Already in Selected Playlist",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Song Already in Selected Playlist", Toast.LENGTH_SHORT).show();
+                } else {
+                    ListView listView2 = (ListView) findViewById(R.id.listView2);
+
+                    if (mItem!=null && mItem.getItemId() == R.id.listViewPlaylist && Playlist_String.equals(selectedText) && listView2.getVisibility() == View.VISIBLE ) {
+                        Log.e("Success","Success");
+                    }
+                    if (mItem!=null && mItem.getItemId() == R.id.nav_Favourites) {
+                        onNavigationItemSelected(mItem);
+                    }
                 }
             }
         });
@@ -429,6 +432,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        mItem=item;
         int id = item.getItemId();
         ListView listView2 = (ListView) findViewById(R.id.listView2);
         listView2.setVisibility(View.GONE);
@@ -477,7 +481,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ArrayList<String> playlist_List= mDbHelper.getPlaylists();
             java.util.Collections.sort(playlist_List);
             rePopulateList(playlist_List,Playlist_String);
-
 
         }else if (id == R.id.nav_Favourites) {
             populateFavouriteSongs();
@@ -542,6 +545,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case Playlist_String:
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                         songList_type=musicDB.getSongsInPlaylist(selection_inside_type);
+                        PlaylistSelected=selection_inside_type;
                         for (Song song:songList_type){   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
                         }
@@ -585,7 +589,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
-
     }
 
     public void HidePanel() {
