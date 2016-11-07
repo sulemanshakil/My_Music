@@ -1,6 +1,10 @@
 [
     {
-        "merged": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
-        "source": "E:\\Google Drive\\Work\\Development\\My_Music\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/E:\\Google Drive\\Work\\Development\\My_Music\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/E:\\Google Drive\\Work\\Development\\My_Music\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

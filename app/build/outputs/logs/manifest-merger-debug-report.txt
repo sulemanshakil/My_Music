@@ -1,102 +1,102 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:2:1-33:12
-	package
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:3:5-43
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-	android:versionName
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:2:1-33:12
 	xmlns:android
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:2:11-69
+	package
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:3:5-43
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:4:5-80
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:4:5-80
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:4:22-77
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:4:22-77
 application
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:6:5-31:19
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.sothree.slidinguppanel:library:3.2.0] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.sothree.slidinguppanel\library\3.2.0\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-	android:label
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:9:9-41
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:6:5-31:19
+MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.sothree.slidinguppanel:library:3.2.0] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/3.2.0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:10:9-35
-	android:allowBackup
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:7:9-35
-	android:icon
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:8:9-43
-	android:theme
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:11:9-40
-service#com.example.android.my_music.MusicService
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:12:9-49
-	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:12:18-46
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:13:9-84
-	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:13:26-82
-activity#com.example.android.my_music.MainActivity
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:15:9-25:20
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:17:13-45
-	android:launchMode
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:18:13-48
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:9:9-41
+	android:allowBackup
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:7:9-35
+	android:icon
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:8:9-43
 	android:theme
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:19:13-56
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:11:9-40
+service#com.example.android.my_music.MusicService
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:12:9-49
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:16:13-41
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:12:18-46
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:13:9-84
+	android:name
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:13:26-82
+activity#com.example.android.my_music.MainActivity
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:15:9-25:20
+	android:label
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:17:13-45
+	android:theme
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:19:13-56
+	android:name
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:16:13-41
+	android:launchMode
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:18:13-48
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:23:27-74
 receiver#com.example.android.my_music.AudioPlayerBroadcastReceiver
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:26:9-30:20
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:26:9-30:20
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:26:19-91
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:26:19-91
 intent-filter#com.example.app.ACTION_STOP
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:27:13-29:29
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:27:13-29:29
 action#com.example.app.ACTION_STOP
-ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:28:17-70
+ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:28:17-70
 	android:name
-		ADDED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml:28:25-67
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:28:25-67
 uses-sdk
-INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.sothree.slidinguppanel:library:3.2.0] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.sothree.slidinguppanel\library\3.2.0\AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] E:\Google Drive\Work\Development\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.sothree.slidinguppanel:library:3.2.0] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/3.2.0/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] /Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
-		INJECTED from E:\Google Drive\Work\Development\My_Music\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml

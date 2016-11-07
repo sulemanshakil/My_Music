@@ -33,6 +33,7 @@ public class FragmentC extends android.support.v4.app.Fragment {
     public void upDatePlayList(ArrayList<String> songNamesList) {
         PlayList_Adapter adapter = new PlayList_Adapter(getActivity(), songNamesList);
         listView.setAdapter(adapter);
+
     }
 
     @Override
@@ -40,7 +41,6 @@ public class FragmentC extends android.support.v4.app.Fragment {
         super.onResume();
         ArrayList<String > songTitle=new ArrayList<>();
         ArrayList<Song> songList =new ArrayList<>();
-
 
         Gson gson = new Gson();
 

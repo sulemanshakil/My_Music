@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class PlayList_Adapter  extends ArrayAdapter<String> {
     private final Context context;
-    private final ArrayList<String> values;
+    ArrayList<String> values;
 
     public PlayList_Adapter(Context context, ArrayList<String> values) {
         super(context, R.layout.rowlayout, values);

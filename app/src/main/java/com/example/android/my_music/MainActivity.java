@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ViewPagerAdapter viewPagerAdapter;
     MenuItem mItem;
     String PlaylistSelected;
+    ArrayList<String> oldPlayListSongTitles = new ArrayList<String>();;
+    ArrayList<Song> oldPlayListSongList= new ArrayList<Song>();
 
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
@@ -121,7 +123,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setOffscreenPageLimit(3);
 
     }
-    public void addPlaylistClickListener(ArrayList<String> songTitle, final ArrayList<Song> songList){
+    public void addPlaylistClickListener( final ArrayList<String> songTitle, final ArrayList<Song> songList){
+        ArrayList<String> tempList = new ArrayList<String>(songTitle);
+        oldPlayListSongTitles=tempList;
+
+        oldPlayListSongList=songList;
         final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
         fragmentC.upDatePlayList(songTitle);  // Set songs in Playlist fragment
         mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
@@ -394,6 +400,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void showAlertBoxAppend(final int pos,final ArrayList<Song> songList, final ArrayList<String> songNamesList){
+
+        //Create sequence of items
+        final CharSequence[] myPlayList = {"Append"};
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                oldPlayListSongList.add(songList.get(pos));
+                oldPlayListSongTitles.add(songNamesList.get(pos));
+                addPlaylistClickListener(oldPlayListSongTitles, oldPlayListSongList);
+                storeInSharePref(SP_Tag_Playlist, oldPlayListSongList);
+            }
+        });
+        //Create alert dialog object via builder
+        AlertDialog alertDialogObject = dialogBuilder.create();
+        //Show the dialog
+        alertDialogObject.show();
+
+    }
+
     private void showAlertBoxListview(final Song song){
 
         final MusicDbHelper MusicDb= new MusicDbHelper(getApplicationContext());
@@ -420,7 +446,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         listView2.setAdapter(adapter);
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                         ArrayList<Song> songList_type=musicDB.getSongsInPlaylist(selectedText);
-                        setlistner(listView2,songList_type);
+                        setlistner(listView2, songList_type);
                     }
                     if (mItem!=null && mItem.getItemId() == R.id.nav_Favourites) {
                         onNavigationItemSelected(mItem);
@@ -432,7 +458,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AlertDialog alertDialogObject = dialogBuilder.create();
         //Show the dialog
         alertDialogObject.show();
-
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -555,7 +580,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Log.e("inside", "hello"+Playlist_String);
                         for (Song song:songList_type){   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
-                            Log.e("Songtitle",""+song.getTitle());
+                            Log.e("Songtitle", "" + song.getTitle());
                         }
 
                     default:
@@ -592,8 +617,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
-                // TODO Auto-generated method stub
-                Log.e("long clicked","pos: " + pos);
+              //  oldPlayListSongList.add(songList.get(pos));
+              //  oldPlayListSongTitles.add(songNamesList.get(pos));
+              //  addPlaylistClickListener(oldPlayListSongTitles, oldPlayListSongList);
+              //  storeInSharePref(SP_Tag_Playlist, oldPlayListSongList);
+                showAlertBoxAppend(pos,songList,songNamesList);
                 return true;
             }
         });
