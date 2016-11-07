@@ -412,8 +412,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     ListView listView2 = (ListView) findViewById(R.id.listView2);
 
-                    if (mItem!=null && mItem.getItemId() == R.id.listViewPlaylist && Playlist_String.equals(selectedText) && listView2.getVisibility() == View.VISIBLE ) {
-                        Log.e("Success","Success");
+                    if (mItem!=null && mItem.getItemId() == R.id.nav_Playlist && PlaylistSelected.equals(selectedText) && listView2.getVisibility() == View.VISIBLE ) {
+                        //update Listview showing playlist item, once item is added.
+                        ArrayList<String> List = ((MovieListAdapter)listView2.getAdapter()).getValues();
+                        List.add(song.getTitle());
+                        MovieListAdapter adapter = new MovieListAdapter(getApplication(), List);
+                        listView2.setAdapter(adapter);
+                        MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                        ArrayList<Song> songList_type=musicDB.getSongsInPlaylist(selectedText);
+                        setlistner(listView2,songList_type);
                     }
                     if (mItem!=null && mItem.getItemId() == R.id.nav_Favourites) {
                         onNavigationItemSelected(mItem);
@@ -505,12 +512,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MovieListAdapter adapter = new MovieListAdapter(this, List);
         listView.setAdapter(adapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                Log.d("Item Selected", List.get(position));
+                Log.e("Item Selected", List.get(position));
                 String selection_inside_type = List.get(position);
                 final ArrayList<String> selected_type_songs = new ArrayList<>(); // Could be from artist,albums,Genre
                 ArrayList<Song> songList_type = new ArrayList<>();
@@ -546,8 +552,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                         songList_type=musicDB.getSongsInPlaylist(selection_inside_type);
                         PlaylistSelected=selection_inside_type;
+                        Log.e("inside", "hello"+Playlist_String);
                         for (Song song:songList_type){   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
+                            Log.e("Songtitle",""+song.getTitle());
                         }
 
                     default:
