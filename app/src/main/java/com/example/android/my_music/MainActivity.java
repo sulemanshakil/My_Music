@@ -13,6 +13,7 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
@@ -37,9 +38,13 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
+
+import java.io.File;
+import java.io.FileFilter;
 import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -54,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String PlaylistSelected;
     ArrayList<String> oldPlayListSongTitles = new ArrayList<String>();;
     ArrayList<Song> oldPlayListSongList= new ArrayList<Song>();
+    ArrayList<File> mFiles = new ArrayList<File>();
+    DirectoryListAdapter mAdapter=null;
+    private File mCurrentNode = null;
+    private File mLastNode = null;
+    private File mRootNode = null;
+
 
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
@@ -438,17 +449,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     ListView listView2 = (ListView) findViewById(R.id.listView2);
 
-                    if (mItem!=null && mItem.getItemId() == R.id.nav_Playlist && PlaylistSelected.equals(selectedText) && listView2.getVisibility() == View.VISIBLE ) {
+                    if (mItem != null && mItem.getItemId() == R.id.nav_Playlist && PlaylistSelected.equals(selectedText) && listView2.getVisibility() == View.VISIBLE) {
                         //update Listview showing playlist item, once item is added.
-                        ArrayList<String> List = ((MovieListAdapter)listView2.getAdapter()).getValues();
+                        ArrayList<String> List = ((MovieListAdapter) listView2.getAdapter()).getValues();
                         List.add(song.getTitle());
                         MovieListAdapter adapter = new MovieListAdapter(getApplication(), List);
                         listView2.setAdapter(adapter);
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                        ArrayList<Song> songList_type=musicDB.getSongsInPlaylist(selectedText);
+                        ArrayList<Song> songList_type = musicDB.getSongsInPlaylist(selectedText);
                         setlistner(listView2, songList_type);
                     }
-                    if (mItem!=null && mItem.getItemId() == R.id.nav_Favourites) {
+                    if (mItem != null && mItem.getItemId() == R.id.nav_Favourites) {
                         onNavigationItemSelected(mItem);
                     }
                 }
@@ -508,6 +519,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_My_Files) {
 
+            mAdapter = new DirectoryListAdapter(getApplicationContext(),mFiles);
+            listView2.setAdapter(mAdapter);
+            listView2.setVisibility(View.VISIBLE);
+            refreshFileList();
+
+            listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, final View view,
+                                        int pos, long id) {
+                    File f = (File) parent.getItemAtPosition(pos);
+
+                    if (pos == 0) {
+                        if (mCurrentNode.compareTo(mRootNode) != 0) {
+                            mCurrentNode = f.getParentFile();
+                            refreshFileList();
+                        }
+                    }
+                    else if (f.isDirectory()) {
+                        mCurrentNode = f;
+                        refreshFileList();
+                    } else {
+                        Log.e("Song selected ", f.getName().toString());
+                    }
+                }
+            });
+
         } else if (id == R.id.nav_Playlist) {
             MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
             ArrayList<String> playlist_List= mDbHelper.getPlaylists();
@@ -529,6 +566,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void refreshFileList() {
+        if (mRootNode == null) mRootNode = new File(Environment.getExternalStorageDirectory().toString());
+        if (mCurrentNode == null) mCurrentNode = mRootNode;
+        mLastNode = mCurrentNode;
+
+        FileFilter filterDirectoriesOnly = new FileFilter() {
+            public boolean accept(File file) {
+                return file.isDirectory();
+            }
+        };
+        FileFilter filterMP3Only = new FileFilter() {
+            public boolean accept(File file) {
+                return file.getName().contains(".mp3");
+            }
+        };
+        File[] files = mCurrentNode.listFiles(filterDirectoriesOnly);
+        File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
+        Arrays.sort(files);
+        Arrays.sort(filesMusic);
+
+        mFiles.clear();
+        mFiles.add(mLastNode);
+
+        if (files != null) {
+            for (int i = 0; i < files.length; i++) mFiles.add(files[i]);
+        }
+        if (filesMusic != null) {
+            for (int i = 0; i < filesMusic.length; i++) mFiles.add(filesMusic[i]);
+        }
+        mAdapter.notifyDataSetChanged();
+
     }
 
     private void rePopulateList(final ArrayList<String> List, final String Type) {
@@ -617,10 +687,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
-              //  oldPlayListSongList.add(songList.get(pos));
-              //  oldPlayListSongTitles.add(songNamesList.get(pos));
-              //  addPlaylistClickListener(oldPlayListSongTitles, oldPlayListSongList);
-              //  storeInSharePref(SP_Tag_Playlist, oldPlayListSongList);
                 showAlertBoxAppend(pos,songList,songNamesList);
                 return true;
             }
