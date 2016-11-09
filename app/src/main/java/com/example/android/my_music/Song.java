@@ -11,14 +11,17 @@ public class Song {
     private String duration;
     private String album;
     private String genres;
+    private String data;
 
 
-    public Song(long songID, String songTitle, String songArtist,String songDuration,String songAlbum,String songGenres) {
+
+    public Song(long songID, String songTitle, String songArtist,String songDuration,String songAlbum,String songGenres,String songData) {
         id=songID;
         title=songTitle;
         artist=songArtist;
         duration=songDuration;
         album=songAlbum;
+        data=songData;
         if(songGenres.equals("")){
             genres="unknown";
         }else {
@@ -36,6 +39,8 @@ public class Song {
     public String duration(){return duration;}
     public String getAlbum(){return album;}
     public String getGenres(){return genres;}
+    public String getData(){return data;}
+
 
     public void setID(int id){this.id=(long)id;}
     public void setTitle(String title){ this.title= title;}
@@ -43,4 +48,5 @@ public class Song {
     public void setduration(String duration){ this.duration=duration;}
     public void setAlbum(String  album){ this.album=album;}
     public void setGenres(String genres){ this.genres=genres;}
+    public void setData(String data){this.data=data;}
 }

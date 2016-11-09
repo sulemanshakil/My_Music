@@ -158,7 +158,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 // TODO Auto-generated method stub
-
                 //Log.e("long clicked", "pos: " + songList.get(pos).getTitle());
                 showAlertBoxListview(songList.get(pos));
                 return true;
@@ -289,6 +288,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     (android.provider.MediaStore.Audio.Media.DURATION);
             int albumColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ALBUM);
+            int dataColumn = musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.DATA);
 
             //add songs to list
             do {
@@ -297,6 +298,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 String thisArtist = musicCursor.getString(artistColumn);
                 String thisDuration = musicCursor.getString(durationColumn);
                 String thisAlbum = musicCursor.getString(albumColumn);
+                String thisData = musicCursor.getString(dataColumn);
                 String thisGenres= "";
 
                 int musicId = Integer.parseInt(musicCursor.getString(idColumn));
@@ -313,7 +315,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
-                    songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres));
+                    songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData));
                 }
             }
             while (musicCursor.moveToNext());
@@ -530,20 +532,90 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                         int pos, long id) {
                     File f = (File) parent.getItemAtPosition(pos);
 
+
                     if (pos == 0) {
                         if (mCurrentNode.compareTo(mRootNode) != 0) {
                             mCurrentNode = f.getParentFile();
                             refreshFileList();
                         }
-                    }
-                    else if (f.isDirectory()) {
+                    } else if (f.isDirectory()) {
                         mCurrentNode = f;
                         refreshFileList();
                     } else {
-                        Log.e("Song selected ", f.getName().toString());
+
+                        FileFilter filterMP3Only = new FileFilter() {
+                            public boolean accept(File file) {
+                                return file.getName().contains(".mp3");
+                            }
+                        };
+
+                        File[] files = mCurrentNode.listFiles(filterMP3Only);
+                        ArrayList<Song> songsInDir = new ArrayList<>();
+                        ArrayList<String> songNamesList = new ArrayList<>();
+
+                        for (Song song : songList_all) {
+                            for (int i = 0; i < files.length; i++) {
+                                if (song.getData().equals(files[i].getAbsolutePath())) {
+                                    songsInDir.add(song);
+                                    songNamesList.add(song.getTitle());
+                                }
+                            }
+                        }
+                        int position = 0;
+                        for (int i = 0; i < songsInDir.size(); i++) {
+                            if (songsInDir.get(i).getData().equals(f.getAbsolutePath())) {
+                                position = i;
+                            }
+                        }
+                        mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                        fragmentB.play(songsInDir, position);
+                        addPlaylistClickListener(songNamesList, songsInDir);
+                        storeInSharePref(SP_Tag_Playlist, songsInDir);
+                        storeAsRecentlyPlayed(songsInDir.get(position));
                     }
                 }
             });
+
+            listView2.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, final View view,
+                                               int pos, long id) {
+                    File f = (File) parent.getItemAtPosition(pos);
+                    if (pos == 0) {
+                    } else if (f.isDirectory()) {
+                    } else {
+                        FileFilter filterMP3Only = new FileFilter() {
+                            public boolean accept(File file) {
+                                return file.getName().contains(".mp3");
+                            }
+                        };
+
+                        File[] files = mCurrentNode.listFiles(filterMP3Only);
+                        ArrayList<Song> songsInDir = new ArrayList<>();
+                        ArrayList<String> songNamesList = new ArrayList<>();
+
+                        for (Song song : songList_all) {
+                            for (int i = 0; i < files.length; i++) {
+                                if (song.getData().equals(files[i].getAbsolutePath())) {
+                                    songsInDir.add(song);
+                                    songNamesList.add(song.getTitle());
+                                }
+                            }
+                        }
+                        int position = 0;
+                        for (int i = 0; i < songsInDir.size(); i++) {
+                            if (songsInDir.get(i).getData().equals(f.getAbsolutePath())) {
+                                position = i;
+                            }
+                        }
+
+                        showAlertBoxAppend(position, songsInDir, songNamesList);
+                    }
+                    return true;
+                }
+            });
+
 
         } else if (id == R.id.nav_Playlist) {
             MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
