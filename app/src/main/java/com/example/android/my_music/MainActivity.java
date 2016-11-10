@@ -41,6 +41,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -171,10 +172,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ArrayList<Song> recentlyPlayedList1 = new ArrayList<>(recentlyPlayedList);
         int K=0;
         for(Song songR:recentlyPlayedList1){
-           if(songR.getTitle().equals(song.getTitle())){
-                      recentlyPlayedList.remove(K);
-           }
-           K++;
+            if(songR.getTitle().equals(song.getTitle())){
+                recentlyPlayedList.remove(K);
+            }
+            K++;
         }
         recentlyPlayedList.add(0, song);
         if(recentlyPlayedList.size()>30){
@@ -230,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ListView listView = (ListView)findViewById(R.id.listView);
         final ArrayList<String> songNamesList = new ArrayList<String>();
         for (Song song:songList_all){
-         //   Log.d("Song names", song.getName());
+            //   Log.d("Song names", song.getName());
             songNamesList.add(song.getTitle());
         }
 
@@ -305,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Cursor genresCursor = getContentResolver().query(uri, null, null, null, null);
                 int genre_column_index = genresCursor.getColumnIndexOrThrow(MediaStore.Audio.Genres.NAME);
 
-                   if (genresCursor.moveToFirst()) {
+                if (genresCursor.moveToFirst()) {
                     do {
                         thisGenres += genresCursor.getString(genre_column_index) + " ";
                     } while (genresCursor.moveToNext());
@@ -390,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
-                            //    Log.e("Hello",userInput.getText().toString());
+                                //    Log.e("Hello",userInput.getText().toString());
                                 MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                                 musicDB.addPlaylist(userInput.getText().toString());
                                 ArrayList<String> playlist_List= musicDB.getPlaylists();
@@ -551,20 +552,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         ArrayList<Song> songsInDir = new ArrayList<>();
                         ArrayList<String> songNamesList = new ArrayList<>();
 
-                        for (Song song : songList_all) {
-                            for (int i = 0; i < files.length; i++) {
-                                if (song.getData().equals(files[i].getAbsolutePath())) {
-                                    songsInDir.add(song);
+
+                        Collections.sort(songList_all, new Comparator<Song>() {
+                            public int compare(Song a, Song b) {
+                                return a.getData().compareTo(b.getData());
+                            }
+                        });
+
+                        Arrays.sort(files, new Comparator<File>() {
+                            public int compare(File a, File b) {
+                                return a.getAbsolutePath().compareTo(b.getAbsolutePath());
+                            }
+                        });
+
+                       // search algorithm
+                       int d=0;
+                        int position = 0;
+                        for(Song song:songList_all){
+                            if(d<files.length){
+                                if (song.getData().equals(files[d].getAbsolutePath())) {
                                     songNamesList.add(song.getTitle());
+                                    songsInDir.add(song);
+                                    if (songsInDir.get(d).getData().equals(f.getAbsolutePath())) {
+                                        position = d;
+                                    }
+                                    d++;
                                 }
                             }
                         }
-                        int position = 0;
-                        for (int i = 0; i < songsInDir.size(); i++) {
-                            if (songsInDir.get(i).getData().equals(f.getAbsolutePath())) {
-                                position = i;
-                            }
-                        }
+
                         mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                         FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                         fragmentB.play(songsInDir, position);
@@ -575,7 +591,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
 
-            listView2.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            listView2.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
+
+            {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, final View view,
                                                int pos, long id) {
@@ -593,6 +611,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         ArrayList<Song> songsInDir = new ArrayList<>();
                         ArrayList<String> songNamesList = new ArrayList<>();
 
+                        Collections.sort(songList_all, new Comparator<Song>() {
+                            public int compare(Song a, Song b) {
+                                return a.getData().compareTo(b.getData());
+                            }
+                        });
+
+                        Arrays.sort(files, new Comparator<File>() {
+                            public int compare(File a, File b) {
+                                return a.getAbsolutePath().compareTo(b.getAbsolutePath());
+                            }
+                        });
+
+                        // search algorithm
+                        int d=0;
+                        int position = 0;
+                        for(Song song:songList_all){
+                            if(d<files.length){
+                                if (song.getData().equals(files[d].getAbsolutePath())) {
+                                    songNamesList.add(song.getTitle());
+                                    songsInDir.add(song);
+                                    if (songsInDir.get(d).getData().equals(f.getAbsolutePath())) {
+                                        position = d;
+                                    }
+                                    d++;
+                                }
+                            }
+                        }
+
+/*
                         for (Song song : songList_all) {
                             for (int i = 0; i < files.length; i++) {
                                 if (song.getData().equals(files[i].getAbsolutePath())) {
@@ -607,7 +654,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 position = i;
                             }
                         }
-
+*/
                         showAlertBoxAppend(position, songsInDir, songNamesList);
                     }
                     return true;
@@ -737,7 +784,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void setlistner(ListView listView,final ArrayList<Song> songList){
-      //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
+        //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
         final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
