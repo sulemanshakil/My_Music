@@ -261,7 +261,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final ArrayList<String> FavSongNamesList = new ArrayList<String>();
 
         for (Song song:FavSongs){
-            //   Log.d("Song names", song.getName());
             FavSongNamesList.add(song.getTitle());
         }
 
@@ -531,7 +530,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public void onItemClick(AdapterView<?> parent, final View view,
                                         int pos, long id) {
                     File f = (File) parent.getItemAtPosition(pos);
-
 
                     if (pos == 0) {
                         if (mCurrentNode.compareTo(mRootNode) != 0) {

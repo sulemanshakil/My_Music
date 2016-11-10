@@ -230,7 +230,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
         }
 
-
     }
 
 }
