@@ -638,23 +638,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             }
                         }
-
-/*
-                        for (Song song : songList_all) {
-                            for (int i = 0; i < files.length; i++) {
-                                if (song.getData().equals(files[i].getAbsolutePath())) {
-                                    songsInDir.add(song);
-                                    songNamesList.add(song.getTitle());
-                                }
-                            }
-                        }
-                        int position = 0;
-                        for (int i = 0; i < songsInDir.size(); i++) {
-                            if (songsInDir.get(i).getData().equals(f.getAbsolutePath())) {
-                                position = i;
-                            }
-                        }
-*/
                         showAlertBoxAppend(position, songsInDir, songNamesList);
                     }
                     return true;
@@ -697,25 +680,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         };
         FileFilter filterMP3Only = new FileFilter() {
             public boolean accept(File file) {
-                return file.getName().contains(".mp3");
+                return file.getName().toLowerCase().contains(".mp3");
             }
         };
+
         File[] files = mCurrentNode.listFiles(filterDirectoriesOnly);
-        File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
         Arrays.sort(files);
+
+        ArrayList<File> fileArrayList = new ArrayList<>();
+        File[] oneFiles=new File[1];
+
+        for(int i=0;i<files.length;i++){
+            oneFiles[0]=files[i];
+            if(dirHasMP3(oneFiles,".mp3")) {    // heavy work need parallel computation
+                fileArrayList.add(files[i]);
+            }
+        }
+
+        File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
         Arrays.sort(filesMusic);
 
         mFiles.clear();
         mFiles.add(mLastNode);
 
         if (files != null) {
-            for (int i = 0; i < files.length; i++) mFiles.add(files[i]);
+            for (int i = 0; i < fileArrayList.size(); i++) mFiles.add(fileArrayList.get(i));
         }
         if (filesMusic != null) {
             for (int i = 0; i < filesMusic.length; i++) mFiles.add(filesMusic[i]);
         }
         mAdapter.notifyDataSetChanged();
 
+    }
+
+    public static boolean dirHasMP3(File[] files,String fileExtensions){
+        // Iterate over the contents of the given file list
+        for(File file : files){
+            if (file.isFile()) {
+                // If you were given a file, return true if it's a mp3
+                if (file.getName().toLowerCase().endsWith(fileExtensions)) {
+                    return true;
+                }
+            } else if (file.isDirectory()){
+//                Log.e("File"," " + file.getAbsolutePath());
+                // If it is a directory, check its contents recursively
+                if (dirHasMP3(file.listFiles(),fileExtensions)) {
+                    Log.e("File"," " + file.getAbsolutePath());
+                    return true;
+                }
+            }
+        }
+        // If none of the files were mp3, and none of the directories contained mp3, return false
+        return false;
     }
 
     private void rePopulateList(final ArrayList<String> List, final String Type) {
