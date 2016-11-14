@@ -20,6 +20,7 @@ public class Tree<T> {
 
     public static class Node<T> {
         T data;
+        ArrayList<Song> songsInNode;
         Node<T> parent;
         List<Node<T>> children;
 
@@ -32,6 +33,7 @@ public class Tree<T> {
 
         Node<T> childNode = new Node<T>();
         childNode.data = child;
+        childNode.songsInNode=new ArrayList<Song>();
         childNode.parent = parent;
         parent.children.add(childNode);
         childNode.children =  new ArrayList<Node<T>>();
@@ -62,6 +64,11 @@ public class Tree<T> {
 
     public void traverse(Node<T> child){ // pre order traversal
         Log.e("Path",child.toString());
+        if(child.songsInNode!=null) {
+            for (Song song : child.songsInNode) {
+                Log.e("Song path", song.getData());
+            }
+        }
         for(Node<T> each : child.children){
             traverse(each);
         }

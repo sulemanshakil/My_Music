@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String PlaylistSelected;
     ArrayList<String> oldPlayListSongTitles = new ArrayList<String>();;
     ArrayList<Song> oldPlayListSongList= new ArrayList<Song>();
-    ArrayList<File> mFiles = new ArrayList<File>();
+    ArrayList<Tuple> mFiles = new ArrayList<>();
     DirectoryListAdapter mAdapter=null;
     private File mCurrentNode = null;
     private File mLastNode = null;
@@ -139,8 +139,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        if(prefs.contains(SP_Tag_Tree)) new createTree().execute("");
+    //    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+    //    if(prefs.contains(SP_Tag_Tree)) {new createTree().execute("");}
+
+        new buildTree().execute("");
     }
 
     private class createTree extends AsyncTask<String,Void, Tree> {
@@ -191,6 +193,73 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return paths ;
         }
 
+    }
+
+    private class buildTree extends AsyncTask<String,Void,Tree>{
+        Tree myTree = new Tree("/storage");
+        ArrayList<String> myPathList = new ArrayList<>();
+
+        @Override
+        protected Tree doInBackground(String... params) {
+
+            for(Song each:songList_all){
+                String P1=giveSongPath(each);
+                if(!myPathList.contains(P1)) myPathList.add(P1);
+            }
+
+            for(String each:myPathList){addPathToTree(each);}
+            for(Song each:songList_all){addSongToTree(each);}
+         //   myTree.traverse(myTree.root);
+            return myTree;
+        }
+
+        @Override
+        protected void onPostExecute(Tree myTree) {
+            super.onPostExecute(myTree);
+            tree=myTree;
+        }
+
+        public void addPathToTree(String AbsolutePath){
+
+            String[] paths = AbsolutePath.split("/");
+            String p ="";
+            ArrayList<String> string = new ArrayList<String>();
+            for(int i=1;i<paths.length;i++){
+                p=p+"/"+paths[i];
+                string.add(p);
+            }
+
+            for(int i=0;i<string.size()-1;i++){
+                Tree.Node<String> node=myTree.findNode(string.get(i),myTree.root);
+                if(!myTree.findInChild(string.get(i+1),node)){
+                    myTree.addchild(string.get(i+1), node);
+                }
+            }
+        }
+
+        public void addSongToTree(Song song){
+            String Path = giveSongPath(song);
+            Tree.Node myNode = myTree.findNode(Path, myTree.root);
+            myNode.songsInNode.add(song);
+        }
+
+        public String giveSongPath(Song song) {
+            String[] mPaths = song.getData().split("/");
+            String P1 = "";
+            for (int i = 1; i < mPaths.length - 1; i++) {
+                P1 = P1 + "/" + mPaths[i];
+            }
+            return P1;
+        }
+    }
+
+    public String giveSongPath(String song) {
+        String[] mPaths = song.split("/");
+        String P1 = "";
+        for (int i = 1; i < mPaths.length - 1; i++) {
+            P1 = P1 + "/" + mPaths[i];
+        }
+        return P1;
     }
 
 
@@ -334,7 +403,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ContentResolver musicResolver = getContentResolver();
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
-        ArrayList<String> arrayList=new ArrayList<>();
 
         if (musicCursor != null && musicCursor.moveToFirst()) {
             //get columns
@@ -376,16 +444,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
                     songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData));
-                    if(thisData.toLowerCase().endsWith(".mp3")) {
-                        //   Log.e("path ", "File:" + f.getAbsolutePath());
-                        String[] mPaths = thisData.split("/");
-                        String P1 = "";
-                        for (int i = 1; i < mPaths.length - 1; i++) {
-                            P1 = P1 + "/" + mPaths[i];
-                        }
-                        //   Log.e("pathFinal", P1);
-                        if(!arrayList.contains(P1)) arrayList.add(P1);
-                    }
                 }
             }
             while (musicCursor.moveToNext());
@@ -396,8 +454,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return a.getTitle().compareTo(b.getTitle());
             }
         });
-
-        storeInSharePref(arrayList);
     }
 
     public void storeInSharePref(ArrayList arrayList){
@@ -610,54 +666,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public void onItemClick(AdapterView<?> parent, final View view,
                                         int pos, long id) {
-                    File f = (File) parent.getItemAtPosition(pos);
-
+                    Tuple tuple = (Tuple) parent.getItemAtPosition(pos);
+                    File file = new File(tuple.path);
                     if (pos == 0) {
                         if (mCurrentNode.compareTo(mRootNode) != 0) {
-                            mCurrentNode = f.getParentFile();
+                            mCurrentNode = file.getParentFile();
                             refreshFileList();
                         }
-                    } else if (f.isDirectory()) {
-                        mCurrentNode = f;
+                    } else if (file.isDirectory()) {
+                        mCurrentNode = file;
                         refreshFileList();
-                    } else {
-
-                        FileFilter filterMP3Only = new FileFilter() {
-                            public boolean accept(File file) {
-                                return file.getName().contains(".mp3");
-                            }
-                        };
-
-                        File[] files = mCurrentNode.listFiles(filterMP3Only);
-                        ArrayList<Song> songsInDir = new ArrayList<>();
+                    }
+                else {
+                        String path = giveSongPath(file.getAbsolutePath());
+                        Tree.Node node = tree.findNode(path, tree.root);
+                        ArrayList<Song> songsInDir = new ArrayList<>(node.songsInNode);
                         ArrayList<String> songNamesList = new ArrayList<>();
 
-
-                        Collections.sort(songList_all, new Comparator<Song>() {
-                            public int compare(Song a, Song b) {
-                                return a.getData().compareTo(b.getData());
-                            }
-                        });
-
-                        Arrays.sort(files, new Comparator<File>() {
-                            public int compare(File a, File b) {
-                                return a.getAbsolutePath().compareTo(b.getAbsolutePath());
-                            }
-                        });
-
-                       // search algorithm
-                       int d=0;
                         int position = 0;
-                        for(Song song:songList_all){
-                            if(d<files.length){
-                                if (song.getData().equals(files[d].getAbsolutePath())) {
-                                    songNamesList.add(song.getTitle());
-                                    songsInDir.add(song);
-                                    if (songsInDir.get(d).getData().equals(f.getAbsolutePath())) {
-                                        position = d;
-                                    }
-                                    d++;
-                                }
+
+                        for(int i=0;i<songsInDir.size();i++){
+                            songNamesList.add(songsInDir.get(i).getTitle());
+                            if(songsInDir.get(i).getData().equals(file.getAbsolutePath())){
+                                position =i;
                             }
                         }
 
@@ -704,10 +735,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         });
 
                         // search algorithm
-                        int d=0;
+                        int d = 0;
                         int position = 0;
-                        for(Song song:songList_all){
-                            if(d<files.length){
+                        for (Song song : songList_all) {
+                            if (d < files.length) {
                                 if (song.getData().equals(files[d].getAbsolutePath())) {
                                     songNamesList.add(song.getTitle());
                                     songsInDir.add(song);
@@ -750,34 +781,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void refreshFileList() {
 
-//        new createTree().execute(""); // This line must run for the first time only.
-
         if (mRootNode == null) mRootNode = new File(tree.root.toString());
         if (mCurrentNode == null) mCurrentNode = mRootNode;
         mLastNode = mCurrentNode;
 
         mFiles.clear();
-        mFiles.add(mLastNode);
+        Tuple tuple= new Tuple(mLastNode.getName(),mLastNode.getAbsolutePath());
+        mFiles.add(tuple);
 
-        FileFilter filterMP3Only = new FileFilter() {
-            public boolean accept(File file) {
-                return file.getName().toLowerCase().contains(".mp3");
-            }
-        };
 
         Tree.Node<String> node =  tree.findNode(mCurrentNode.getAbsolutePath(), tree.root);
+
         List<Tree.Node<String>> children=node.children;
-        Log.e("size",children.size()+" ");
         for(Tree.Node<String> each:children){
-            mFiles.add(new File(each.toString()));
+            File file =new File(each.toString());
+            Tuple tuple1= new Tuple(file.getName(),file.getAbsolutePath());
+            mFiles.add(tuple1);
         }
 
-
-        File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
-        Arrays.sort(filesMusic);
-
-        if (filesMusic != null) {
-            for (int i = 0; i < filesMusic.length; i++) mFiles.add(filesMusic[i]);
+        ArrayList<Song> songsInDir = node.songsInNode;
+        if(songsInDir!=null){
+            for(Song song:songsInDir){
+                Tuple tuple2 = new Tuple(song.getTitle(),song.getData());
+                mFiles.add(tuple2);
+            }
         }
         mAdapter.notifyDataSetChanged();
 

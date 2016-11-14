@@ -14,12 +14,12 @@ import android.widget.TextView;
 /**
  * Created by sulemanshakil on 11/8/16.
  */
-public class DirectoryListAdapter extends ArrayAdapter<File> {
+public class DirectoryListAdapter extends ArrayAdapter<Tuple> {
 
-    private ArrayList<File> items;
+    private ArrayList<Tuple> items;
     private Context c = null;
 
-    public DirectoryListAdapter(Context context, ArrayList<File> items) {
+    public DirectoryListAdapter(Context context, ArrayList<Tuple> items) {
         super(context, R.layout.rowlayout, items);
         this.items = items;
         this.c = context;
@@ -32,15 +32,15 @@ public class DirectoryListAdapter extends ArrayAdapter<File> {
             v = vi.inflate(R.layout.rowlayout, null);
         }
         TextView filename = null;
-        File f = items.get(position);
-        if (f != null) {
+        String name = items.get(position).name;
+        if (name != null) {
             filename = (TextView) v.findViewById(R.id.label);
         }
         if (filename != null) {
             if (position == 0) {
-                filename.setText(f.getAbsolutePath());
+                filename.setText(items.get(position).path);
             }  else {
-                filename.setText(f.getName());
+                filename.setText(name);
             }
         }
 
