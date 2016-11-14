@@ -11,11 +11,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -49,6 +51,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -65,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private File mCurrentNode = null;
     private File mLastNode = null;
     private File mRootNode = null;
-
+    Tree tree = new Tree<String>("/storage");
 
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String Playlist_String = "Playlist";
     private static final String SP_Tag_Recently_Played = "recent_playlist";
     private static final String SP_Tag_Playlist = "playlist_data";
+    private static final String SP_Tag_Tree = "tree";
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -134,7 +139,128 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        if(prefs.contains(SP_Tag_Tree)) new createTree().execute("");
+
+        new saveTable().execute("");
+    //    ArrayList<String> paths =getSharePrefArrayList(SP_Tag_Tree);
+    //    tree = new Tree<String>("/storage");
+
+    //    for(String each:paths){
+    //        addPathToTree(each);
+    //    }
+        // tree.traverse(tree.root);
     }
+
+    private class createTree extends AsyncTask<String,Void, Tree> {
+        Tree mTree;
+        @Override
+        protected Tree doInBackground(String... params) {
+            ArrayList<String> paths =getSharePrefArrayList(SP_Tag_Tree);
+            mTree = new Tree<String>("/storage");
+
+                for(String each:paths){
+                    addPathToTree(each);
+                }
+            return mTree;
+        }
+
+        @Override
+        protected void onPostExecute(Tree mtree) {
+            super.onPostExecute(mtree);
+            tree=mtree;
+        }
+
+        public void addPathToTree(String AbsolutePath){
+
+            String[] paths = AbsolutePath.split("/");
+            String p ="";
+            ArrayList<String> string = new ArrayList<String>();
+            for(int i=1;i<paths.length;i++){
+                p=p+"/"+paths[i];
+                string.add(p);
+            }
+
+            for(int i=0;i<string.size()-1;i++){
+                Tree.Node<String> node=mTree.findNode(string.get(0),mTree.root);
+                if(!mTree.findInChild(string.get(i+1),node)){
+                    mTree.addchild(string.get(i+1), node);
+                }
+            }
+        }
+        public ArrayList<String> getSharePrefArrayList(String TagSP){
+            Gson gson = new Gson();
+            ArrayList<String> paths = new ArrayList<>();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            String jsonData = prefs.getString(TagSP, "");
+            if(!jsonData.isEmpty()){
+                Type type = new TypeToken<ArrayList<String>>(){}.getType();
+                paths = gson.fromJson(jsonData, type);
+            }
+            return paths ;
+        }
+
+    }
+
+    private class saveTable extends AsyncTask<String,Void, Void> {
+
+        ArrayList<String> arrayList = new ArrayList<String>();
+        @Override
+        protected Void doInBackground(String... params) {
+
+            File file = new File(Environment.getExternalStorageDirectory().toString());
+            FileFilter filterDirectoriesOnly = new FileFilter() {
+                public boolean accept(File file) {
+                    return file.isDirectory();
+                }
+            };
+
+            File[] files = file.listFiles(filterDirectoriesOnly);
+            Arrays.sort(files);
+
+            File[] oneFiles=new File[1];
+
+
+             for(int i=0;i<files.length;i++){
+                 oneFiles[0]=files[i];
+                 dirHasMP3(oneFiles, ".mp3");
+             }
+
+            storeInSharePref(arrayList);
+            return null;
+        }
+
+        public boolean dirHasMP3(File[] files,String fileExtensions){
+            // Iterate over the contents of the given file list
+            for(File file : files){
+                if (file.isFile()) {
+                    // If you were given a file, return true if it's a mp3
+                    if (file.getName().toLowerCase().endsWith(fileExtensions)) {
+                        return true;
+                    }
+                } else if (file.isDirectory()){
+                    // If it is a directory, check its contents recursively
+                    if (dirHasMP3(file.listFiles(),fileExtensions)) {
+                        arrayList.add(file.getAbsoluteFile().toString());
+                     //   addPathToTree(file.getAbsolutePath());
+                        return true;
+                    }
+                }
+            }
+            // If none of the files were mp3, and none of the directories contained mp3, return false
+            return false;
+        }
+        public void storeInSharePref(ArrayList arrayList){
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = prefs.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(arrayList);
+            editor.putString(SP_Tag_Tree, json);
+            editor.commit();
+        }
+    }
+
+
     public void addPlaylistClickListener( final ArrayList<String> songTitle, final ArrayList<Song> songList){
         ArrayList<String> tempList = new ArrayList<String>(songTitle);
         oldPlayListSongTitles=tempList;
@@ -669,6 +795,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void refreshFileList() {
+
+//        new createTree().execute("");  This line must run for the first time only.
+
+        tree.traverse(tree.root);
+
         if (mRootNode == null) mRootNode = new File(Environment.getExternalStorageDirectory().toString());
         if (mCurrentNode == null) mCurrentNode = mRootNode;
         mLastNode = mCurrentNode;
@@ -687,16 +818,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         File[] files = mCurrentNode.listFiles(filterDirectoriesOnly);
         Arrays.sort(files);
 
-        ArrayList<File> fileArrayList = new ArrayList<>();
-        File[] oneFiles=new File[1];
-
-        for(int i=0;i<files.length;i++){
-            oneFiles[0]=files[i];
-            if(dirHasMP3(oneFiles,".mp3")) {    // heavy work need parallel computation
-                fileArrayList.add(files[i]);
-            }
-        }
-
         File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
         Arrays.sort(filesMusic);
 
@@ -704,34 +825,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mFiles.add(mLastNode);
 
         if (files != null) {
-            for (int i = 0; i < fileArrayList.size(); i++) mFiles.add(fileArrayList.get(i));
+            for (int i = 0; i < files.length; i++) mFiles.add(files[i]);
         }
         if (filesMusic != null) {
             for (int i = 0; i < filesMusic.length; i++) mFiles.add(filesMusic[i]);
         }
         mAdapter.notifyDataSetChanged();
 
-    }
-
-    public static boolean dirHasMP3(File[] files,String fileExtensions){
-        // Iterate over the contents of the given file list
-        for(File file : files){
-            if (file.isFile()) {
-                // If you were given a file, return true if it's a mp3
-                if (file.getName().toLowerCase().endsWith(fileExtensions)) {
-                    return true;
-                }
-            } else if (file.isDirectory()){
-//                Log.e("File"," " + file.getAbsolutePath());
-                // If it is a directory, check its contents recursively
-                if (dirHasMP3(file.listFiles(),fileExtensions)) {
-                    Log.e("File"," " + file.getAbsolutePath());
-                    return true;
-                }
-            }
-        }
-        // If none of the files were mp3, and none of the directories contained mp3, return false
-        return false;
     }
 
     private void rePopulateList(final ArrayList<String> List, final String Type) {
@@ -794,7 +894,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 listView2.setAdapter(adapter2);
                 listView2.setVisibility(View.VISIBLE);
                 setlistner(listView2, songList_type);
-
             }
         });
     }
