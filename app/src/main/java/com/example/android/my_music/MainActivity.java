@@ -141,15 +141,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if(prefs.contains(SP_Tag_Tree)) new createTree().execute("");
-
-        new saveTable().execute("");
-    //    ArrayList<String> paths =getSharePrefArrayList(SP_Tag_Tree);
-    //    tree = new Tree<String>("/storage");
-
-    //    for(String each:paths){
-    //        addPathToTree(each);
-    //    }
-        // tree.traverse(tree.root);
     }
 
     private class createTree extends AsyncTask<String,Void, Tree> {
@@ -182,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             for(int i=0;i<string.size()-1;i++){
-                Tree.Node<String> node=mTree.findNode(string.get(0),mTree.root);
+                Tree.Node<String> node=mTree.findNode(string.get(i),mTree.root);
                 if(!mTree.findInChild(string.get(i+1),node)){
                     mTree.addchild(string.get(i+1), node);
                 }
@@ -200,64 +191,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return paths ;
         }
 
-    }
-
-    private class saveTable extends AsyncTask<String,Void, Void> {
-
-        ArrayList<String> arrayList = new ArrayList<String>();
-        @Override
-        protected Void doInBackground(String... params) {
-
-            File file = new File(Environment.getExternalStorageDirectory().toString());
-            FileFilter filterDirectoriesOnly = new FileFilter() {
-                public boolean accept(File file) {
-                    return file.isDirectory();
-                }
-            };
-
-            File[] files = file.listFiles(filterDirectoriesOnly);
-            Arrays.sort(files);
-
-            File[] oneFiles=new File[1];
-
-
-             for(int i=0;i<files.length;i++){
-                 oneFiles[0]=files[i];
-                 dirHasMP3(oneFiles, ".mp3");
-             }
-
-            storeInSharePref(arrayList);
-            return null;
-        }
-
-        public boolean dirHasMP3(File[] files,String fileExtensions){
-            // Iterate over the contents of the given file list
-            for(File file : files){
-                if (file.isFile()) {
-                    // If you were given a file, return true if it's a mp3
-                    if (file.getName().toLowerCase().endsWith(fileExtensions)) {
-                        return true;
-                    }
-                } else if (file.isDirectory()){
-                    // If it is a directory, check its contents recursively
-                    if (dirHasMP3(file.listFiles(),fileExtensions)) {
-                        arrayList.add(file.getAbsoluteFile().toString());
-                     //   addPathToTree(file.getAbsolutePath());
-                        return true;
-                    }
-                }
-            }
-            // If none of the files were mp3, and none of the directories contained mp3, return false
-            return false;
-        }
-        public void storeInSharePref(ArrayList arrayList){
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            SharedPreferences.Editor editor = prefs.edit();
-            Gson gson = new Gson();
-            String json = gson.toJson(arrayList);
-            editor.putString(SP_Tag_Tree, json);
-            editor.commit();
-        }
     }
 
 
@@ -401,6 +334,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ContentResolver musicResolver = getContentResolver();
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
+        ArrayList<String> arrayList=new ArrayList<>();
 
         if (musicCursor != null && musicCursor.moveToFirst()) {
             //get columns
@@ -442,6 +376,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
                     songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData));
+                    if(thisData.toLowerCase().endsWith(".mp3")) {
+                        //   Log.e("path ", "File:" + f.getAbsolutePath());
+                        String[] mPaths = thisData.split("/");
+                        String P1 = "";
+                        for (int i = 1; i < mPaths.length - 1; i++) {
+                            P1 = P1 + "/" + mPaths[i];
+                        }
+                        //   Log.e("pathFinal", P1);
+                        if(!arrayList.contains(P1)) arrayList.add(P1);
+                    }
                 }
             }
             while (musicCursor.moveToNext());
@@ -453,6 +397,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        storeInSharePref(arrayList);
+    }
+
+    public void storeInSharePref(ArrayList arrayList){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(arrayList);
+        editor.putString(SP_Tag_Tree, json);
+        editor.commit();
     }
 
     @Override
@@ -796,37 +750,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void refreshFileList() {
 
-//        new createTree().execute("");  This line must run for the first time only.
+//        new createTree().execute(""); // This line must run for the first time only.
 
-        tree.traverse(tree.root);
-
-        if (mRootNode == null) mRootNode = new File(Environment.getExternalStorageDirectory().toString());
+        if (mRootNode == null) mRootNode = new File(tree.root.toString());
         if (mCurrentNode == null) mCurrentNode = mRootNode;
         mLastNode = mCurrentNode;
 
-        FileFilter filterDirectoriesOnly = new FileFilter() {
-            public boolean accept(File file) {
-                return file.isDirectory();
-            }
-        };
+        mFiles.clear();
+        mFiles.add(mLastNode);
+
         FileFilter filterMP3Only = new FileFilter() {
             public boolean accept(File file) {
                 return file.getName().toLowerCase().contains(".mp3");
             }
         };
 
-        File[] files = mCurrentNode.listFiles(filterDirectoriesOnly);
-        Arrays.sort(files);
+        Tree.Node<String> node =  tree.findNode(mCurrentNode.getAbsolutePath(), tree.root);
+        List<Tree.Node<String>> children=node.children;
+        Log.e("size",children.size()+" ");
+        for(Tree.Node<String> each:children){
+            mFiles.add(new File(each.toString()));
+        }
+
 
         File[] filesMusic = mCurrentNode.listFiles(filterMP3Only);
         Arrays.sort(filesMusic);
 
-        mFiles.clear();
-        mFiles.add(mLastNode);
-
-        if (files != null) {
-            for (int i = 0; i < files.length; i++) mFiles.add(files[i]);
-        }
         if (filesMusic != null) {
             for (int i = 0; i < filesMusic.length; i++) mFiles.add(filesMusic[i]);
         }
