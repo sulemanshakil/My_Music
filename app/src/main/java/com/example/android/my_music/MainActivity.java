@@ -668,6 +668,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                         int pos, long id) {
                     Tuple tuple = (Tuple) parent.getItemAtPosition(pos);
                     File file = new File(tuple.path);
+
+
                     if (pos == 0) {
                         if (mCurrentNode.compareTo(mRootNode) != 0) {
                             mCurrentNode = file.getParentFile();
@@ -677,8 +679,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         mCurrentNode = file;
                         refreshFileList();
                     }
-                else {
-                        String path = giveSongPath(file.getAbsolutePath());
+                else {  // make it faster
+                        String path = giveSongPath(tuple.path);
                         Tree.Node node = tree.findNode(path, tree.root);
                         ArrayList<Song> songsInDir = new ArrayList<>(node.songsInNode);
                         ArrayList<String> songNamesList = new ArrayList<>();
@@ -708,45 +710,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, final View view,
                                                int pos, long id) {
-                    File f = (File) parent.getItemAtPosition(pos);
-                    if (pos == 0) {
-                    } else if (f.isDirectory()) {
-                    } else {
-                        FileFilter filterMP3Only = new FileFilter() {
-                            public boolean accept(File file) {
-                                return file.getName().contains(".mp3");
-                            }
-                        };
+                    Tuple tuple = (Tuple) parent.getItemAtPosition(pos);
+                    File file = new File(tuple.path);
 
-                        File[] files = mCurrentNode.listFiles(filterMP3Only);
-                        ArrayList<Song> songsInDir = new ArrayList<>();
+                    if (pos == 0) {
+                    } else if (file.isDirectory()) {
+                    } else {
+                        String path = giveSongPath(tuple.path);
+                        Tree.Node node = tree.findNode(path, tree.root);
+                        ArrayList<Song> songsInDir = new ArrayList<>(node.songsInNode);
                         ArrayList<String> songNamesList = new ArrayList<>();
 
-                        Collections.sort(songList_all, new Comparator<Song>() {
-                            public int compare(Song a, Song b) {
-                                return a.getData().compareTo(b.getData());
-                            }
-                        });
-
-                        Arrays.sort(files, new Comparator<File>() {
-                            public int compare(File a, File b) {
-                                return a.getAbsolutePath().compareTo(b.getAbsolutePath());
-                            }
-                        });
-
-                        // search algorithm
-                        int d = 0;
                         int position = 0;
-                        for (Song song : songList_all) {
-                            if (d < files.length) {
-                                if (song.getData().equals(files[d].getAbsolutePath())) {
-                                    songNamesList.add(song.getTitle());
-                                    songsInDir.add(song);
-                                    if (songsInDir.get(d).getData().equals(f.getAbsolutePath())) {
-                                        position = d;
-                                    }
-                                    d++;
-                                }
+
+                        for(int i=0;i<songsInDir.size();i++){
+                            songNamesList.add(songsInDir.get(i).getTitle());
+                            if(songsInDir.get(i).getData().equals(file.getAbsolutePath())){
+                                position =i;
                             }
                         }
                         showAlertBoxAppend(position, songsInDir, songNamesList);
