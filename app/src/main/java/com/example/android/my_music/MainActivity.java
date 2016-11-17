@@ -138,6 +138,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(1);
         viewPager.setOffscreenPageLimit(3);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            //    Log.e("onPageScrolled", "" + position);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(position==0){
+                    final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+                    //    mSlidingUpPanelLayout.setScrollableView(recyclerListFragment.recyclerView);
+                    mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
+                }else if(position==1){
+                    mSlidingUpPanelLayout.setDragView(null);
+
+                }else{
+                    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+                    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
+
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     //    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     //    if(prefs.contains(SP_Tag_Tree)) {new createTree().execute("");}
@@ -264,13 +291,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     public void addPlaylistClickListener( final ArrayList<String> songTitle, final ArrayList<Song> songList){
-        ArrayList<String> tempList = new ArrayList<String>(songTitle);
-        oldPlayListSongTitles=tempList;
 
-        oldPlayListSongList=songList;
+
+        ArrayList<String> tempList = new ArrayList<String>(songTitle);
+        oldPlayListSongTitles = tempList;
+        oldPlayListSongList = songList;
         final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
         fragmentC.upDatePlayList(songTitle);  // Set songs in Playlist fragment
-        mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
+        //    mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
 
         fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -292,6 +320,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
+
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        recyclerListFragment.upDatePlayList(songList);
+    //    mSlidingUpPanelLayout.setScrollableView(recyclerListFragment.recyclerView);
+    //    mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
     }
 
     public void storeAsRecentlyPlayed(Song song){
@@ -722,7 +755,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         ArrayList<String> songNamesList = new ArrayList<>();
 
                         int position = 0;
-
                         for(int i=0;i<songsInDir.size();i++){
                             songNamesList.add(songsInDir.get(i).getTitle());
                             if(songsInDir.get(i).getData().equals(file.getAbsolutePath())){
