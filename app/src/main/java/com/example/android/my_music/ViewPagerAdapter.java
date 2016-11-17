@@ -38,10 +38,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Fragment fragment=null;
-
         switch (position){
             case 0:
-                fragment = new FragmentA();
+                fragment = new RecyclerListFragment();
                 break;
             case 1:
                 fragment = new FragmentB();
@@ -50,7 +49,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 fragment = new FragmentC();
                 break;
         }
-
         return fragment;
     }
 

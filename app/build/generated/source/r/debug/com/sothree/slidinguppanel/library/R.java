@@ -32,11 +32,11 @@ public final class R {
 		public static final int below_shadow = 0x7f02004b;
 	}
 	public static final class id {
-		public static final int anchored = 0x7f0c0037;
-		public static final int collapsed = 0x7f0c0038;
-		public static final int expanded = 0x7f0c0039;
-		public static final int hidden = 0x7f0c003a;
-		public static final int item_touch_helper_previous_elevation = 0x7f0c0005;
+		public static final int anchored = 0x7f0d0038;
+		public static final int collapsed = 0x7f0d0039;
+		public static final int expanded = 0x7f0d003a;
+		public static final int hidden = 0x7f0d003b;
+		public static final int item_touch_helper_previous_elevation = 0x7f0d0006;
 	}
 	public static final class styleable {
 		public static final int[] RecyclerView = { 0x010100c4, 0x7f01005d, 0x7f01005e, 0x7f01005f, 0x7f010060 };

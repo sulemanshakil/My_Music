@@ -4,9 +4,12 @@ package com.example.android.my_music;
  * Created by sulemanshakil on 11/16/16.
  */
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +25,7 @@ import java.util.List;
 import com.example.android.my_music.helper.ItemTouchHelperAdapter;
 import com.example.android.my_music.helper.ItemTouchHelperViewHolder;
 import com.example.android.my_music.helper.OnStartDragListener;
+import com.google.gson.Gson;
 
 /**
  * Simple RecyclerView.Adapter that implements {@link ItemTouchHelperAdapter} to respond to move and
@@ -32,22 +36,23 @@ import com.example.android.my_music.helper.OnStartDragListener;
 public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapter.ItemViewHolder>
         implements ItemTouchHelperAdapter {
 
-    private final List<String> mItems = new ArrayList<>();
-//    private final List<Song> songArrayList= new ArrayList<>();
+    private ArrayList<Song> songArrayList= new ArrayList<>();
     private final OnStartDragListener mDragStartListener;
+    Context context;
+
+    private static final String SP_Tag_Playlist = "playlist_data";
+
 
     public RecyclerListAdapter(Context context, OnStartDragListener dragStartListener) {
         mDragStartListener = dragStartListener;
-        mItems.addAll(Arrays.asList(context.getResources().getStringArray(R.array.dummy_items)));
-        mItems.addAll(Arrays.asList(context.getResources().getStringArray(R.array.dummy_items)));
-
+        this.context=context;
     }
 
-    public RecyclerListAdapter(Context context, OnStartDragListener dragStartListener,ArrayList<Song> songArrayList) {
-        mDragStartListener = dragStartListener;
-        for(Song each :songArrayList){
-//            this.songArrayList.add(each);
-        }
+    public void updateValues(ArrayList<Song> songArrayList) {
+        this.songArrayList.clear();
+        this.songArrayList.addAll(songArrayList);
+        notifyDataSetChanged();
+        storeInSharePref(SP_Tag_Playlist, songArrayList);
     }
 
     @Override
@@ -59,7 +64,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
 
     @Override
     public void onBindViewHolder(final ItemViewHolder holder, int position) {
-        holder.textView.setText(mItems.get(position));
+        holder.textView.setText(songArrayList.get(position).getTitle());
 
         // Start a drag whenever the handle view it touched
         holder.handleView.setOnTouchListener(new View.OnTouchListener() {
@@ -75,20 +80,42 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
 
     @Override
     public void onItemDismiss(int position) {
-        mItems.remove(position);
+        songArrayList.remove(position);
         notifyItemRemoved(position);
+        storeInSharePref(SP_Tag_Playlist, songArrayList);
+
     }
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
-        Collections.swap(mItems, fromPosition, toPosition);
+        Collections.swap(songArrayList, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
+        storeInSharePref(SP_Tag_Playlist, songArrayList);
         return true;
     }
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return songArrayList.size();
+    }
+
+    public ArrayList<Song> getSongsPlaylist(){
+        return songArrayList;
+    }
+
+    public void addSong(Song song){
+        songArrayList.add(song);
+        notifyItemInserted(songArrayList.size());
+        storeInSharePref(SP_Tag_Playlist,songArrayList);
+    }
+
+    public void storeInSharePref(String TagSP,ArrayList<Song> songListSharePref){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(songListSharePref);
+        editor.putString(TagSP, json);
+        editor.commit();
     }
 
     /**

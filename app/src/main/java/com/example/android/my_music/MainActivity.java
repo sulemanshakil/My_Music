@@ -15,6 +15,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,8 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ViewPagerAdapter viewPagerAdapter;
     MenuItem mItem;
     String PlaylistSelected;
-    ArrayList<String> oldPlayListSongTitles = new ArrayList<String>();;
-    ArrayList<Song> oldPlayListSongList= new ArrayList<Song>();
     ArrayList<Tuple> mFiles = new ArrayList<>();
     DirectoryListAdapter mAdapter=null;
     private File mCurrentNode = null;
@@ -141,22 +141,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            //    Log.e("onPageScrolled", "" + position);
+                //    Log.e("onPageScrolled", "" + position);
             }
 
             @Override
             public void onPageSelected(int position) {
-                if(position==0){
+                if (position == 0) {
                     final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
-                    //    mSlidingUpPanelLayout.setScrollableView(recyclerListFragment.recyclerView);
                     mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
-                }else if(position==1){
+                } else if (position == 1) {
                     mSlidingUpPanelLayout.setDragView(null);
-
-                }else{
+                } else {
                     final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
                     mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
-
                 }
             }
 
@@ -165,62 +162,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-
-    //    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-    //    if(prefs.contains(SP_Tag_Tree)) {new createTree().execute("");}
-
         new buildTree().execute("");
     }
 
-    private class createTree extends AsyncTask<String,Void, Tree> {
-        Tree mTree;
-        @Override
-        protected Tree doInBackground(String... params) {
-            ArrayList<String> paths =getSharePrefArrayList(SP_Tag_Tree);
-            mTree = new Tree<String>("/storage");
 
-                for(String each:paths){
-                    addPathToTree(each);
-                }
-            return mTree;
-        }
-
-        @Override
-        protected void onPostExecute(Tree mtree) {
-            super.onPostExecute(mtree);
-            tree=mtree;
-        }
-
-        public void addPathToTree(String AbsolutePath){
-
-            String[] paths = AbsolutePath.split("/");
-            String p ="";
-            ArrayList<String> string = new ArrayList<String>();
-            for(int i=1;i<paths.length;i++){
-                p=p+"/"+paths[i];
-                string.add(p);
-            }
-
-            for(int i=0;i<string.size()-1;i++){
-                Tree.Node<String> node=mTree.findNode(string.get(i),mTree.root);
-                if(!mTree.findInChild(string.get(i+1),node)){
-                    mTree.addchild(string.get(i+1), node);
-                }
-            }
-        }
-        public ArrayList<String> getSharePrefArrayList(String TagSP){
-            Gson gson = new Gson();
-            ArrayList<String> paths = new ArrayList<>();
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            String jsonData = prefs.getString(TagSP, "");
-            if(!jsonData.isEmpty()){
-                Type type = new TypeToken<ArrayList<String>>(){}.getType();
-                paths = gson.fromJson(jsonData, type);
-            }
-            return paths ;
-        }
-
-    }
 
     private class buildTree extends AsyncTask<String,Void,Tree>{
         Tree myTree = new Tree("/storage");
@@ -290,41 +235,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public void addPlaylistClickListener( final ArrayList<String> songTitle, final ArrayList<Song> songList){
-
-
-        ArrayList<String> tempList = new ArrayList<String>(songTitle);
-        oldPlayListSongTitles = tempList;
-        oldPlayListSongList = songList;
-        final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-        fragmentC.upDatePlayList(songTitle);  // Set songs in Playlist fragment
-        //    mSlidingUpPanelLayout.setScrollableView(fragmentC.listView);
-
-        fragmentC.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                fragmentB.play(songList, position);
-                storeAsRecentlyPlayed(songList.get(position));
-                populateRecentlyPayed();
-            }
-        });
-        fragmentC.listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-                                           int pos, long id) {
-                // TODO Auto-generated method stub
-                //Log.e("long clicked", "pos: " + songList.get(pos).getTitle());
-                showAlertBoxListview(songList.get(pos));
-                return true;
-            }
-        });
+    public void setUpRecyclerClickListener(){
 
         final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
-        recyclerListFragment.upDatePlayList(songList);
-    //    mSlidingUpPanelLayout.setScrollableView(recyclerListFragment.recyclerView);
-    //    mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        //adapter.updateValues(songList);
+
+        ItemClickSupport.addTo(recyclerListFragment.recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                // do it
+                ArrayList<Song> mSongsList = adapter.getSongsPlaylist();
+                FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                fragmentB.play(mSongsList, position);
+                storeAsRecentlyPlayed(mSongsList.get(position));
+            }
+        });
+
+        ItemClickSupport.addTo(recyclerListFragment.recyclerView).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
+
+            @Override
+            public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+                ArrayList<Song> mSongsList = adapter.getSongsPlaylist();
+                showAlertBoxListview(mSongsList.get(position));
+                return false;
+            }
+        });
+
+    }
+
+    public void appendSongInRecyclerView(Song song){
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        adapter.addSong(song);
+    }
+
+    public void addSongsInRecyclerView(ArrayList<Song> mSonglist){
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        if(adapter.getSongsPlaylist().equals(mSonglist))return;
+        adapter.updateValues(mSonglist);
     }
 
     public void storeAsRecentlyPlayed(Song song){
@@ -376,23 +326,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    public boolean isServiceRunning(String serviceClassName){
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        final List<ActivityManager.RunningServiceInfo> services = activityManager.getRunningServices(Integer.MAX_VALUE);
 
-        for (ActivityManager.RunningServiceInfo runningServiceInfo : services) {
-            if (runningServiceInfo.service.getClassName().equals(serviceClassName)){
-                return true;
-            }
-        }
-        return false;
-    }
 
     private void populateSongs() {
         ListView listView = (ListView)findViewById(R.id.listView);
         final ArrayList<String> songNamesList = new ArrayList<String>();
         for (Song song:songList_all){
-            //   Log.d("Song names", song.getName());
             songNamesList.add(song.getTitle());
         }
 
@@ -406,7 +345,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final ArrayList<String> songNamesList = new ArrayList<String>();
         ArrayList<Song> sonList_recentlyPlayed = getSharePref(SP_Tag_Recently_Played);
         for (Song song:sonList_recentlyPlayed){
-            //   Log.d("Song names", song.getName());
             songNamesList.add(song.getTitle());
         }
 
@@ -489,14 +427,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    public void storeInSharePref(ArrayList arrayList){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences.Editor editor = prefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(arrayList);
-        editor.putString(SP_Tag_Tree, json);
-        editor.commit();
-    }
 
     @Override
     public void onBackPressed() {
@@ -589,10 +519,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                oldPlayListSongList.add(songList.get(pos));
-                oldPlayListSongTitles.add(songNamesList.get(pos));
-                addPlaylistClickListener(oldPlayListSongTitles, oldPlayListSongList);
-                storeInSharePref(SP_Tag_Playlist, oldPlayListSongList);
+                appendSongInRecyclerView(songList.get(pos));
             }
         });
         //Create alert dialog object via builder
@@ -730,8 +657,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                         FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                         fragmentB.play(songsInDir, position);
-                        addPlaylistClickListener(songNamesList, songsInDir);
-                        storeInSharePref(SP_Tag_Playlist, songsInDir);
+                        addSongsInRecyclerView(songsInDir);
                         storeAsRecentlyPlayed(songsInDir.get(position));
                     }
                 }
@@ -866,22 +792,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case Playlist_String:
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                        songList_type=musicDB.getSongsInPlaylist(selection_inside_type);
-                        PlaylistSelected=selection_inside_type;
-                        Log.e("inside", "hello"+Playlist_String);
-                        for (Song song:songList_type){   //use pair class to avoid for loop.
+                        songList_type = musicDB.getSongsInPlaylist(selection_inside_type);
+                        PlaylistSelected = selection_inside_type;
+                        Log.e("inside", "hello" + Playlist_String);
+                        for (Song song : songList_type) {   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
                             Log.e("Songtitle", "" + song.getTitle());
                         }
-
                     default:
                         break;
                 }
+
                 ListView listView2 = (ListView) findViewById(R.id.listView2);
                 MovieListAdapter adapter2 = new MovieListAdapter(getApplication(), selected_type_songs);
                 listView2.setAdapter(adapter2);
                 listView2.setVisibility(View.VISIBLE);
                 setlistner(listView2, songList_type);
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                return true;
             }
         });
     }
@@ -897,8 +831,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 fragmentB.play(songList, position);
-                addPlaylistClickListener(songNamesList, songList);
-                storeInSharePref(SP_Tag_Playlist, songList);
+                addSongsInRecyclerView(songList);
                 storeAsRecentlyPlayed(songList.get(position));
             }
         });
