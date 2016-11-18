@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,9 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 import com.example.android.my_music.helper.ItemTouchHelperAdapter;
 import com.example.android.my_music.helper.ItemTouchHelperViewHolder;
@@ -52,7 +49,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         this.songArrayList.clear();
         this.songArrayList.addAll(songArrayList);
         notifyDataSetChanged();
-        storeInSharePref(SP_Tag_Playlist, songArrayList);
+     //   storeInSharePref(SP_Tag_Playlist, songArrayList);
     }
 
     @Override
@@ -82,15 +79,14 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public void onItemDismiss(int position) {
         songArrayList.remove(position);
         notifyItemRemoved(position);
-        storeInSharePref(SP_Tag_Playlist, songArrayList);
-
+     //   storeInSharePref(SP_Tag_Playlist, songArrayList);
     }
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         Collections.swap(songArrayList, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
-        storeInSharePref(SP_Tag_Playlist, songArrayList);
+    //    storeInSharePref(SP_Tag_Playlist, songArrayList);
         return true;
     }
 
@@ -106,6 +102,10 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public void addSong(Song song){
         songArrayList.add(song);
         notifyItemInserted(songArrayList.size());
+     //   storeInSharePref(SP_Tag_Playlist,songArrayList);
+    }
+
+    public void saveSongs(){
         storeInSharePref(SP_Tag_Playlist,songArrayList);
     }
 

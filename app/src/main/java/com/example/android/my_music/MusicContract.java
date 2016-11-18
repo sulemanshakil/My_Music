@@ -21,6 +21,9 @@ public class MusicContract {
         public static final String Column_Song_Albums = "songAlbums";
         public static final String Column_Song_Genres = "songGenres";
         public static final String COLUMN_PlayList_KEY = "song_id";
+        public static final String COLUMN_Data_KEY = "songData";
+        public static final String COLUMN_AlbumID_KEY = "album_id";
+
 
     }
 

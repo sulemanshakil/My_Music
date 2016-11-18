@@ -141,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                //    Log.e("onPageScrolled", "" + position);
             }
 
             @Override
@@ -164,8 +163,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         new buildTree().execute("");
     }
-
-
 
     private class buildTree extends AsyncTask<String,Void,Tree>{
         Tree myTree = new Tree("/storage");
@@ -234,12 +231,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return P1;
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        adapter.saveSongs();
+    }
 
     public void setUpRecyclerClickListener(){
 
         final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
         final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
-        //adapter.updateValues(songList);
 
         ItemClickSupport.addTo(recyclerListFragment.recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
@@ -326,8 +329,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-
-
     private void populateSongs() {
         ListView listView = (ListView)findViewById(R.id.listView);
         final ArrayList<String> songNamesList = new ArrayList<String>();
@@ -389,6 +390,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     (android.provider.MediaStore.Audio.Media.ALBUM);
             int dataColumn = musicCursor.getColumnIndex
                     (MediaStore.Audio.Media.DATA);
+            int idAlbumColumn = musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.ALBUM_ID);
 
             //add songs to list
             do {
@@ -398,6 +401,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 String thisDuration = musicCursor.getString(durationColumn);
                 String thisAlbum = musicCursor.getString(albumColumn);
                 String thisData = musicCursor.getString(dataColumn);
+                String thisAlbumId = musicCursor.getString(idAlbumColumn);
                 String thisGenres= "";
 
                 int musicId = Integer.parseInt(musicCursor.getString(idColumn));
@@ -414,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
-                    songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData));
+                    songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData,thisAlbumId));
                 }
             }
             while (musicCursor.moveToNext());
@@ -490,7 +494,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
-                                //    Log.e("Hello",userInput.getText().toString());
                                 MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                                 musicDB.addPlaylist(userInput.getText().toString());
                                 ArrayList<String> playlist_List= musicDB.getPlaylists();
@@ -758,7 +761,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                Log.e("Item Selected", List.get(position));
                 String selection_inside_type = List.get(position);
                 final ArrayList<String> selected_type_songs = new ArrayList<>(); // Could be from artist,albums,Genre
                 ArrayList<Song> songList_type = new ArrayList<>();
@@ -794,10 +796,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
                         songList_type = musicDB.getSongsInPlaylist(selection_inside_type);
                         PlaylistSelected = selection_inside_type;
-                        Log.e("inside", "hello" + Playlist_String);
                         for (Song song : songList_type) {   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
-                            Log.e("Songtitle", "" + song.getTitle());
                         }
                     default:
                         break;

@@ -80,7 +80,6 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         player.setWakeMode(getApplicationContext(),
                 PowerManager.PARTIAL_WAKE_LOCK);
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
         player.setOnPreparedListener(this);
         player.setOnCompletionListener(this);
         player.setOnErrorListener(this);
@@ -102,15 +101,14 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     public void clickNext(){
         if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
             playSong(positon + 1);
-            sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
-
+        //    sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
         }
     }
 
     public void clickPrevious(){
         if(positon!=0) {
             playSong(positon - 1);
-            sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
+        //    sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
         }
     }
 
@@ -138,12 +136,12 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         Uri trackUri = ContentUris.withAppendedId(
                 android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                 song_id);
-
         try{
             player = new MediaPlayer();
             player.setDataSource(getApplicationContext(), trackUri);
             player.prepare();
             player.start();
+            sendBroadcast(Constants.ACTION.SongStarted_ACTION);
         }
         catch(Exception e){
             Log.e("MUSIC SERVICE", "Error setting data source", e);
@@ -153,7 +151,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                   clickNext();
+                clickNext();
                 sendBroadcast(Constants.ACTION.PLAY_ACTION);
             }
         });
@@ -210,6 +208,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         closeIntent.setAction(Constants.ACTION.STOPFOREGROUND_ACTION);
         PendingIntent pcloseIntent = PendingIntent.getService(this, 0,
                 closeIntent, 0);
+
 
     //    Intent Update_Recently_Playlist_Intent = new Intent(this, MusicService.class);
     //    closeIntent.setAction(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);

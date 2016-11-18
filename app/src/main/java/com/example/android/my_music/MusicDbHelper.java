@@ -56,6 +56,8 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                 PlayListSongEntry.Column_Song_Artist + " TEXT NOT NULL, " +
                 PlayListSongEntry.Column_Song_Duration + " TEXT NOT NULL, " +
                 PlayListSongEntry.Column_Song_Genres + " TEXT NOT NULL, " +
+                PlayListSongEntry.COLUMN_AlbumID_KEY + " TEXT NOT NULL, " +
+                PlayListSongEntry.COLUMN_Data_KEY + " TEXT NOT NULL, " +
                 // Set up the location column as a foreign key to location table.
                 " FOREIGN KEY (" + PlayListSongEntry.COLUMN_PlayList_KEY + ") REFERENCES " +
                 PlayListEntry.TABLE_NAME + " (" + PlayListEntry._ID + ") " +
@@ -134,17 +136,19 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                         PlayListSongEntry.Column_Song_Artist + "," +
                         PlayListSongEntry.Column_Song_Albums + "," +
                         PlayListSongEntry.Column_Song_Duration + "," +
-                        PlayListSongEntry.Column_Song_Genres +
+                        PlayListSongEntry.Column_Song_Genres + "," +
+                        PlayListSongEntry.COLUMN_AlbumID_KEY + "," +
+                        PlayListSongEntry.COLUMN_Data_KEY +
                         ")" +
                         "VALUES" +
                         "(" +
                         "(SELECT " + PlayListEntry._ID +
                         " FROM " + PlayListEntry.TABLE_NAME +
                         " WHERE " + PlayListEntry.COLUMN_PlayList_NAME + "=?)," +
-                        "?,?,?,?,?,?" +
+                        "?,?,?,?,?,?,?,?" +
                         ")",
                 new Object[]{playlist_name, song.getID(), song.getTitle(), song.getArtist(),
-                        song.getAlbum(), song.duration(), song.getGenres()
+                        song.getAlbum(), song.duration(), song.getGenres(), song.getAlbumId(), song.getData()
                 });
         return true;
     }
@@ -152,31 +156,6 @@ public class MusicDbHelper extends SQLiteOpenHelper {
     public ArrayList<Song> getSongsInPlaylist(String PlayListName){
         String  propertyId= getPlayListID(PlayListName);
         return getSongsinPlayList(propertyId);
-
-/*
-        final String MY_QUERY = "SELECT * FROM "+ PlayListSongEntry.TABLE_NAME + " INNER JOIN "+ PlayListEntry.TABLE_NAME +
-                " ON " + PlayListSongEntry.COLUMN_PlayList_KEY + "=" + PlayListEntry._ID + " WHERE "+PlayListEntry._ID +"=?";
-
-
-        Cursor c  = db.rawQuery(MY_QUERY, new String[]{String.valueOf(propertyId)});
-        ArrayList<Song> songArrayList = new  ArrayList<>();
-        // looping through all rows and adding to list
-        if (c.moveToFirst()) {
-            do {
-                Song song = new Song();
-               // song.setID(c.getInt((c.getColumnIndex(PlayListSongEntry.Column_SongId))));
-                song.setTitle((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Title))));
-                song.setAlbum((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Albums))));
-                song.setArtist((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Artist))));
-                song.setduration((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Duration))));
-                song.setGenres((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Genres))));
-                Log.e("Data",song.getTitle());
-                // adding to todo list
-                songArrayList.add(song);
-            } while (c.moveToNext());
-        }
-
-*/
     }
 
     public ArrayList<Song> getSongsinPlayList(String playlist_id) {
@@ -189,6 +168,8 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                 PlayListSongEntry.Column_Song_Duration,
                 PlayListSongEntry.Column_Song_Albums,
                 PlayListSongEntry.Column_Song_Artist,
+                PlayListSongEntry.COLUMN_AlbumID_KEY,
+                PlayListSongEntry.COLUMN_Data_KEY,
                 PlayListSongEntry.Column_Song_Genres
         };
         String[] where = {
@@ -220,6 +201,8 @@ public class MusicDbHelper extends SQLiteOpenHelper {
                 song.setArtist((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Artist))));
                 song.setduration((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Duration))));
                 song.setGenres((c.getString(c.getColumnIndex(PlayListSongEntry.Column_Song_Genres))));
+                song.setAlbumId((c.getString(c.getColumnIndex(PlayListSongEntry.COLUMN_AlbumID_KEY))));
+                song.setData((c.getString(c.getColumnIndex(PlayListSongEntry.COLUMN_Data_KEY))));
                 // adding to todo list
                 songArrayList.add(song);
             } while (c.moveToNext());

@@ -45,7 +45,6 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         RecyclerListAdapter adapter = new RecyclerListAdapter(getActivity(), this);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
@@ -76,10 +75,8 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
             Type type = new TypeToken<ArrayList<Song>>(){}.getType();
             songList = gson.fromJson(jsonData, type);
         }
-
         MainActivity mainActivity = (MainActivity)getActivity();
         mainActivity.addSongsInRecyclerView(songList);
-        Log.e("Hello","onresume");
         mainActivity.setUpRecyclerClickListener();
     }
 }
