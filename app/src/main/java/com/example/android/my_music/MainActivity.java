@@ -340,6 +340,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         listView.setAdapter(adapter);
         setlistner(listView, songList_all);
     }
+
     private void populateRecentlyPayed(){
 
         ListView listView = (ListView)findViewById(R.id.listView);

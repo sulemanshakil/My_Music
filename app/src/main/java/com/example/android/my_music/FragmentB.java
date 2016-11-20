@@ -17,6 +17,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +33,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -42,6 +45,7 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Suleman Shakil on 29.11.2015.
@@ -259,25 +263,30 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         String Albumid = musicSrv.getCurrentSong().getAlbumId();
         Long idAlbum = Long.valueOf(Albumid).longValue();
         Bitmap AlbumArtBitmap=getAlbumart(idAlbum);
-        Log.e("Albumid",Albumid);
+        Bitmap AlbumArtBitmap1=getAlbumart(idAlbum);
 
-        if(AlbumArtBitmap==null)return;
-        int width = rootView.getMeasuredWidth();
-        int height = rootView.getHeight();
+        if(AlbumArtBitmap==null) {
+            Random ran = new Random();
+            int x = ran.nextInt(4) + 1;
+            int resID = getResources().getIdentifier("albumcover" + x, "drawable", getActivity().getPackageName());
+            AlbumArtBitmap = BitmapFactory.decodeResource(getResources(),resID);
+            AlbumArtBitmap1 = BitmapFactory.decodeResource(getResources(),resID);
+        }
+        View view = rootView.findViewById(R.id.RelativeLayout);
+        int width = view.getWidth();
+        int height = view.getHeight();
         int heightAlbumArt=height/2;
 
-        Bitmap bp=getResizedBitmap(getAlbumart(idAlbum),width+100,height);
-        for(int i=0;i<10;i++){
-            bp=BlurImage(bp);
-        }
-        ImageView imageView1 = (ImageView) rootView.findViewById(R.id.imageViewBackground);
-        imageView1.setImageBitmap(bp);
-        imageView1.setAlpha(0.35f);
+        Bitmap AlbumArtBitmapResized=getResizedBitmap(AlbumArtBitmap, heightAlbumArt, heightAlbumArt);
+        ImageView imageViewAlbumArt = (ImageView) rootView.findViewById(R.id.imageViewAlbumArt);
+        imageViewAlbumArt.setImageBitmap(AlbumArtBitmapResized);
 
-        Bitmap AlbumArtBitmapResized=getResizedBitmap(AlbumArtBitmap,heightAlbumArt,heightAlbumArt);
-        ImageView imageView = (ImageView) rootView.findViewById(R.id.imageViewAlbumArt);
-        imageView.setImageBitmap(AlbumArtBitmapResized);
+        MyTaskParams params = new MyTaskParams(AlbumArtBitmap1, width, height);
+        new BlurTask().execute(params);
+        ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
+        imageViewBackground.setAlpha(0f);
     }
+
 
     public Bitmap getAlbumart(Long album_id) {
         Bitmap bm = null;
@@ -299,7 +308,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         return bm;
     }
 
-    Bitmap BlurImage (Bitmap input) {
+    public Bitmap BlurImage (Bitmap input) {
         try
         {
             RenderScript rsScript = RenderScript.create(getActivity());
@@ -342,4 +351,37 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         return resizedBitmap;
     }
 
-}
+
+    private class BlurTask extends AsyncTask<MyTaskParams,Void,Bitmap> {
+        @Override
+        protected Bitmap doInBackground(MyTaskParams... params) {
+            Bitmap bp=getResizedBitmap(params[0].bitmap,params[0].width,params[0].height);
+            for(int i=0;i<10;i++){
+                bp=BlurImage(bp);
+            }
+            return bp;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
+            Animation fadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in_anim);
+            imageViewBackground.setImageBitmap(bitmap);
+            imageViewBackground.setAlpha(0.35f);
+            imageViewBackground.startAnimation(fadeInAnimation);
+        }
+    }
+
+    private static class MyTaskParams {
+        Bitmap bitmap;
+        int width;
+        int height;
+
+        MyTaskParams(Bitmap bitmap, int width, int height) {
+            this.bitmap = bitmap;
+            this.width = width;
+            this.height = height;
+        }
+    }
+    }

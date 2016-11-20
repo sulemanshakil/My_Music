@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/anim/fade_in_anim.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/anim/fade_in_anim.xml"
+    },
+    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/anim/fade_out_anim.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/anim/fade_out_anim.xml"
     },
     {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
