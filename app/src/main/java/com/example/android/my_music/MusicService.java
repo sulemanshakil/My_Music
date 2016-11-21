@@ -86,7 +86,16 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
 
     public void setList(ArrayList<Song> theSonglist){
-        songList=theSonglist;
+        songList.clear();
+        songList.addAll(theSonglist);
+    }
+
+    public ArrayList<Song> getSongList(){
+        return songList;
+    }
+
+    public void setPositon(int newPositon){
+        positon=newPositon;
     }
 
     public void toggleSong() {
@@ -101,14 +110,12 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     public void clickNext(){
         if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
             playSong(positon + 1);
-        //    sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
         }
     }
 
     public void clickPrevious(){
         if(positon!=0) {
             playSong(positon - 1);
-        //    sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
         }
     }
 
@@ -125,6 +132,9 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         //play a song
         //get song
         this.positon=position;
+        if(position<0)return;
+        if(position>songList.size())return;
+
         long song_id = songList.get(position).getID();
 
         if (player!=null){

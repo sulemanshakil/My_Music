@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -55,7 +56,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main, parent, false);
-        ItemViewHolder itemViewHolder = new ItemViewHolder(view);
+        ItemViewHolder itemViewHolder = new ItemViewHolder(context,view);
         return itemViewHolder;
     }
 
@@ -75,20 +76,29 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         });
     }
 
+
     @Override
     public void onItemDismiss(int position) {
         songArrayList.remove(position);
         notifyItemRemoved(position);
-     //   storeInSharePref(SP_Tag_Playlist, songArrayList);
+    //    ((MainActivity) context).updateSongInMusicService(songArrayList, position,0,Constants.ACTION.ItemDismiss);
     }
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         Collections.swap(songArrayList, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
-    //    storeInSharePref(SP_Tag_Playlist, songArrayList);
+    //    ((MainActivity) context).updateSongInMusicService(songArrayList,toPosition,fromPosition,Constants.ACTION.ItemMoved);
         return true;
     }
+
+    public void addSong(Song song){
+        songArrayList.add(song);
+        notifyItemInserted(songArrayList.size());
+        ((MainActivity) context).updateSongInMusicService();
+    }
+
+
 
     @Override
     public int getItemCount() {
@@ -99,11 +109,6 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         return songArrayList;
     }
 
-    public void addSong(Song song){
-        songArrayList.add(song);
-        notifyItemInserted(songArrayList.size());
-     //   storeInSharePref(SP_Tag_Playlist,songArrayList);
-    }
 
     public void saveSongs(){
         storeInSharePref(SP_Tag_Playlist,songArrayList);
@@ -118,6 +123,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         editor.commit();
     }
 
+
     /**
      * Simple example of a view holder that implements {@link ItemTouchHelperViewHolder} and has a
      * "handle" view that initiates a drag event when touched.
@@ -127,11 +133,13 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
 
         public final TextView textView;
         public final ImageView handleView;
+        Context context;
 
-        public ItemViewHolder(View itemView) {
+        public ItemViewHolder(Context context,View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.text);
             handleView = (ImageView) itemView.findViewById(R.id.handle);
+            this.context=context;
         }
 
         @Override
@@ -142,6 +150,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         @Override
         public void onItemClear() {
             itemView.setBackgroundColor(0);
+            ((MainActivity) context).updateSongInMusicService();
         }
     }
 }

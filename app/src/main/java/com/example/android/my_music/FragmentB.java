@@ -60,6 +60,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     ServiceConnection musicConnection;
     private SeekBar seekBar_Music;
     View rootView;
+    private BlurTask mBlurTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -174,6 +175,11 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         if (musicConnection != null) {
            getActivity().unbindService(musicConnection);
         }
+        if(mBlurTask!=null) {
+            mBlurTask.cancel(true);
+            mBlurTask=null;
+        }
+
     }
 
     public void setup_seekbar_duration(){
@@ -269,9 +275,10 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             Random ran = new Random();
             int x = ran.nextInt(4) + 1;
             int resID = getResources().getIdentifier("albumcover" + x, "drawable", getActivity().getPackageName());
-            AlbumArtBitmap = BitmapFactory.decodeResource(getResources(),resID);
+            AlbumArtBitmap = BitmapFactory.decodeResource(getResources(), resID);
             AlbumArtBitmap1 = BitmapFactory.decodeResource(getResources(),resID);
         }
+
         View view = rootView.findViewById(R.id.RelativeLayout);
         int width = view.getWidth();
         int height = view.getHeight();
@@ -281,12 +288,17 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         ImageView imageViewAlbumArt = (ImageView) rootView.findViewById(R.id.imageViewAlbumArt);
         imageViewAlbumArt.setImageBitmap(AlbumArtBitmapResized);
 
-        MyTaskParams params = new MyTaskParams(AlbumArtBitmap1, width, height);
-        new BlurTask().execute(params);
         ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
-        imageViewBackground.setAlpha(0f);
-    }
+        MyTaskParams params = new MyTaskParams(AlbumArtBitmap1, width, height);
 
+        if(mBlurTask!=null) {  // handles if already Async task is running.
+            mBlurTask.cancel(true);
+            mBlurTask=null;
+            imageViewBackground.clearAnimation();
+        }
+        imageViewBackground.setAlpha(0f);
+        mBlurTask= (BlurTask) new BlurTask().execute(params);
+    }
 
     public Bitmap getAlbumart(Long album_id) {
         Bitmap bm = null;
@@ -368,7 +380,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
             Animation fadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in_anim);
             imageViewBackground.setImageBitmap(bitmap);
-            imageViewBackground.setAlpha(0.35f);
+            imageViewBackground.setAlpha(0.3f);
             imageViewBackground.startAnimation(fadeInAnimation);
         }
     }
