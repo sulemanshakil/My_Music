@@ -3,12 +3,40 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="200dp"
         android:layout_height="70dp"
         android:text="Playlist"
         android:id="@+id/textView4"
         android:background="#8895fc" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/buttonSave"
+            android:layout_alignTop="@+id/buttonClear"
+            android:layout_toRightOf="@+id/buttonClear"
+            android:layout_toEndOf="@+id/buttonClear" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:id="@+id/buttonClear"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView4"
+            android:layout_toEndOf="@+id/textView4" />
+
+
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"

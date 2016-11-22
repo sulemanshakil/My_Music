@@ -15,6 +15,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -272,8 +273,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter.addSong(song);
     }
 
+    public void addSongInMusicService(Song song){
+        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        ArrayList<Song> modifiedSongList = new ArrayList<>(adapter.getSongsPlaylist());
+        fragmentB.musicSrv.setList(modifiedSongList);
+    }
+
     public void updateSongInMusicService() {
-     //   Log.e("hello","cleared");
+     // called when playlist is modified or appended
         FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
         ArrayList<Song> currentSongList = new ArrayList<>(fragmentB.musicSrv.getSongList());
 
@@ -284,7 +293,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(currentSongList.equals(modifiedSongList)){
 //            Log.e("same","sameList");
         }else if(currentSongList.size()!=modifiedSongList.size()){ // Handle Del
-//            Log.e("del", "delList");
+         //   Log.e("del", "delList");
             Song song = fragmentB.musicSrv.getCurrentSong();
             int CurretPosition=fragmentB.musicSrv.positon;
             if(!modifiedSongList.contains(song)){
@@ -295,21 +304,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragmentB.musicSrv.setPositon(CurretPosition);
                     fragmentB.upDateToggleButton();
                     fragmentB.setImageView();
-                }else if(modifiedSongList.size()==0){
+                }else if(modifiedSongList.size()==0){ // no song in Playlist
+                    fragmentB.musicSrv.stopForeground(true); // stop music service
                     fragmentB.musicSrv.player.stop();
-                    mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                    HidePanel();
                 }
                 else {
                     fragmentB.musicSrv.playSong(CurretPosition);
                     fragmentB.upDateToggleButton();
                     fragmentB.setImageView();
                 }
-
             }else if(modifiedSongList.indexOf(song)<CurretPosition){
                 fragmentB.musicSrv.positon = modifiedSongList.indexOf(song);
                 fragmentB.musicSrv.setList(modifiedSongList);
             }
-
         }else if (currentSongList.size()==modifiedSongList.size()){ // Handle Swap
             Song song = fragmentB.musicSrv.getCurrentSong();
             int currentPos=fragmentB.musicSrv.positon;
@@ -320,6 +328,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentB.musicSrv.setPositon(modifiedSongList.indexOf(song));
             }
         }
+    }
+
+    public void clearSongsinPlaylist(){
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        adapter.updateValues(new ArrayList<Song>());
+        Handler handler = new Handler();
+        final Runnable r = new Runnable() {
+            public void run() {
+                HidePanel();
+            }
+        };
+        handler.postDelayed(r, 500);
+        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+        fragmentB.musicSrv.player.stop();
+        fragmentB.musicSrv.stopForeground(true);
+        fragmentB.musicSrv.songList.clear();
     }
 
     public void addSongsInRecyclerView(ArrayList<Song> mSonglist){
@@ -481,7 +506,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-
     @Override
     public void onBackPressed() {
 
@@ -522,6 +546,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void savePlaylistAlertBox() {
+
+        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
+        if(adapter.getItemCount()==0)return;
+        final ArrayList<Song> songsInPlaylist=adapter.getSongsPlaylist();
+
+        // get prompts.xml view
+        LayoutInflater li = LayoutInflater.from(getApplicationContext());
+        View promptsView = li.inflate(R.layout.prompts, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        final EditText userInput = (EditText) promptsView
+                .findViewById(R.id.editTextDialogUserInput);
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                final Runnable r = new Runnable() {
+                                    public void run() {
+                                        MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                                        musicDB.addPlaylist(userInput.getText().toString());
+                                        for (Song song : songsInPlaylist) {
+                                            musicDB.addSongToPlaylist(song, userInput.getText().toString());
+                                        }
+                                    }
+                                };
+                                new Thread(r).start();                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        // show it
+        alertDialog.show();
     }
 
     private void showAlertBox() {
@@ -574,14 +647,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
                 final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
-
-                if(adapter.getSongsPlaylist().size()==0){  // handle if playlist is empty
+                if(fragmentB.musicSrv.songList.size()==0){  // handle if playlist is empty
                     ArrayList<Song> templist=new ArrayList<>();
+                    adapter.updateValues(templist);
                     templist.add(songList.get(pos));
                     fragmentB.play(templist, 0);
-                    mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                    appendSongInRecyclerView(songList.get(pos));
+
+                    final Handler handler = new Handler();
+                    final Runnable r = new Runnable() {
+                        public void run() {mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);}};
+                    handler.postDelayed(r, 700);
+
+                }else if(!fragmentB.musicSrv.isPlaying()){ //song is not playing but playlist is not empty
+                    appendSongInRecyclerView(songList.get(pos));
+                    fragmentB.play(adapter.getSongsPlaylist(), adapter.getItemCount() - 1);
+                    final Handler handler = new Handler();
+                    final Runnable r = new Runnable() {
+                        public void run() {mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);}};
+                    handler.postDelayed(r, 700);
+
+                }else { // songs playing and Playlist is not empty
+                    appendSongInRecyclerView(songList.get(pos));
                 }
-                appendSongInRecyclerView(songList.get(pos));
             }
         });
         //Create alert dialog object via builder

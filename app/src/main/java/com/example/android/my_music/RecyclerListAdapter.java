@@ -6,6 +6,7 @@ package com.example.android.my_music;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
@@ -95,7 +96,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public void addSong(Song song){
         songArrayList.add(song);
         notifyItemInserted(songArrayList.size());
-        ((MainActivity) context).updateSongInMusicService();
+        ((MainActivity) context).addSongInMusicService(song);
     }
 
 
@@ -150,7 +151,14 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         @Override
         public void onItemClear() {
             itemView.setBackgroundColor(0);
-            ((MainActivity) context).updateSongInMusicService();
+
+            Handler handler = new Handler();
+            final Runnable r = new Runnable() {
+                public void run() {
+                    ((MainActivity) context).updateSongInMusicService();
+                }
+            };
+            handler.postDelayed(r, 300);
         }
     }
 }

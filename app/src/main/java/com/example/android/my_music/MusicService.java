@@ -65,8 +65,8 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
             sendBroadcast(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);   // Problem with next and previous action. Not Working
        }else if (intent.getAction().equals(
                 Constants.ACTION.STOPFOREGROUND_ACTION)) {
-            Log.i(LOG_TAG, "Received Stop Foreground Intent");
-            Toast.makeText(this, "Service Stoped", Toast.LENGTH_SHORT).show();
+       //     Log.i(LOG_TAG, "Received Stop Foreground Intent");
+       //     Toast.makeText(this, "Service Stoped", Toast.LENGTH_SHORT).show();
             stopForeground(true);
             sendBroadcast(Constants.ACTION.STOPFOREGROUND_ACTION);
             player.stop();

@@ -1,6 +1,8 @@
 package com.example.android.my_music;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -13,6 +15,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.android.my_music.helper.OnStartDragListener;
 import com.example.android.my_music.helper.SimpleItemTouchHelperCallback;
@@ -25,7 +29,7 @@ import java.util.ArrayList;
 /**
  * @author Paul Burke (ipaulpro)
  */
-public class RecyclerListFragment extends Fragment implements OnStartDragListener {
+public class RecyclerListFragment extends Fragment implements OnStartDragListener,View.OnClickListener {
 
     View rootView;
     RecyclerView recyclerView;
@@ -56,7 +60,10 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(recyclerView);
 
-
+        Button clearButton = (Button) rootView.findViewById(R.id.buttonClear);
+        Button saveButton  = (Button) rootView.findViewById(R.id.buttonSave);
+        clearButton.setOnClickListener(this);
+        saveButton.setOnClickListener(this);
     }
 
     @Override
@@ -79,4 +86,19 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
         mainActivity.addSongsInRecyclerView(songList);
         mainActivity.setUpRecyclerClickListener();
     }
+
+
+    @Override
+    public void onClick(View v) {
+        MainActivity mainActivity = (MainActivity)getActivity();
+        switch (v.getId()){
+            case R.id.buttonClear:
+                mainActivity.clearSongsinPlaylist();
+                break;
+            case R.id.buttonSave:
+                mainActivity.savePlaylistAlertBox();
+                break;
+        }
+    }
+
 }
