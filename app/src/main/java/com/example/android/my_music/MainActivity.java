@@ -432,7 +432,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void populateFavouriteSongs(){
         ListView listView = (ListView)findViewById(R.id.listView);
         MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
-        ArrayList<Song> FavSongs =  mDbHelper.getSongsInPlaylist("Favourites");
+        ArrayList<Song> FavSongs =  mDbHelper.getSongsInPlaylistByName("Favourites");
 
         final ArrayList<String> FavSongNamesList = new ArrayList<String>();
 
@@ -576,13 +576,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 final Runnable r = new Runnable() {
                                     public void run() {
                                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                                        musicDB.addPlaylist(userInput.getText().toString());
-                                        for (Song song : songsInPlaylist) {
-                                            musicDB.addSongToPlaylist(song, userInput.getText().toString());
+                                        Boolean flag = musicDB.addPlaylist(userInput.getText().toString());
+                                        if (flag == true) {
+                                            for (Song song : songsInPlaylist) {
+                                                musicDB.addSongToPlaylist(song, userInput.getText().toString());
+                                            }
+                                        } else {
+                                            showToast("Playlist already exist");
+                                            Log.e("Playlist already ", "exist by this name");
                                         }
                                     }
                                 };
-                                new Thread(r).start();                            }
+                                new Thread(r).start();
+                            }
                         })
                 .setNegativeButton("Cancel",
                         new DialogInterface.OnClickListener() {
@@ -616,12 +622,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setCancelable(false)
                 .setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
+                            public void onClick(DialogInterface dialog, int id) {
                                 MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                                musicDB.addPlaylist(userInput.getText().toString());
-                                ArrayList<String> playlist_List= musicDB.getPlaylists();
-                                java.util.Collections.sort(playlist_List);
-                                rePopulateList(playlist_List, Playlist_String);
+                                Boolean flag = musicDB.addPlaylist(userInput.getText().toString());
+                                if (flag == true) {
+                                    showToast("Playlist created successfully");
+                                } else {
+                                    showToast("Playlist already exist");
+
+                                }
+//                                ArrayList<String> playlist_List= musicDB.getPlaylists();
+//                                java.util.Collections.sort(playlist_List);
+//                                rePopulateList(playlist_List, Playlist_String);
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -637,18 +649,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         alertDialog.show();
     }
 
-    private void showAlertBoxAppend(final int pos,final ArrayList<Song> songList, final ArrayList<String> songNamesList){
+    private Boolean showAlertBoxDelete(final String playlistName,final ListView listView, final int pos){
 
-        //Create sequence of items
-        final CharSequence[] myPlayList = {"Append"};
+        final CharSequence[] myPlayList = {"Delete"};
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
+                MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                Boolean flag =musicDB.deletePlaylist(playlistName);
+                if(flag) {
+                    ((MovieListAdapter) listView.getAdapter()).removeItem(pos);
+                }
+             }
+        });
+        //Create alert dialog object via builder
+        AlertDialog alertDialogObject = dialogBuilder.create();
+        //Show the dialog
+        alertDialogObject.show();
+
+        return false;
+    }
+
+    private void showAlertBoxAppend(final int pos,final ArrayList<Song> songList,final ListView listView ){
+        final CharSequence[] myPlayList;
+        //Create sequence of items
+        if(mItem.getItemId()==R.id.nav_Playlist){myPlayList= new CharSequence[]{"Append", "Delete"};
+        }else{myPlayList = new CharSequence[]{"Append"};}
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+
+                if(item==1){
+                    MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
+                    Boolean flag =musicDB.deleteSongInPlaylist(pos,PlaylistSelected);
+                    MovieListAdapter movieListAdapter=(MovieListAdapter) listView.getAdapter();
+                    movieListAdapter.removeItem(pos);
+                    ArrayList<Song> songList1=musicDB.getSongsInPlaylistByName(PlaylistSelected);
+                   // Log.e("item","Delete "+songList1.size());
+
+                    for(Song song:songList1) {
+                        Log.e("Song", "" + song.getTitle());
+                    }
+                    setlistner(listView, songList1);
+                    return;
+                }
+
+
                 FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                 final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
-                final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
-                if(fragmentB.musicSrv.songList.size()==0){  // handle if playlist is empty
-                    ArrayList<Song> templist=new ArrayList<>();
+                final RecyclerListAdapter adapter = (RecyclerListAdapter) recyclerListFragment.recyclerView.getAdapter();
+                if (fragmentB.musicSrv.songList.size() == 0) {  // handle if playlist is empty
+                    ArrayList<Song> templist = new ArrayList<>();
                     adapter.updateValues(templist);
                     templist.add(songList.get(pos));
                     fragmentB.play(templist, 0);
@@ -656,21 +708,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     final Handler handler = new Handler();
                     final Runnable r = new Runnable() {
-                        public void run() {mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);}};
+                        public void run() {
+                            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        }
+                    };
                     handler.postDelayed(r, 700);
 
-                }else if(!fragmentB.musicSrv.isPlaying()){ //song is not playing but playlist is not empty
+                } else if (!fragmentB.musicSrv.isPlaying()) { //song is not playing but playlist is not empty
                     appendSongInRecyclerView(songList.get(pos));
                     fragmentB.play(adapter.getSongsPlaylist(), adapter.getItemCount() - 1);
                     final Handler handler = new Handler();
                     final Runnable r = new Runnable() {
-                        public void run() {mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);}};
+                        public void run() {
+                            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        }
+                    };
                     handler.postDelayed(r, 700);
 
-                }else { // songs playing and Playlist is not empty
+                } else { // songs playing and Playlist is not empty
                     appendSongInRecyclerView(songList.get(pos));
                 }
             }
+
+
+
         });
         //Create alert dialog object via builder
         AlertDialog alertDialogObject = dialogBuilder.create();
@@ -704,7 +765,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         MovieListAdapter adapter = new MovieListAdapter(getApplication(), List);
                         listView2.setAdapter(adapter);
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                        ArrayList<Song> songList_type = musicDB.getSongsInPlaylist(selectedText);
+                        ArrayList<Song> songList_type = musicDB.getSongsInPlaylistByName(selectedText);
                         setlistner(listView2, songList_type);
                     }
                     if (mItem != null && mItem.getItemId() == R.id.nav_Favourites) {
@@ -725,7 +786,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         mItem=item;
         int id = item.getItemId();
-        ListView listView2 = (ListView) findViewById(R.id.listView2);
+        final ListView listView2 = (ListView) findViewById(R.id.listView2);
         listView2.setVisibility(View.GONE);
 
 
@@ -837,7 +898,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 position =i;
                             }
                         }
-                        showAlertBoxAppend(position, songsInDir, songNamesList);
+                        showAlertBoxAppend(position, songsInDir,listView2);
                     }
                     return true;
                 }
@@ -900,7 +961,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void rePopulateList(final ArrayList<String> List, final String Type) {
 
-        ListView listView = (ListView)findViewById(R.id.listView);
+        final ListView listView = (ListView)findViewById(R.id.listView);
         MovieListAdapter adapter = new MovieListAdapter(this, List);
         listView.setAdapter(adapter);
 
@@ -941,7 +1002,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case Playlist_String:
                         MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                        songList_type = musicDB.getSongsInPlaylist(selection_inside_type);
+                        songList_type = musicDB.getSongsInPlaylistByName(selection_inside_type);
                         PlaylistSelected = selection_inside_type;
                         for (Song song : songList_type) {   //use pair class to avoid for loop.
                             selected_type_songs.add(song.getTitle());
@@ -962,14 +1023,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
+                String string = (String) arg0.getItemAtPosition(pos);
+                if(mItem.getItemId() == R.id.nav_Playlist) { //check if selected item is from playlist
+                    if(!listView.getAdapter().getItem(pos).equals("Favourites")){
+                     //   Log.e("From ", " " + string);
+                        Boolean flag=showAlertBoxDelete(string,listView,pos);
+                    }
+                }
                 return true;
             }
         });
     }
 
-    private void setlistner(ListView listView,final ArrayList<Song> songList){
+    private void setlistner(final ListView listView,final ArrayList<Song> songList){
         //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
-        final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
+    //    final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -987,7 +1055,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
-                showAlertBoxAppend(pos,songList,songNamesList);
+                showAlertBoxAppend(pos,songList,listView);
                 return true;
             }
         });
@@ -996,5 +1064,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void HidePanel() {
         mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
 
+    }
+
+    public void showToast(final String toast) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

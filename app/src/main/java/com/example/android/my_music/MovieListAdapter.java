@@ -39,4 +39,9 @@ public class MovieListAdapter  extends ArrayAdapter<String> {
 
         return rowView;
     }
+
+    public void removeItem(int pos) {
+        values.remove(pos);
+        notifyDataSetChanged();
+    }
 }

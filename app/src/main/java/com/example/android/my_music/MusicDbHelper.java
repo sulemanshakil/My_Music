@@ -106,7 +106,12 @@ public class MusicDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addPlaylist(String name) {
+    public boolean addPlaylist(String name) {
+
+        ArrayList<String> playlistNames=getPlaylists();
+        if(playlistNames.contains(name)){
+            return false;
+        }
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -114,11 +119,12 @@ public class MusicDbHelper extends SQLiteOpenHelper {
         values.put(PlayListEntry.COLUMN_PlayList_NAME, name);
         db.insert(PlayListEntry.TABLE_NAME, null, values);
         db.close();
+        return true;
     }
 
 
     public Boolean addSongToPlaylist(Song song, String playlist_name) {
-        ArrayList<Song> SongsInPlayList=getSongsInPlaylist(playlist_name);
+        ArrayList<Song> SongsInPlayList=getSongsInPlaylistByName(playlist_name);
 
         for (Song mSong:SongsInPlayList) {
             if(mSong.getID()==song.getID()){
@@ -153,7 +159,7 @@ public class MusicDbHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public ArrayList<Song> getSongsInPlaylist(String PlayListName){
+    public ArrayList<Song> getSongsInPlaylistByName(String PlayListName){
         String  propertyId= getPlayListID(PlayListName);
         return getSongsinPlayList(propertyId);
     }
@@ -235,11 +241,47 @@ public class MusicDbHelper extends SQLiteOpenHelper {
         String string = new String();
         if (c.moveToFirst()) {
             do {
-                Log.e("Db",c.getString(c.getColumnIndex(PlayListEntry.COLUMN_PlayList_NAME)));
+                Log.e("Db", c.getString(c.getColumnIndex(PlayListEntry.COLUMN_PlayList_NAME)));
                  string = c.getString(c.getColumnIndex(PlayListEntry._ID));
             //    Log.e("Db", id);
             } while (c.moveToNext());
         }
         return string;
+    }
+
+    public boolean deletePlaylist(String playlistName) {
+        deleteAllSongsInPlaylist(playlistName);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = PlayListEntry.COLUMN_PlayList_NAME + "=?";
+        String[] whereArgs = new String[]{(playlistName)};
+        db.delete(PlayListEntry.TABLE_NAME, whereClause, whereArgs);
+        db.close();
+
+        return true;
+    }
+
+    public boolean deleteAllSongsInPlaylist(String playlistname){
+        String id=getPlayListID(playlistname);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = PlayListSongEntry.COLUMN_PlayList_KEY + "=?";
+        String[] whereArgs = new String[]{(id)};
+        db.delete(PlayListSongEntry.TABLE_NAME, whereClause, whereArgs);
+        db.close();
+        return true;
+    }
+
+    public Boolean deleteSongInPlaylist(int pos, String playlistSelected) {
+        String idPlaylist=getPlayListID(playlistSelected);
+        ArrayList<Song> songsInPlaylist=getSongsinPlayList(idPlaylist);
+        long idSong=songsInPlaylist.get(pos).getID();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = PlayListSongEntry.COLUMN_PlayList_KEY + "=? AND "+PlayListSongEntry.Column_SongId + "=?";
+        String[] whereArgs = new String[]{String.valueOf(idPlaylist),String.valueOf(idSong)};
+        db.delete(PlayListSongEntry.TABLE_NAME, whereClause, whereArgs);
+        db.close();
+        return true;
     }
 }

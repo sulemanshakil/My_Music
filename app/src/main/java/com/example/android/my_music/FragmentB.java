@@ -129,8 +129,12 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         musicSrv.playSong(position);
         upDateToggleButton();
     }
+    public void play(int position) {
+        musicSrv.playSong(position);
+        upDateToggleButton();
+    }
 
-    //STEP1: Create a broadcast receiver
+        //STEP1: Create a broadcast receiver
     private BroadcastReceiver activityReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -138,7 +142,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             switch (Action){
                 case Constants.ACTION.PLAY_ACTION:
                     upDateToggleButton();
-                    setup_seekbar_duration();
                     break;
                 case Constants.ACTION.STOPFOREGROUND_ACTION:
                     ((MainActivity)getActivity()).HidePanel();
@@ -153,6 +156,8 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
                     break;
                 case Constants.ACTION.SongStarted_ACTION:
+                    upDateToggleButton();
+                 //   setup_seekbar_duration();
                     MainActivity mainActivity = (MainActivity)getActivity();
                     mainActivity.storeAsRecentlyPlayed(musicSrv.getCurrentSong());
                     setImageView();
