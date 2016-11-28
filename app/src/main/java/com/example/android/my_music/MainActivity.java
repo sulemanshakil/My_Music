@@ -21,6 +21,7 @@ import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private File mLastNode = null;
     private File mRootNode = null;
     Tree tree = new Tree<String>("/storage");
+    FragmentSearch fragmentSearch;
 
     private ArrayList<Song> songList_all;
     private static final String Artist_string= "Artist";
@@ -152,8 +154,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else if (position == 1) {
                     mSlidingUpPanelLayout.setDragView(null);
                 } else {
-                    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-                    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
+                //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+                //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
                 }
             }
 
@@ -545,6 +547,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             showAlertBox();
             return true;
         }
+        if(id==R.id.search_button){
+            Log.e("Search item","clicked");
+            fragmentSearch = new FragmentSearch();
+            fragmentSearch.setSongList(songList_all);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.drawer_layout, fragmentSearch);
+            ft.setTransition(FragmentTransaction.TRANSIT_NONE);// it will anim while calling fragment.
+            ft.addToBackStack(null); // it will manage back stack of fragments.
+            ft.commit();
+
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -656,11 +670,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 MusicDbHelper musicDB = new MusicDbHelper(getApplicationContext());
-                Boolean flag =musicDB.deletePlaylist(playlistName);
-                if(flag) {
+                Boolean flag = musicDB.deletePlaylist(playlistName);
+                if (flag) {
                     ((MovieListAdapter) listView.getAdapter()).removeItem(pos);
                 }
-             }
+            }
         });
         //Create alert dialog object via builder
         AlertDialog alertDialogObject = dialogBuilder.create();
@@ -1024,10 +1038,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 String string = (String) arg0.getItemAtPosition(pos);
-                if(mItem.getItemId() == R.id.nav_Playlist) { //check if selected item is from playlist
-                    if(!listView.getAdapter().getItem(pos).equals("Favourites")){
-                     //   Log.e("From ", " " + string);
-                        Boolean flag=showAlertBoxDelete(string,listView,pos);
+                if (mItem.getItemId() == R.id.nav_Playlist) { //check if selected item is from playlist
+                    if (!listView.getAdapter().getItem(pos).equals("Favourites")) {
+                        //   Log.e("From ", " " + string);
+                        Boolean flag = showAlertBoxDelete(string, listView, pos);
                     }
                 }
                 return true;
@@ -1059,6 +1073,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
+    }
+
+    public void playSingleSong(ArrayList<Song> list){
+        mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.remove(fragmentSearch).commit();
+        FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+        fragmentB.play(list, 0);
+        addSongsInRecyclerView(list);
+        storeAsRecentlyPlayed(list.get(0));
     }
 
     public void HidePanel() {
