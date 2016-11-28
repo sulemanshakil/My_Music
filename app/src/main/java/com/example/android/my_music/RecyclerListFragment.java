@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.android.my_music.helper.OnStartDragListener;
 import com.example.android.my_music.helper.SimpleItemTouchHelperCallback;
@@ -60,8 +61,8 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(recyclerView);
 
-        Button clearButton = (Button) rootView.findViewById(R.id.buttonClear);
-        Button saveButton  = (Button) rootView.findViewById(R.id.buttonSave);
+        ImageButton clearButton = (ImageButton) rootView.findViewById(R.id.imageButtonClear);
+        ImageButton saveButton  = (ImageButton) rootView.findViewById(R.id.imageButtonSave);
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
     }
@@ -92,10 +93,10 @@ public class RecyclerListFragment extends Fragment implements OnStartDragListene
     public void onClick(View v) {
         MainActivity mainActivity = (MainActivity)getActivity();
         switch (v.getId()){
-            case R.id.buttonClear:
+            case R.id.imageButtonClear:
                 mainActivity.clearSongsinPlaylist();
                 break;
-            case R.id.buttonSave:
+            case R.id.imageButtonSave:
                 mainActivity.savePlaylistAlertBox();
                 break;
         }

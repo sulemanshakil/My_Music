@@ -36,5 +36,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|right"
         android:scaleType="center"
-        android:src="@drawable/ic_reorder_grey_500_24dp" />
+        android:src="@drawable/ic_menu_24dp" />
 </FrameLayout>

@@ -60,9 +60,7 @@ import java.util.Random;
  */
 public class FragmentB extends android.support.v4.app.Fragment implements View.OnClickListener
 {
-    Button toogleButton,backButton,forwardButton;
-    ToggleButton shuffleButton;
-    private ImageButton repeatButton;
+    private ImageButton repeatButton,backButton,forwardButton,toogleButton,queueMusic;
     private int state=0;
 
     public MusicService musicSrv;
@@ -76,65 +74,45 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView=inflater.inflate(R.layout.fragment_b,container,false);
-        toogleButton = (Button) rootView.findViewById(R.id.toggleButton);
+        toogleButton = (ImageButton) rootView.findViewById(R.id.toggleButton);
         seekBar_Music = (SeekBar) rootView.findViewById(R.id.seekBarMusic);
-        backButton = (Button) rootView.findViewById(R.id.buttonBack);
-        forwardButton = (Button) rootView.findViewById(R.id.buttonForward);
-        shuffleButton = (ToggleButton) rootView.findViewById(R.id.toggleButtonShuffle);
+        backButton = (ImageButton) rootView.findViewById(R.id.buttonBack);
+        forwardButton = (ImageButton) rootView.findViewById(R.id.buttonForward);
+        queueMusic = (ImageButton) rootView.findViewById(R.id.queueMusic);
         repeatButton = (ImageButton) rootView.findViewById(R.id.imageButtonRepeat);
 
         toogleButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
         forwardButton.setOnClickListener(this);
+        queueMusic.setOnClickListener(this);
 
-        setupShuffleButton();
         setupRepeatButton();
 
         return rootView;
     }
 
-    public void setupShuffleButton(){
-        shuffleButton.setChecked(false);
-        shuffleButton.setTextOff("Shuffle");
-        shuffleButton.setTextOn("Shuffle");
-        shuffleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // The toggle is enabled
-                    Log.e("Switch", "On");
-                    musicSrv.setShuffleState(true);
-                    storeInSharePref(Constants.ACTION.SHUFFLE_STATE, true);
-
-                } else {
-                    // The toggle is disabled
-                    Log.e("Switch", "Off");
-                    musicSrv.setShuffleState(false);
-                    storeInSharePref(Constants.ACTION.SHUFFLE_STATE, false);
-                }
-            }
-        });
-    }
 
     public void setupRepeatButton(){
 
         repeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bm;
+        //        Log.e("stae",""+musicSrv.getStateRepeat());
                 switch (musicSrv.getStateRepeat()) {
                     case 0:
-                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_enable);
-                        repeatButton.setImageBitmap(bm);
+                        repeatButton.setImageResource(R.drawable.ic_repeat_24dp);
                         musicSrv.setStateRepeat(1);
                         break;
                     case 1:
-                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_enable_1);
-                        repeatButton.setImageBitmap(bm);
+                        repeatButton.setImageResource(R.drawable.ic_repeat_one_24dp);
                         musicSrv.setStateRepeat(2);
                         break;
                     case 2:
-                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_disable);
-                        repeatButton.setImageBitmap(bm);
+                        repeatButton.setImageResource(R.drawable.ic_shuffle_24dp);
+                        musicSrv.setStateRepeat(3);
+                        break;
+                    case 3:
+                        repeatButton.setImageResource(R.drawable.ic_trending_neutral_24dp);
                         musicSrv.setStateRepeat(0);
                         break;
                     default:
@@ -314,9 +292,9 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
         if(musicSrv!=null) {
             if (musicSrv.isPlaying()) {
-                toogleButton.setText("Pause");
+                toogleButton.setImageResource(R.drawable.ic_pause_circle_outline_48dp);
             } else {
-                toogleButton.setText("Play");
+                toogleButton.setImageResource(R.drawable.ic_play_circle_outline_48dp);
             }
 
             if(musicSrv.songList.size()!=0){
@@ -342,6 +320,10 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             case R.id.buttonForward:
                 musicSrv.clickNext();
                 upDateToggleButton();
+                break;
+            case R.id.queueMusic:
+                MainActivity mainActivity =(MainActivity)getActivity();
+                mainActivity.viewPager.setCurrentItem(0,true);
                 break;
         }
 
@@ -465,7 +447,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
             Animation fadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in_anim);
             imageViewBackground.setImageBitmap(bitmap);
-            imageViewBackground.setAlpha(0.3f);
+            imageViewBackground.setAlpha(0.35f);
             imageViewBackground.startAnimation(fadeInAnimation);
         }
     }

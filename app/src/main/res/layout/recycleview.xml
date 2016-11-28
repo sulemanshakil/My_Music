@@ -16,24 +16,26 @@
         android:id="@+id/textView4"
         android:background="#8895fc" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
-            android:id="@+id/buttonSave"
-            android:layout_alignTop="@+id/buttonClear"
-            android:layout_toRightOf="@+id/buttonClear"
-            android:layout_toEndOf="@+id/buttonClear" />
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clear"
-            android:id="@+id/buttonClear"
+            android:id="@+id/imageButtonSave"
+            android:src="@drawable/ic_save_24dp"
+            android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/textView4"
             android:layout_toEndOf="@+id/textView4" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButtonClear"
+            android:src="@drawable/ic_close_24dp"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_alignTop="@+id/imageButtonSave"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

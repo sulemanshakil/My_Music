@@ -152,7 +152,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
                     mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
                 } else if (position == 1) {
-                    mSlidingUpPanelLayout.setDragView(null);
+                    final FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                    mSlidingUpPanelLayout.setDragView(fragmentB.rootView.findViewById(R.id.linearlayloutfragb));
                 } else {
                 //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
                 //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));

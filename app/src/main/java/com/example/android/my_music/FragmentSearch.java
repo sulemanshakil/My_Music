@@ -2,10 +2,8 @@ package com.example.android.my_music;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +18,8 @@ import java.util.ArrayList;
 public class FragmentSearch extends android.support.v4.app.Fragment {
     View rootView;
     private ArrayList<Song> songArrayList = new ArrayList<>();
-//    private ArrayList<Song> listClone = new ArrayList<>();
     private EditText editText;
     private ListView listView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

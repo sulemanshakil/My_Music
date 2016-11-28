@@ -39,7 +39,6 @@ public class MusicService extends Service  {
     public MediaPlayer player;
     ArrayList<Song> songList = new ArrayList<Song>();
     int positon;
-    private Boolean shuffleState;
     private final IBinder musicBind = new MusicBinder();
     private int stateRepeat=0;
 
@@ -48,7 +47,6 @@ public class MusicService extends Service  {
         super.onCreate();
         player = new MediaPlayer();
         initMusicPlayer();
-        shuffleState=false;
     }
 
     @Override
@@ -79,9 +77,6 @@ public class MusicService extends Service  {
         return START_STICKY;
     }
 
-    public void setShuffleState(Boolean shuffleState){
-        this.shuffleState=shuffleState;
-    }
 
     public void initMusicPlayer(){
         //set player properties
@@ -116,8 +111,8 @@ public class MusicService extends Service  {
     }
 
     public void clickNext(){
-        Log.e("shuffleState",""+shuffleState);
-        if(shuffleState){  //handle shuffle
+    //    Log.e("shuffleState",""+shuffleState);
+        if(getStateRepeat()==3){  //handle shuffle
             Random ran = new Random();
             int x = ran.nextInt(songList.size());
             while(x==positon){  //make sure current item is not selected.

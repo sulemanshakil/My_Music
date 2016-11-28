@@ -5,19 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment B"
-        android:id="@+id/txtViewSongName" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/linearlayloutfragb"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:id="@+id/toggleButton"
-        android:layout_gravity="right" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Fragment B"
+            android:id="@+id/txtViewSongName" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pause_circle_outline_48dp"
+            android:id="@+id/toggleButton"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right"
+            />
+    </LinearLayout>
+
+
 
     <RelativeLayout
         android:background="@color/black"
@@ -42,23 +52,37 @@
             android:max="100" >
         </SeekBar>
 
-        <Button
+
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
             android:id="@+id/buttonBack"
+            android:src="@drawable/ic_skip_previous_48dp"
+            android:background="@android:color/transparent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forward"
+            android:id="@+id/queueMusic"
+            android:src="@drawable/ic_queue_music_48dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageButtonRepeat"
+            android:layout_alignStart="@+id/imageButtonRepeat" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/buttonForward"
+            android:src="@drawable/ic_skip_next_48dp"
+            android:background="@android:color/transparent"
             android:layout_alignBottom="@+id/buttonBack"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"/>
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -68,19 +92,11 @@
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true" />
 
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="shuffle"
-            android:id="@+id/toggleButtonShuffle"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButtonRepeat"
-            android:src="@drawable/repeat_disable"
+            android:src="@drawable/ic_trending_neutral_24dp"
             android:background="@android:color/transparent"
             android:layout_above="@+id/seekBarMusic"
             android:layout_centerHorizontal="true" />
