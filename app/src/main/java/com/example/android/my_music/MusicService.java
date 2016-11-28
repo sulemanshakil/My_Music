@@ -25,6 +25,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Suleman Shakil on 05.12.2015.
@@ -38,13 +39,16 @@ public class MusicService extends Service  {
     public MediaPlayer player;
     ArrayList<Song> songList = new ArrayList<Song>();
     int positon;
+    private Boolean shuffleState;
     private final IBinder musicBind = new MusicBinder();
+    private int stateRepeat=0;
 
     @Override
     public void onCreate() {
         super.onCreate();
         player = new MediaPlayer();
         initMusicPlayer();
+        shuffleState=false;
     }
 
     @Override
@@ -73,6 +77,10 @@ public class MusicService extends Service  {
         }
 
         return START_STICKY;
+    }
+
+    public void setShuffleState(Boolean shuffleState){
+        this.shuffleState=shuffleState;
     }
 
     public void initMusicPlayer(){
@@ -108,7 +116,20 @@ public class MusicService extends Service  {
     }
 
     public void clickNext(){
-        if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
+        Log.e("shuffleState",""+shuffleState);
+        if(shuffleState){  //handle shuffle
+            Random ran = new Random();
+            int x = ran.nextInt(songList.size());
+            while(x==positon){  //make sure current item is not selected.
+                x=ran.nextInt(songList.size());
+            }
+            playSong(x);
+        }else if(getStateRepeat()==2){  //repeat same song
+            playSong(positon);
+        }else if(getStateRepeat()==1 && positon==songList.size()-1){ //repeat same playlist
+            playSong(0);
+        }
+        else if(positon!=songList.size()-1) {  // need to check some how there is difference of two in pos and song list size
             playSong(positon + 1);
         }
     }
@@ -276,6 +297,12 @@ public class MusicService extends Service  {
         return player.isPlaying();
     }
 
+    public void setStateRepeat(int stateRepeat){
+        this.stateRepeat=stateRepeat;
+    }
+    public int getStateRepeat(){
+        return stateRepeat;
+    }
 
     public class MusicBinder extends Binder {
         MusicService getService() {

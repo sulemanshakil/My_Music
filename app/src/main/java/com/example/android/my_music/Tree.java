@@ -63,10 +63,10 @@ public class Tree<T> {
     }
 
     public void traverse(Node<T> child){ // pre order traversal
-        Log.e("Path",child.toString());
+     //   Log.e("Path",child.toString());
         if(child.songsInNode!=null) {
             for (Song song : child.songsInNode) {
-                Log.e("Song path", song.getData());
+            //    Log.e("Song path", song.getData());
             }
         }
         for(Node<T> each : child.children){

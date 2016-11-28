@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
+import android.preference.PreferenceManager;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -36,10 +38,15 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -47,12 +54,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 /**
  * Created by Suleman Shakil on 29.11.2015.
  */
 public class FragmentB extends android.support.v4.app.Fragment implements View.OnClickListener
 {
     Button toogleButton,backButton,forwardButton;
+    ToggleButton shuffleButton;
+    private ImageButton repeatButton;
+    private int state=0;
 
     public MusicService musicSrv;
     private Intent playIntent;
@@ -69,10 +80,69 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         seekBar_Music = (SeekBar) rootView.findViewById(R.id.seekBarMusic);
         backButton = (Button) rootView.findViewById(R.id.buttonBack);
         forwardButton = (Button) rootView.findViewById(R.id.buttonForward);
+        shuffleButton = (ToggleButton) rootView.findViewById(R.id.toggleButtonShuffle);
+        repeatButton = (ImageButton) rootView.findViewById(R.id.imageButtonRepeat);
+
         toogleButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
         forwardButton.setOnClickListener(this);
+
+        setupShuffleButton();
+        setupRepeatButton();
+
         return rootView;
+    }
+
+    public void setupShuffleButton(){
+        shuffleButton.setChecked(false);
+        shuffleButton.setTextOff("Shuffle");
+        shuffleButton.setTextOn("Shuffle");
+        shuffleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // The toggle is enabled
+                    Log.e("Switch", "On");
+                    musicSrv.setShuffleState(true);
+                    storeInSharePref(Constants.ACTION.SHUFFLE_STATE, true);
+
+                } else {
+                    // The toggle is disabled
+                    Log.e("Switch", "Off");
+                    musicSrv.setShuffleState(false);
+                    storeInSharePref(Constants.ACTION.SHUFFLE_STATE, false);
+                }
+            }
+        });
+    }
+
+    public void setupRepeatButton(){
+
+        repeatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap bm;
+                switch (musicSrv.getStateRepeat()) {
+                    case 0:
+                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_enable);
+                        repeatButton.setImageBitmap(bm);
+                        musicSrv.setStateRepeat(1);
+                        break;
+                    case 1:
+                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_enable_1);
+                        repeatButton.setImageBitmap(bm);
+                        musicSrv.setStateRepeat(2);
+                        break;
+                    case 2:
+                        bm = BitmapFactory.decodeResource(getResources(), R.drawable.repeat_disable);
+                        repeatButton.setImageBitmap(bm);
+                        musicSrv.setStateRepeat(0);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
     }
 
     @Override
@@ -122,6 +192,15 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             getActivity().bindService(playIntent, musicConnection, Context.BIND_AUTO_CREATE);
             getActivity().startService(playIntent);
         }
+    }
+
+    public void storeInSharePref(String TagSP,Boolean shuffleState){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(shuffleState);
+        editor.putString(TagSP, json);
+        editor.commit();
     }
 
     public void play(ArrayList<Song> mySongsList,int position){
@@ -264,10 +343,11 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                 musicSrv.clickNext();
                 upDateToggleButton();
                 break;
-
         }
 
     }
+
+
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void setImageView(){

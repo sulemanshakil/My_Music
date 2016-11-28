@@ -22,6 +22,7 @@ public class Constants {
         public static String ItemDismiss = "ItemDismiss";
         public static String ItemMoved = "ItemMoved";
         public static String ItemAdded = "ItemAdded";
+        public static String SHUFFLE_STATE = "shufflestate";
     }
 
     public interface NOTIFICATION_ID {

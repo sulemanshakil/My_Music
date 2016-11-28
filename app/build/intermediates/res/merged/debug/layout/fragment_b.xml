@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -65,5 +67,22 @@
             android:paddingTop="100px"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shuffle"
+            android:id="@+id/toggleButtonShuffle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButtonRepeat"
+            android:src="@drawable/repeat_disable"
+            android:background="@android:color/transparent"
+            android:layout_above="@+id/seekBarMusic"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </LinearLayout>
