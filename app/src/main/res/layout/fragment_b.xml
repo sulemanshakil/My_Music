@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/side_nav_bar">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageViewBackground"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
 
     <RelativeLayout
         android:id="@+id/linearlayloutfragb"
@@ -35,78 +42,91 @@
             />
     </RelativeLayout>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewAlbumArt"
+        android:layout_below="@+id/linearlayloutfragb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
 
 
     <RelativeLayout
-        android:background="@color/black"
+        android:background="@android:color/transparent"
         android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
+        android:layout_height="match_parent"
+       >
+        <RelativeLayout
+            android:background="#af212121"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/imageViewBackground"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true" />
-
-        <SeekBar
-            android:id="@+id/seekBarMusic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_above="@+id/buttonBack"
-            android:layout_marginTop="26dp"
-            android:max="100" >
-        </SeekBar>
-
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonBack"
-            android:src="@drawable/ic_skip_previous_48dp"
-            android:background="@android:color/transparent"
+            android:layout_height="170dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            >
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/queueMusic"
-            android:src="@drawable/ic_queue_music_48dp"
-            android:background="@android:color/transparent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/imageButtonRepeat"
-            android:layout_alignStart="@+id/imageButtonRepeat" />
+            <SeekBar
+                android:id="@+id/seekBarMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:max="100" >
+            </SeekBar>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonForward"
-            android:src="@drawable/ic_skip_next_48dp"
-            android:background="@android:color/transparent"
-            android:layout_alignBottom="@+id/buttonBack"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/playPauseButton"
+                android:src="@drawable/ic_pause_48dp"
+                android:background="@android:color/transparent"
+                android:layout_below="@+id/seekBarMusic"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonForward"
+                android:src="@drawable/ic_skip_next_48dp"
+                android:background="@android:color/transparent"
+                android:layout_alignTop="@+id/playPauseButton"
+                android:layout_toRightOf="@+id/playPauseButton"
+                android:layout_marginLeft="48dp"               />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonBack"
+                android:src="@drawable/ic_skip_previous_48dp"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/playPauseButton"
+                android:layout_alignTop="@+id/playPauseButton"
+                android:layout_marginRight="48dp"
+                 />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageViewAlbumArt"
-            android:paddingTop="100px"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButtonRepeat"
+                android:src="@drawable/ic_trending_neutral_24dp"
+                android:background="@android:color/transparent"
+                android:layout_below="@+id/playPauseButton"
+                android:layout_toLeftOf="@+id/playPauseButton"
+                android:layout_toStartOf="@+id/playPauseButton"
+                android:layout_marginTop="10dp"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButtonRepeat"
-            android:src="@drawable/ic_trending_neutral_24dp"
-            android:background="@android:color/transparent"
-            android:layout_above="@+id/seekBarMusic"
-            android:layout_centerHorizontal="true" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/queueMusic"
+                android:src="@drawable/ic_queue_music_48dp"
+                android:background="@android:color/transparent"
+                android:layout_below="@+id/playPauseButton"
+                android:layout_toRightOf="@+id/playPauseButton"
+                android:layout_marginTop="10dp" />
+
+        </RelativeLayout>
+
     </RelativeLayout>
-</LinearLayout>
+
+</RelativeLayout>

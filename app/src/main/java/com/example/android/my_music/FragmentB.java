@@ -60,7 +60,7 @@ import java.util.Random;
  */
 public class FragmentB extends android.support.v4.app.Fragment implements View.OnClickListener
 {
-    private ImageButton repeatButton,backButton,forwardButton,toogleButton,queueMusic;
+    private ImageButton repeatButton,backButton,forwardButton,toogleButton,queueMusic,playPauseButton;
     private int state=0;
 
     public MusicService musicSrv;
@@ -75,6 +75,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView=inflater.inflate(R.layout.fragment_b,container,false);
         toogleButton = (ImageButton) rootView.findViewById(R.id.toggleButton);
+        playPauseButton=(ImageButton) rootView.findViewById(R.id.playPauseButton);
         seekBar_Music = (SeekBar) rootView.findViewById(R.id.seekBarMusic);
         backButton = (ImageButton) rootView.findViewById(R.id.buttonBack);
         forwardButton = (ImageButton) rootView.findViewById(R.id.buttonForward);
@@ -82,6 +83,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         repeatButton = (ImageButton) rootView.findViewById(R.id.imageButtonRepeat);
 
         toogleButton.setOnClickListener(this);
+        playPauseButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
         forwardButton.setOnClickListener(this);
         queueMusic.setOnClickListener(this);
@@ -293,8 +295,11 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         if(musicSrv!=null) {
             if (musicSrv.isPlaying()) {
                 toogleButton.setImageResource(R.drawable.ic_pause_circle_outline_48dp);
+                playPauseButton.setImageResource(R.drawable.ic_pause_48dp);
             } else {
                 toogleButton.setImageResource(R.drawable.ic_play_circle_outline_48dp);
+                playPauseButton.setImageResource(R.drawable.ic_play_arrow_48dp);
+
             }
 
             if(musicSrv.songList.size()!=0){
@@ -309,6 +314,10 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     public void onClick(View v) {
 
         switch (v.getId()){
+            case R.id.playPauseButton:
+                musicSrv.toggleSong();
+                upDateToggleButton();
+                break;
             case R.id.toggleButton:
                 musicSrv.toggleSong();
                 upDateToggleButton();
@@ -448,6 +457,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             imageViewBackground.setImageBitmap(bitmap);
             imageViewBackground.setAlpha(0.35f);
             imageViewBackground.startAnimation(fadeInAnimation);
+
         }
     }
 

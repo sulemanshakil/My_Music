@@ -175,7 +175,12 @@ public class MusicService extends Service  {
                 Runnable runnable = new Runnable() {
                     @Override
                     public void run() {
-                        mp.start();
+                        try {
+                            mp.start();
+
+                        }catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         sendBroadcast(Constants.ACTION.SongStarted_ACTION);
                         showNotification();
                     }

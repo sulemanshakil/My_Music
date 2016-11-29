@@ -919,7 +919,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
 
-
         } else if (id == R.id.nav_Playlist) {
             MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
             ArrayList<String> playlist_List= mDbHelper.getPlaylists();
@@ -932,11 +931,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_Recently_Played) {
             populateRecentlyPayed();
 
-        }else if (id == R.id.nav_Settings) {
-
+        }/*else if (id == R.id.nav_Settings) {
         }else if (id == R.id.nav_remove_adds) {
-
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

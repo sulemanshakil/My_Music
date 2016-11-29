@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/shuffle_grey"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.android.my_music.MainActivity"
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="@color/shuffle_grey"
         android:id="@+id/listView" />
     <ListView
         android:layout_width="wrap_content"
@@ -21,7 +23,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:visibility="gone"
-        android:background="#4eb33e"
+        android:background="@color/shuffle_grey"
         android:id="@+id/listView2" />
 
 </RelativeLayout>

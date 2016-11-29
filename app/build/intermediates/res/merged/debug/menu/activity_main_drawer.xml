@@ -4,49 +4,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_all_songs"
-            android:icon="@drawable/ic_menu_camera"
             android:title="All Songs" />
         <item
             android:id="@+id/nav_Artist"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="Artist" />
         <item
             android:id="@+id/nav_Albums"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="Albums" />
         <item
             android:id="@+id/nav_Genres"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Genres" />
         <item
             android:id="@+id/nav_My_Files"
-            android:icon="@drawable/ic_menu_manage"
             android:title="My Files" />
         <item
             android:id="@+id/nav_Playlist"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Playlists" />
         <item
             android:id="@+id/nav_Favourites"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Favourites" />
         <item
             android:id="@+id/nav_Recently_Played"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Recently Played" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_Settings"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Setting" />
-            <item
-                android:id="@+id/nav_remove_adds"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Remove adds" />
-        </menu>
-    </item>
-
-</menu>
+    <!--
+        <item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/nav_Settings"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Setting" />
+                <item
+                    android:id="@+id/nav_remove_adds"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Remove adds" />
+            </menu>
+        </item>
+ -->
+    </menu>

@@ -29,7 +29,7 @@ public class DirectoryListAdapter extends ArrayAdapter<Tuple> {
         View v = convertView;
         if (v == null) {
             LayoutInflater vi = (LayoutInflater)c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = vi.inflate(R.layout.rowlayout, null);
+            v = vi.inflate(R.layout.rowlayout, parent,false);
         }
         TextView filename = null;
         String name = items.get(position).name;

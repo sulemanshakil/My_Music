@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#282C2D</color>
+    <color name="colorPrimaryDark">#242728</color>
+    <color name="colorAccent">#ffffff</color>
 
     <!-- A transparent black -->
     <color name="transparent_black">#aa000000</color>
@@ -14,6 +14,8 @@
     <color name="unselected_tabtext">#77000000</color>
     <color name="shuffle_grey">#ffdedede</color>
     <color name="background_grey">#ffdedede</color>
+    <color name="background_grey1">#b9b8b8</color>
+
 
     <!-- Transparent -->
     <color name="transparent">#00000000</color>

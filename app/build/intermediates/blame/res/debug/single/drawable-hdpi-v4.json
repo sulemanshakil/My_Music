@@ -112,6 +112,10 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_playlist_add_24dp.png"
     },
     {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_pause_48dp.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_pause_48dp.png"
+    },
+    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_repeat_24dp.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_repeat_24dp.png"
     },
@@ -184,6 +188,10 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_trending_neutral_24dp.png"
     },
     {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_play_arrow_48dp.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_play_arrow_48dp.png"
+    },
+    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_btn_check_to_on_mtrl_000.png"
     },
@@ -226,6 +234,10 @@
     {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-hdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_search_24dp1.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/generated/res/pngs/debug/drawable-hdpi/ic_search_24dp1.png"
     },
     {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
