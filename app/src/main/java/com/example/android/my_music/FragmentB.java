@@ -326,7 +326,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                 mainActivity.viewPager.setCurrentItem(0,true);
                 break;
         }
-
     }
 
 

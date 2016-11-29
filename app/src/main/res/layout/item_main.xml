@@ -19,22 +19,31 @@
     android:layout_height="?listPreferredItemHeight"
     android:clickable="true"
     android:focusable="true"
+    android:background="@android:color/transparent"
     android:foreground="?selectableItemBackground">
 
     <TextView
         android:id="@+id/text"
-        android:layout_marginRight="200px"
+        android:layout_marginLeft="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textColor="#9E9E9E"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/duration"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textColor="#616161"
+        android:textSize="13dp" />
 
     <ImageView
         android:id="@+id/handle"
-        android:layout_width="?listPreferredItemHeight"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical|right"
-        android:scaleType="center"
+        android:layout_gravity="center_vertical|left"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:src="@drawable/ic_menu_24dp" />
 </FrameLayout>

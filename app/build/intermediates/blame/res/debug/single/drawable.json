@@ -100,10 +100,6 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/apollo_holo_dark_next.png"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/repeat_disable.png",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/repeat_disable.png"
-    },
-    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/notify_panel_notification_icon_bg.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/notify_panel_notification_icon_bg.png"
     },
@@ -132,30 +128,6 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_thumb_material.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/side_nav_bar.xml",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/side_nav_bar.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/albumcover4.png",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/albumcover4.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/repeat_enable_1.png",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/repeat_enable_1.png"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/repeat_enable.png",
-        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/repeat_enable.png"
-    },
-    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/apollo_holo_dark_prev.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/apollo_holo_dark_prev.png"
     },
@@ -172,11 +144,27 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/albumcover1.png"
     },
     {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/side_nav_bar.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/side_nav_bar.xml"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/albumcover4.png",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/albumcover4.png"
+    },
+    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/apollo_holo_dark_pause.png",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/drawable/apollo_holo_dark_pause.png"
     },
     {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_holo_light.xml"
     }
 ]

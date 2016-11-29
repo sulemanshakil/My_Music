@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.LoginFilter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -64,6 +65,19 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     @Override
     public void onBindViewHolder(final ItemViewHolder holder, int position) {
         holder.textView.setText(songArrayList.get(position).getTitle());
+        String time=songArrayList.get(position).duration();
+        String songTime;
+        int dur=Integer.parseInt(time);
+        int hrs = (dur / 3600000);
+        int mns = (dur / 60000) % 60000;
+        int scs = dur % 60000 / 1000;
+        if(hrs==0){
+            songTime = String.format("%02d:%02d",  mns, scs);
+        }else {
+             songTime = String.format("%02d:%02d:%02d", hrs,  mns, scs);
+        }
+
+        holder.durationTextview.setText(songTime);
 
         // Start a drag whenever the handle view it touched
         holder.handleView.setOnTouchListener(new View.OnTouchListener() {
@@ -89,7 +103,6 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public boolean onItemMove(int fromPosition, int toPosition) {
         Collections.swap(songArrayList, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
-    //    ((MainActivity) context).updateSongInMusicService(songArrayList,toPosition,fromPosition,Constants.ACTION.ItemMoved);
         return true;
     }
 
@@ -132,13 +145,15 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public static class ItemViewHolder extends RecyclerView.ViewHolder implements
             ItemTouchHelperViewHolder {
 
-        public final TextView textView;
+        public final TextView textView,durationTextview;
         public final ImageView handleView;
+
         Context context;
 
         public ItemViewHolder(Context context,View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.text);
+            durationTextview = (TextView) itemView.findViewById(R.id.duration);
             handleView = (ImageView) itemView.findViewById(R.id.handle);
             this.context=context;
         }
