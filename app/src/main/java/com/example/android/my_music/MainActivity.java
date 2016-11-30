@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private File mCurrentNode = null;
     private File mLastNode = null;
     private File mRootNode = null;
-    Tree tree = new Tree<String>("/storage");
+    Tree tree; //= new Tree<String>("/storage");
     FragmentSearch fragmentSearch;
 
     private ArrayList<Song> songList_all;
@@ -165,15 +165,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-        new buildTree().execute("");
+
+        String[] mPaths = songList_all.get(0).getData().split("/");
+        String P1 = "/"+mPaths[1];
+        new buildTree().execute(P1);
     }
 
-    private class buildTree extends AsyncTask<String,Void,Tree>{
-        Tree myTree = new Tree("/storage");
+    private class buildTree extends AsyncTask<String ,Void,Tree>{
+        Tree myTree;
         ArrayList<String> myPathList = new ArrayList<>();
 
         @Override
         protected Tree doInBackground(String... params) {
+             myTree = new Tree(params[0]);
 
             for(Song each:songList_all){
                 String P1=giveSongPath(each);

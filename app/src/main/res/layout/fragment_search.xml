@@ -11,18 +11,12 @@
         android:layout_height="wrap_content"
         android:background="@color/background_grey1">
 
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_search_24dp1" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
             android:hint="Search"
+            android:drawableLeft="@drawable/ic_search_24dp1"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
