@@ -276,14 +276,7 @@
                     "endOffset": 1795
                 },
                 "from": {
-                    "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/colors.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 564,
-                        "endColumn": 50,
-                        "endOffset": 610
-                    }
+                    "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/colors.xml"
                 }
             },
             {
@@ -3321,7 +3314,15 @@
                     "endOffset": 42243
                 },
                 "from": {
-                    "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml"
+                    "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 374,
+                        "endLine": 13,
+                        "endColumn": 12,
+                        "endOffset": 519
+                    }
                 }
             },
             {

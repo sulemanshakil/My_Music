@@ -1,6 +1,5 @@
 package com.example.android.my_music;
 
-import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentUris;
@@ -8,15 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -24,47 +17,34 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
-import android.preference.PreferenceManager;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.example.android.my_music.helper.DurationToTime;
-import com.google.gson.Gson;
 
-import java.io.File;
 import java.io.FileDescriptor;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
 
-/**
- * Created by Suleman Shakil on 29.11.2015.
- */
 public class FragmentB extends android.support.v4.app.Fragment implements View.OnClickListener
 {
     private ImageButton repeatButton,backButton,forwardButton,toogleButton,queueMusic,playPauseButton;
-    private int state=0;
-    private TextView timeDuration,changingTime;
-
+//    private int state=0;
+    private TextView timeDuration,changingTime,textState;
     public MusicService musicSrv;
     private Intent playIntent;
     private boolean musicBound=false;
@@ -85,6 +65,8 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         repeatButton = (ImageButton) rootView.findViewById(R.id.imageButtonRepeat);
         timeDuration = (TextView) rootView.findViewById(R.id.textViewDuration);
         changingTime = (TextView) rootView.findViewById(R.id.textViewTimeChanging);
+        textState = (TextView) rootView.findViewById(R.id.textviewState);
+        textState.setVisibility(View.INVISIBLE);
 
         toogleButton.setOnClickListener(this);
         playPauseButton.setOnClickListener(this);
@@ -92,34 +74,40 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         forwardButton.setOnClickListener(this);
         queueMusic.setOnClickListener(this);
 
-        setupRepeatButton();
+        setupRepeatButtonListener();
+        repeatButton.setImageResource(R.drawable.ic_trending_neutral_24dp);
 
         return rootView;
     }
 
 
-    public void setupRepeatButton(){
+    public void setupRepeatButtonListener(){
 
         repeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //        Log.e("stae",""+musicSrv.getStateRepeat());
                 switch (musicSrv.getStateRepeat()) {
                     case 0:
                         repeatButton.setImageResource(R.drawable.ic_repeat_24dp);
                         musicSrv.setStateRepeat(1);
+                        animToast("Repeat All");
                         break;
                     case 1:
                         repeatButton.setImageResource(R.drawable.ic_repeat_one_24dp);
                         musicSrv.setStateRepeat(2);
+                        animToast("Repeat one");
+
                         break;
                     case 2:
                         repeatButton.setImageResource(R.drawable.ic_shuffle_24dp);
                         musicSrv.setStateRepeat(3);
+                        animToast("Shuffle On");
+
                         break;
                     case 3:
                         repeatButton.setImageResource(R.drawable.ic_trending_neutral_24dp);
                         musicSrv.setStateRepeat(0);
+                        animToast("No Repeat");
                         break;
                     default:
                         break;
@@ -127,6 +115,51 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             }
         });
 
+    }
+
+    public void animToast(final String toast) {
+        textState.setText(toast);
+        final AlphaAnimation out = new AlphaAnimation(1.0f,0.0f);
+        out.setStartOffset(0);                        // start in 5 seconds
+        out.setDuration(1000);
+        out.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                //    textState.setVisibility(View.VISIBLE);
+            }
+
+            public void onAnimationEnd(Animation animation) {
+                // make invisible when animation completes, you could also remove the view from the layout
+                textState.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        textState.setVisibility(View.VISIBLE);
+        AlphaAnimation in = new AlphaAnimation(0.0f,1.0f);
+        in.setStartOffset(0);                        // start in 5 seconds
+        in.setDuration(1000);
+        in.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            //    textState.setVisibility(View.INVISIBLE);
+            }
+
+            public void onAnimationEnd(Animation animation) {
+                // make invisible when animation completes, you could also remove the view from the layout
+                textState.setAnimation(out);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        textState.setAnimation(in);
     }
 
     @Override
@@ -142,6 +175,9 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                 musicSrv = binder.getService();
                 musicBound = true;
                 upDateToggleButton();
+                if(musicSrv.isPlaying()) {
+                    setImageView();
+                }
             }
 
             @Override
@@ -178,14 +214,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         }
     }
 
-    public void storeInSharePref(String TagSP,Boolean shuffleState){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        SharedPreferences.Editor editor = prefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(shuffleState);
-        editor.putString(TagSP, json);
-        editor.commit();
-    }
+
 
     public void play(ArrayList<Song> mySongsList,int position){
         musicSrv.setList(mySongsList);
@@ -193,10 +222,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         upDateToggleButton();
 
     }
-    public void play(int position) {
-        musicSrv.playSong(position);
-        upDateToggleButton();
-    }
+
 
         //STEP1: Create a broadcast receiver
     private BroadcastReceiver activityReceiver = new BroadcastReceiver() {
@@ -217,11 +243,9 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
                     upDateToggleButton();
                     break;
                 case Constants.ACTION.UPDATE_RECENTLY_PLAYLIST:
-
                     break;
                 case Constants.ACTION.SongStarted_ACTION:
                     upDateToggleButton();
-                 //   setup_seekbar_duration();
                     MainActivity mainActivity = (MainActivity)getActivity();
                     mainActivity.storeAsRecentlyPlayed(musicSrv.getCurrentSong());
                     setImageView();
@@ -232,10 +256,11 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         }
     };
 
+
+
     @Override
     public void onPause() {
         super.onPause();
-    //    getActivity().unregisterReceiver(activityReceiver);
     }
 
     @Override
@@ -266,7 +291,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
             @Override
             public void run() {
-                if (musicSrv.player.isPlaying()) {
+                if (musicSrv!=null) {
                     int mCurrentPosition = musicSrv.player.getCurrentPosition();
                     seekBar_Music.setProgress(mCurrentPosition);
                     changingTime.setText(DurationToTime.calculate(mCurrentPosition));
@@ -297,7 +322,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     }
 
     public void upDateToggleButton() {
-
         if(musicSrv!=null) {
             if (musicSrv.isPlaying()) {
                 toogleButton.setImageResource(R.drawable.ic_pause_circle_outline_48dp);
@@ -308,11 +332,35 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
             }
 
+            if(musicSrv.isPause){
+                MainActivity mainActivity = (MainActivity)getActivity();
+                mainActivity.restoreAtPause();
+            }
+
             if(musicSrv.songList.size()!=0){
                 TextView textView = (TextView) getView().findViewById(R.id.txtViewSongName);
                 textView.setText(musicSrv.getSongNamePlayed());
             }
             setup_Seekbar();
+
+            switch (musicSrv.getStateRepeat()) {
+                case 1:
+                    repeatButton.setImageResource(R.drawable.ic_repeat_24dp);
+                    break;
+                case 2:
+                    repeatButton.setImageResource(R.drawable.ic_repeat_one_24dp);
+                    break;
+                case 3:
+                    repeatButton.setImageResource(R.drawable.ic_shuffle_24dp);
+                    break;
+                case 0:
+                    repeatButton.setImageResource(R.drawable.ic_trending_neutral_24dp);
+                    break;
+                default:
+                    break;
+            }
+
+
         }
     }
 
@@ -345,8 +393,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
     }
 
 
-
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void setImageView(){
         String Albumid = musicSrv.getCurrentSong().getAlbumId();
         Long idAlbum = Long.valueOf(Albumid).longValue();
@@ -407,18 +453,19 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         {
             RenderScript rsScript = RenderScript.create(getActivity());
             Allocation alloc = Allocation.createFromBitmap(rsScript, input);
-
-            ScriptIntrinsicBlur blur = ScriptIntrinsicBlur.create(rsScript, Element.U8_4(rsScript));
-            blur.setRadius(25);
-            blur.setInput(alloc);
-
+            ScriptIntrinsicBlur blur;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                blur = ScriptIntrinsicBlur.create(rsScript, Element.U8_4(rsScript));
+                blur.setRadius(25);
+                blur.setInput(alloc);
+                Bitmap result = Bitmap.createBitmap(input.getWidth(), input.getHeight(), Bitmap.Config.ARGB_8888);
+                Allocation outAlloc = Allocation.createFromBitmap(rsScript, result);
+                blur.forEach(outAlloc);
+                outAlloc.copyTo(result);
+                rsScript.destroy();
+                return result;
+            }
             Bitmap result = Bitmap.createBitmap(input.getWidth(), input.getHeight(), Bitmap.Config.ARGB_8888);
-            Allocation outAlloc = Allocation.createFromBitmap(rsScript, result);
-
-            blur.forEach(outAlloc);
-            outAlloc.copyTo(result);
-
-            rsScript.destroy();
             return result;
         }
         catch (Exception e) {
@@ -444,7 +491,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         bm.recycle();
         return resizedBitmap;
     }
-
 
     private class BlurTask extends AsyncTask<MyTaskParams,Void,Bitmap> {
         @Override
@@ -479,4 +525,6 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             this.height = height;
         }
     }
-    }
+
+
+}

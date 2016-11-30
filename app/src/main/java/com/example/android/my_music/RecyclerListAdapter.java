@@ -86,7 +86,6 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
     public void onItemDismiss(int position) {
         songArrayList.remove(position);
         notifyItemRemoved(position);
-    //    ((MainActivity) context).updateSongInMusicService(songArrayList, position,0,Constants.ACTION.ItemDismiss);
     }
 
     @Override

@@ -39,6 +39,7 @@ public class MusicService extends Service  {
     public MediaPlayer player;
     ArrayList<Song> songList = new ArrayList<Song>();
     int positon;
+    Boolean isPause=false;
     private final IBinder musicBind = new MusicBinder();
     private int stateRepeat=0;
 
@@ -104,8 +105,10 @@ public class MusicService extends Service  {
     public void toggleSong() {
         if(player.isPlaying()){
             player.pause();
+            isPause=true;
         }else {
             player.start();
+            isPause=false;
         }
         showNotification();
     }
@@ -177,6 +180,7 @@ public class MusicService extends Service  {
                     public void run() {
                         try {
                             mp.start();
+                            isPause=false;
 
                         }catch (Exception e) {
                             e.printStackTrace();
@@ -241,11 +245,6 @@ public class MusicService extends Service  {
         PendingIntent pcloseIntent = PendingIntent.getService(this, 0,
                 closeIntent, 0);
 
-
-    //    Intent Update_Recently_Playlist_Intent = new Intent(this, MusicService.class);
-    //    closeIntent.setAction(Constants.ACTION.UPDATE_RECENTLY_PLAYLIST);
-    //    PendingIntent pUpdate_Recently_Playlist_Intent = PendingIntent.getService(this, 0,
-    //            Update_Recently_Playlist_Intent, 0);
 
         views.setOnClickPendingIntent(R.id.status_bar_play, pplayIntent);
         bigViews.setOnClickPendingIntent(R.id.status_bar_play, pplayIntent);

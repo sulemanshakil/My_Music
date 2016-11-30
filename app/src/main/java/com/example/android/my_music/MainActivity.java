@@ -34,6 +34,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -87,8 +89,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         songList_all = new ArrayList<>();
@@ -169,6 +176,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String[] mPaths = songList_all.get(0).getData().split("/");
         String P1 = "/"+mPaths[1];
         new buildTree().execute(P1);
+    }
+
+    public void restoreAtPause() {
+        mSlidingUpPanelLayout.getPanelState();
+        if(mSlidingUpPanelLayout.getPanelState()==SlidingUpPanelLayout.PanelState.HIDDEN){
+            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+            fragmentB.setImageView();
+        }
     }
 
     private class buildTree extends AsyncTask<String ,Void,Tree>{
@@ -399,6 +415,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return songList ;
     }
+
+
 
     @Override
     protected void onResume() {

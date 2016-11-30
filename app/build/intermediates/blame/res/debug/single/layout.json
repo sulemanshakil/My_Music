@@ -100,6 +100,10 @@
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/layout/toast.xml",
+        "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/layout/toast.xml"
+    },
+    {
         "merged": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view.xml"
     },

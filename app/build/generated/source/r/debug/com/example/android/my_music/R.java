@@ -2360,9 +2360,9 @@ containing a value of this type.
         public static final int status_bg=0x7f020070;
     }
     public static final class id {
-        public static final int RelativeLayout=0x7f0d0082;
+        public static final int RelativeLayout=0x7f0d0083;
         public static final int action0=0x7f0d0094;
-        public static final int action_add=0x7f0d00bc;
+        public static final int action_add=0x7f0d00be;
         public static final int action_bar=0x7f0d005f;
         public static final int action_bar_activity_content=0x7f0d0000;
         public static final int action_bar_container=0x7f0d005e;
@@ -2435,7 +2435,7 @@ containing a value of this type.
         public static final int imageButtonRepeat=0x7f0d008a;
         public static final int imageButtonSave=0x7f0d00a4;
         public static final int imageView=0x7f0d0092;
-        public static final int imageViewAlbumArt=0x7f0d0081;
+        public static final int imageViewAlbumArt=0x7f0d0082;
         public static final int imageViewBackground=0x7f0d007d;
         public static final int info=0x7f0d009e;
         public static final int item=0x7f0d008e;
@@ -2456,14 +2456,14 @@ containing a value of this type.
         public static final int middle=0x7f0d0032;
         public static final int mini=0x7f0d0030;
         public static final int multiply=0x7f0d0027;
-        public static final int nav_Albums=0x7f0d00b6;
-        public static final int nav_Artist=0x7f0d00b5;
-        public static final int nav_Favourites=0x7f0d00ba;
-        public static final int nav_Genres=0x7f0d00b7;
-        public static final int nav_My_Files=0x7f0d00b8;
-        public static final int nav_Playlist=0x7f0d00b9;
-        public static final int nav_Recently_Played=0x7f0d00bb;
-        public static final int nav_all_songs=0x7f0d00b4;
+        public static final int nav_Albums=0x7f0d00b8;
+        public static final int nav_Artist=0x7f0d00b7;
+        public static final int nav_Favourites=0x7f0d00bc;
+        public static final int nav_Genres=0x7f0d00b9;
+        public static final int nav_My_Files=0x7f0d00ba;
+        public static final int nav_Playlist=0x7f0d00bb;
+        public static final int nav_Recently_Played=0x7f0d00bd;
+        public static final int nav_all_songs=0x7f0d00b6;
         public static final int nav_view=0x7f0d0071;
         public static final int navigation_header_container=0x7f0d0077;
         public static final int never=0x7f0d0036;
@@ -2497,7 +2497,7 @@ containing a value of this type.
         public static final int search_plate=0x7f0d0067;
         public static final int search_src_text=0x7f0d0068;
         public static final int search_voice_btn=0x7f0d006c;
-        public static final int seekBarMusic=0x7f0d0083;
+        public static final int seekBarMusic=0x7f0d0084;
         public static final int select_dialog_listview=0x7f0d006d;
         public static final int shortcut=0x7f0d0058;
         public static final int showCustom=0x7f0d0012;
@@ -2528,22 +2528,24 @@ containing a value of this type.
         public static final int text=0x7f0d008f;
         public static final int text2=0x7f0d009c;
         public static final int textSpacerNoButtons=0x7f0d0052;
+        public static final int textToast=0x7f0d00b5;
         public static final int textView=0x7f0d0093;
         public static final int textView1=0x7f0d00a1;
         public static final int textView2=0x7f0d007c;
         public static final int textView4=0x7f0d00a3;
-        public static final int textViewDuration=0x7f0d0085;
-        public static final int textViewTime=0x7f0d0086;
-        public static final int textViewTimeChanging=0x7f0d0084;
+        public static final int textViewDuration=0x7f0d0086;
+        public static final int textViewTimeChanging=0x7f0d0085;
         public static final int textarea=0x7f0d00b2;
+        public static final int textviewState=0x7f0d007f;
         public static final int time=0x7f0d009a;
         public static final int title=0x7f0d0048;
         public static final int title_template=0x7f0d004d;
-        public static final int toggleButton=0x7f0d0080;
+        public static final int toast_layout_root=0x7f0d00b4;
+        public static final int toggleButton=0x7f0d0081;
         public static final int toolbar=0x7f0d0072;
         public static final int top=0x7f0d0026;
         public static final int topPanel=0x7f0d004c;
-        public static final int txtViewSongName=0x7f0d007f;
+        public static final int txtViewSongName=0x7f0d0080;
         public static final int up=0x7f0d000a;
         public static final int useLogo=0x7f0d0015;
         public static final int view_offset_helper=0x7f0d000b;
@@ -2620,6 +2622,7 @@ containing a value of this type.
         public static final int status_bar=0x7f04003a;
         public static final int status_bar_expanded=0x7f04003b;
         public static final int support_simple_spinner_dropdown_item=0x7f04003c;
+        public static final int toast=0x7f04003d;
     }
     public static final class menu {
         public static final int activity_main_drawer=0x7f0e0000;

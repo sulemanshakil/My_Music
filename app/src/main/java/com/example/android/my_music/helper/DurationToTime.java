@@ -1,6 +1,8 @@
 package com.example.android.my_music.helper;
 
 
+import android.widget.Toast;
+
 public class DurationToTime {
 
     public static String calculate(int dur){
@@ -16,4 +18,5 @@ public class DurationToTime {
 
         return songTime;
     }
+
 }
