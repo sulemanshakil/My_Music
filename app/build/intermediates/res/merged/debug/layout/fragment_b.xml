@@ -74,6 +74,32 @@
                 android:max="100" >
             </SeekBar>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="02:02"
+                android:id="@+id/textViewTimeChanging"
+                android:textColor="#9E9E9E"
+                android:layout_below="@+id/seekBarMusic"
+                android:layout_marginLeft="10dp"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="01:01"
+                android:id="@+id/textViewDuration"
+                android:textColor="#9E9E9E"
+                android:layout_below="@+id/seekBarMusic"
+                android:layout_alignTop="@+id/textViewTime"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                />
+
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,6 +150,8 @@
                 android:layout_below="@+id/playPauseButton"
                 android:layout_toRightOf="@+id/playPauseButton"
                 android:layout_marginTop="10dp" />
+
+
 
         </RelativeLayout>
 

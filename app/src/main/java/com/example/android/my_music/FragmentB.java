@@ -46,6 +46,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.example.android.my_music.helper.DurationToTime;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -62,6 +63,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 {
     private ImageButton repeatButton,backButton,forwardButton,toogleButton,queueMusic,playPauseButton;
     private int state=0;
+    private TextView timeDuration,changingTime;
 
     public MusicService musicSrv;
     private Intent playIntent;
@@ -81,6 +83,8 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         forwardButton = (ImageButton) rootView.findViewById(R.id.buttonForward);
         queueMusic = (ImageButton) rootView.findViewById(R.id.queueMusic);
         repeatButton = (ImageButton) rootView.findViewById(R.id.imageButtonRepeat);
+        timeDuration = (TextView) rootView.findViewById(R.id.textViewDuration);
+        changingTime = (TextView) rootView.findViewById(R.id.textViewTimeChanging);
 
         toogleButton.setOnClickListener(this);
         playPauseButton.setOnClickListener(this);
@@ -99,7 +103,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         repeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        //        Log.e("stae",""+musicSrv.getStateRepeat());
+                //        Log.e("stae",""+musicSrv.getStateRepeat());
                 switch (musicSrv.getStateRepeat()) {
                     case 0:
                         repeatButton.setImageResource(R.drawable.ic_repeat_24dp);
@@ -187,6 +191,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
         musicSrv.setList(mySongsList);
         musicSrv.playSong(position);
         upDateToggleButton();
+
     }
     public void play(int position) {
         musicSrv.playSong(position);
@@ -248,7 +253,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
     public void setup_seekbar_duration(){
         seekBar_Music.setMax(musicSrv.player.getDuration());
-
+        timeDuration.setText(DurationToTime.calculate(musicSrv.player.getDuration()));
     }
 
     public void setup_Seekbar(){
@@ -261,9 +266,10 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
             @Override
             public void run() {
-                if (musicSrv.player != null) {
+                if (musicSrv.player.isPlaying()) {
                     int mCurrentPosition = musicSrv.player.getCurrentPosition();
                     seekBar_Music.setProgress(mCurrentPosition);
+                    changingTime.setText(DurationToTime.calculate(mCurrentPosition));
                 }
                 mHandler.postDelayed(this, 1000);
             }
@@ -309,6 +315,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             setup_Seekbar();
         }
     }
+
 
     @Override
     public void onClick(View v) {

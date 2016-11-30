@@ -497,7 +497,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     } while (genresCursor.moveToNext());
                 }
 
-
                 int duration = Integer.parseInt(thisDuration);
                 if (duration > 10000) {
                     songList_all.add(new Song(thisId, thisTitle, thisArtist, thisDuration,thisAlbum,thisGenres,thisData,thisAlbumId));
