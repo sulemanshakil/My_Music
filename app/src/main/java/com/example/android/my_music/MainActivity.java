@@ -162,8 +162,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     final FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
                     mSlidingUpPanelLayout.setDragView(fragmentB.rootView.findViewById(R.id.linearlayloutfragb));
                 } else {
-                //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-                //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
+                    //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+                    //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
                 }
             }
 
@@ -173,8 +173,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        String[] mPaths = songList_all.get(0).getData().split("/");
-        String P1 = "/"+mPaths[1];
+
+            String[] mPaths = Environment.getExternalStorageDirectory().getPath().split("/");
+            String P1 = "/" + mPaths[1];
+
         new buildTree().execute(P1);
     }
 
