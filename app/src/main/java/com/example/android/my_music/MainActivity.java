@@ -173,10 +173,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
-            String[] mPaths = Environment.getExternalStorageDirectory().getPath().split("/");
-            String P1 = "/" + mPaths[1];
-
+        String[] mPaths = Environment.getExternalStorageDirectory().getPath().split("/");
+        String P1 = "/" + mPaths[1];
         new buildTree().execute(P1);
     }
 

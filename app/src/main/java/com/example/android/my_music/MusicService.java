@@ -8,6 +8,8 @@ import android.app.Service;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -15,6 +17,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.ParcelFileDescriptor;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -23,6 +26,7 @@ import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -212,14 +216,9 @@ public class MusicService extends Service  {
 // showing default album image
         views.setViewVisibility(R.id.status_bar_icon, View.VISIBLE);
         views.setViewVisibility(R.id.status_bar_album_art, View.GONE);
-        bigViews.setImageViewBitmap(R.id.status_bar_album_art,
-                Constants.getDefaultAlbumArt(this));
-/*
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        notificationIntent.setAction(Constants.ACTION.MAIN_ACTION);
-        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-*/
+        Bitmap bm = getAlbumart(Long.valueOf(getCurrentSong().getAlbumId()).longValue());
+        bigViews.setImageViewBitmap(R.id.status_bar_album_art,bm);
+
         PackageManager pm = getPackageManager();
         Intent notificationIntent = pm.getLaunchIntentForPackage("com.example.android.my_music");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
@@ -270,13 +269,15 @@ public class MusicService extends Service  {
                     R.drawable.apollo_holo_dark_play);
         }
 
-        views.setTextViewText(R.id.status_bar_track_name, "Song Title");
-        bigViews.setTextViewText(R.id.status_bar_track_name, "Song Title");
 
-        views.setTextViewText(R.id.status_bar_artist_name, "Artist Name");
-        bigViews.setTextViewText(R.id.status_bar_artist_name, "Artist Name");
+        views.setTextViewText(R.id.status_bar_track_name, getCurrentSong().getTitle());
+        bigViews.setTextViewText(R.id.status_bar_track_name,getCurrentSong().getTitle());
 
-        bigViews.setTextViewText(R.id.status_bar_album_name, "Album Name");
+        views.setTextViewText(R.id.status_bar_artist_name, getCurrentSong().getAlbum());
+        bigViews.setTextViewText(R.id.status_bar_artist_name,getCurrentSong().getArtist());
+
+        bigViews.setTextViewText(R.id.status_bar_album_name,getCurrentSong().getAlbum());
+
 
         status = new Notification.Builder(this).build();
         status.contentView = views;
@@ -319,4 +320,30 @@ public class MusicService extends Service  {
         return false;
     }
 
+    public Bitmap getAlbumart(Long album_id) {
+        Bitmap bm = null;
+        try
+        {
+            final Uri sArtworkUri = Uri
+                    .parse("content://media/external/audio/albumart");
+            Uri uri = ContentUris.withAppendedId(sArtworkUri, album_id);
+            ParcelFileDescriptor pfd = getApplicationContext().getContentResolver()
+                    .openFileDescriptor(uri, "r");
+
+            if (pfd != null)
+            {
+                FileDescriptor fd = pfd.getFileDescriptor();
+                bm = BitmapFactory.decodeFileDescriptor(fd);
+            }
+        } catch (Exception e) {
+        }
+
+        if(bm==null) {
+            Random ran = new Random();
+            int x = ran.nextInt(4) + 1;
+            int resID = getResources().getIdentifier("albumcover" + x, "drawable", getApplicationContext().getPackageName());
+            bm = BitmapFactory.decodeResource(getResources(), resID);
+        }
+        return bm;
+    }
 }
