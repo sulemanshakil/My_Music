@@ -16,10 +16,10 @@
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 596,
+                        "startOffset": 603,
                         "endLine": 28,
                         "endColumn": 12,
-                        "endOffset": 894
+                        "endOffset": 901
                     }
                 }
             },
@@ -4273,9 +4273,9 @@
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 900,
+                        "startOffset": 907,
                         "endColumn": 48,
-                        "endOffset": 944
+                        "endOffset": 951
                     }
                 }
             },
@@ -4881,9 +4881,9 @@
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 214,
+                        "startOffset": 221,
                         "endColumn": 42,
-                        "endOffset": 252
+                        "endOffset": 259
                     }
                 }
             },
@@ -4892,8 +4892,8 @@
                     "startLine": 314,
                     "startColumn": 4,
                     "startOffset": 40524,
-                    "endColumn": 45,
-                    "endOffset": 40565
+                    "endColumn": 52,
+                    "endOffset": 40572
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
@@ -4901,8 +4901,8 @@
                         "startLine": 1,
                         "startColumn": 4,
                         "startOffset": 16,
-                        "endColumn": 45,
-                        "endOffset": 57
+                        "endColumn": 52,
+                        "endOffset": 64
                     }
                 }
             },
@@ -4910,18 +4910,18 @@
                 "to": {
                     "startLine": 315,
                     "startColumn": 4,
-                    "startOffset": 40570,
+                    "startOffset": 40577,
                     "endColumn": 50,
-                    "endOffset": 40616
+                    "endOffset": 40623
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 280,
+                        "startOffset": 287,
                         "endColumn": 50,
-                        "endOffset": 326
+                        "endOffset": 333
                     }
                 }
             },
@@ -4929,9 +4929,9 @@
                 "to": {
                     "startLine": 316,
                     "startColumn": 4,
-                    "startOffset": 40621,
+                    "startOffset": 40628,
                     "endColumn": 144,
-                    "endOffset": 40761
+                    "endOffset": 40768
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -4948,18 +4948,18 @@
                 "to": {
                     "startLine": 317,
                     "startColumn": 4,
-                    "startOffset": 40766,
+                    "startOffset": 40773,
                     "endColumn": 49,
-                    "endOffset": 40811
+                    "endOffset": 40818
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 545,
+                        "startOffset": 552,
                         "endColumn": 49,
-                        "endOffset": 590
+                        "endOffset": 597
                     }
                 }
             },
@@ -4967,18 +4967,18 @@
                 "to": {
                     "startLine": 318,
                     "startColumn": 4,
-                    "startOffset": 40816,
+                    "startOffset": 40823,
                     "endColumn": 50,
-                    "endOffset": 40862
+                    "endOffset": 40869
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 494,
+                        "startOffset": 501,
                         "endColumn": 50,
-                        "endOffset": 540
+                        "endOffset": 547
                     }
                 }
             },
@@ -4986,18 +4986,18 @@
                 "to": {
                     "startLine": 319,
                     "startColumn": 4,
-                    "startOffset": 40867,
+                    "startOffset": 40874,
                     "endColumn": 54,
-                    "endOffset": 40917
+                    "endOffset": 40924
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 439,
+                        "startOffset": 446,
                         "endColumn": 54,
-                        "endOffset": 489
+                        "endOffset": 496
                     }
                 }
             },
@@ -5005,18 +5005,18 @@
                 "to": {
                     "startLine": 320,
                     "startColumn": 4,
-                    "startOffset": 40922,
+                    "startOffset": 40929,
                     "endColumn": 55,
-                    "endOffset": 40973
+                    "endOffset": 40980
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 383,
+                        "startOffset": 390,
                         "endColumn": 55,
-                        "endOffset": 434
+                        "endOffset": 441
                     }
                 }
             },
@@ -5024,9 +5024,9 @@
                 "to": {
                     "startLine": 321,
                     "startColumn": 4,
-                    "startOffset": 40978,
+                    "startOffset": 40985,
                     "endColumn": 86,
-                    "endOffset": 41060
+                    "endOffset": 41067
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -5043,18 +5043,18 @@
                 "to": {
                     "startLine": 322,
                     "startColumn": 4,
-                    "startOffset": 41065,
+                    "startOffset": 41072,
                     "endColumn": 50,
-                    "endOffset": 41111
+                    "endOffset": 41118
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 331,
+                        "startOffset": 338,
                         "endColumn": 50,
-                        "endOffset": 377
+                        "endOffset": 384
                     }
                 }
             },
@@ -5062,18 +5062,18 @@
                 "to": {
                     "startLine": 323,
                     "startColumn": 4,
-                    "startOffset": 41116,
+                    "startOffset": 41123,
                     "endColumn": 75,
-                    "endOffset": 41187
+                    "endOffset": 41194
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 137,
+                        "startOffset": 144,
                         "endColumn": 75,
-                        "endOffset": 208
+                        "endOffset": 215
                     }
                 }
             },
@@ -5081,18 +5081,18 @@
                 "to": {
                     "startLine": 324,
                     "startColumn": 4,
-                    "startOffset": 41192,
+                    "startOffset": 41199,
                     "endColumn": 73,
-                    "endOffset": 41261
+                    "endOffset": 41268
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 63,
+                        "startOffset": 70,
                         "endColumn": 73,
-                        "endOffset": 132
+                        "endOffset": 139
                     }
                 }
             },
@@ -5100,9 +5100,9 @@
                 "to": {
                     "startLine": 325,
                     "startColumn": 4,
-                    "startOffset": 41266,
+                    "startOffset": 41273,
                     "endColumn": 70,
-                    "endOffset": 41332
+                    "endOffset": 41339
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5119,9 +5119,9 @@
                 "to": {
                     "startLine": 326,
                     "startColumn": 4,
-                    "startOffset": 41337,
+                    "startOffset": 41344,
                     "endColumn": 77,
-                    "endOffset": 41410
+                    "endOffset": 41417
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5138,9 +5138,9 @@
                 "to": {
                     "startLine": 327,
                     "startColumn": 4,
-                    "startOffset": 41415,
+                    "startOffset": 41422,
                     "endColumn": 89,
-                    "endOffset": 41500
+                    "endOffset": 41507
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5157,9 +5157,9 @@
                 "to": {
                     "startLine": 328,
                     "startColumn": 4,
-                    "startOffset": 41505,
+                    "startOffset": 41512,
                     "endColumn": 87,
-                    "endOffset": 41588
+                    "endOffset": 41595
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5176,9 +5176,9 @@
                 "to": {
                     "startLine": 329,
                     "startColumn": 4,
-                    "startOffset": 41593,
+                    "startOffset": 41600,
                     "endColumn": 95,
-                    "endOffset": 41684
+                    "endOffset": 41691
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5195,10 +5195,10 @@
                 "to": {
                     "startLine": 330,
                     "startColumn": 4,
-                    "startOffset": 41689,
+                    "startOffset": 41696,
                     "endLine": 335,
                     "endColumn": 12,
-                    "endOffset": 42003
+                    "endOffset": 42010
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml",
@@ -5216,9 +5216,9 @@
                 "to": {
                     "startLine": 336,
                     "startColumn": 4,
-                    "startOffset": 42008,
+                    "startOffset": 42015,
                     "endColumn": 89,
-                    "endOffset": 42093
+                    "endOffset": 42100
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml",
@@ -5235,10 +5235,10 @@
                 "to": {
                     "startLine": 337,
                     "startColumn": 4,
-                    "startOffset": 42098,
+                    "startOffset": 42105,
                     "endLine": 340,
                     "endColumn": 12,
-                    "endOffset": 42243
+                    "endOffset": 42250
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml",
@@ -5256,9 +5256,9 @@
                 "to": {
                     "startLine": 341,
                     "startColumn": 4,
-                    "startOffset": 42248,
+                    "startOffset": 42255,
                     "endColumn": 79,
-                    "endOffset": 42323
+                    "endOffset": 42330
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/res/values/styles.xml",
@@ -5275,10 +5275,10 @@
                 "to": {
                     "startLine": 342,
                     "startColumn": 4,
-                    "startOffset": 42328,
+                    "startOffset": 42335,
                     "endLine": 348,
                     "endColumn": 12,
-                    "endOffset": 42824
+                    "endOffset": 42831
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5296,9 +5296,9 @@
                 "to": {
                     "startLine": 349,
                     "startColumn": 4,
-                    "startOffset": 42829,
+                    "startOffset": 42836,
                     "endColumn": 88,
-                    "endOffset": 42913
+                    "endOffset": 42920
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5315,10 +5315,10 @@
                 "to": {
                     "startLine": 350,
                     "startColumn": 4,
-                    "startOffset": 42918,
+                    "startOffset": 42925,
                     "endLine": 353,
                     "endColumn": 12,
-                    "endOffset": 43160
+                    "endOffset": 43167
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5336,10 +5336,10 @@
                 "to": {
                     "startLine": 354,
                     "startColumn": 4,
-                    "startOffset": 43165,
+                    "startOffset": 43172,
                     "endLine": 357,
                     "endColumn": 12,
-                    "endOffset": 43441
+                    "endOffset": 43448
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5357,10 +5357,10 @@
                 "to": {
                     "startLine": 358,
                     "startColumn": 4,
-                    "startOffset": 43446,
+                    "startOffset": 43453,
                     "endLine": 362,
                     "endColumn": 12,
-                    "endOffset": 43726
+                    "endOffset": 43733
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5378,10 +5378,10 @@
                 "to": {
                     "startLine": 363,
                     "startColumn": 4,
-                    "startOffset": 43731,
+                    "startOffset": 43738,
                     "endLine": 368,
                     "endColumn": 12,
-                    "endOffset": 44119
+                    "endOffset": 44126
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5399,10 +5399,10 @@
                 "to": {
                     "startLine": 369,
                     "startColumn": 4,
-                    "startOffset": 44124,
+                    "startOffset": 44131,
                     "endLine": 375,
                     "endColumn": 12,
-                    "endOffset": 44596
+                    "endOffset": 44603
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5420,10 +5420,10 @@
                 "to": {
                     "startLine": 376,
                     "startColumn": 4,
-                    "startOffset": 44601,
+                    "startOffset": 44608,
                     "endLine": 379,
                     "endColumn": 12,
-                    "endOffset": 44818
+                    "endOffset": 44825
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5441,10 +5441,10 @@
                 "to": {
                     "startLine": 380,
                     "startColumn": 4,
-                    "startOffset": 44823,
+                    "startOffset": 44830,
                     "endLine": 383,
                     "endColumn": 12,
-                    "endOffset": 45040
+                    "endOffset": 45047
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5462,10 +5462,10 @@
                 "to": {
                     "startLine": 384,
                     "startColumn": 4,
-                    "startOffset": 45045,
+                    "startOffset": 45052,
                     "endLine": 388,
                     "endColumn": 12,
-                    "endOffset": 45308
+                    "endOffset": 45315
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5483,10 +5483,10 @@
                 "to": {
                     "startLine": 389,
                     "startColumn": 4,
-                    "startOffset": 45313,
+                    "startOffset": 45320,
                     "endLine": 392,
                     "endColumn": 12,
-                    "endOffset": 45535
+                    "endOffset": 45542
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5504,10 +5504,10 @@
                 "to": {
                     "startLine": 393,
                     "startColumn": 4,
-                    "startOffset": 45540,
+                    "startOffset": 45547,
                     "endLine": 396,
                     "endColumn": 12,
-                    "endOffset": 45765
+                    "endOffset": 45772
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5525,10 +5525,10 @@
                 "to": {
                     "startLine": 397,
                     "startColumn": 4,
-                    "startOffset": 45770,
+                    "startOffset": 45777,
                     "endLine": 400,
                     "endColumn": 12,
-                    "endOffset": 45995
+                    "endOffset": 46002
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5546,10 +5546,10 @@
                 "to": {
                     "startLine": 401,
                     "startColumn": 4,
-                    "startOffset": 46000,
+                    "startOffset": 46007,
                     "endLine": 404,
                     "endColumn": 12,
-                    "endOffset": 46225
+                    "endOffset": 46232
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5567,10 +5567,10 @@
                 "to": {
                     "startLine": 405,
                     "startColumn": 4,
-                    "startOffset": 46230,
+                    "startOffset": 46237,
                     "endLine": 408,
                     "endColumn": 12,
-                    "endOffset": 46455
+                    "endOffset": 46462
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5588,10 +5588,10 @@
                 "to": {
                     "startLine": 409,
                     "startColumn": 4,
-                    "startOffset": 46460,
+                    "startOffset": 46467,
                     "endLine": 412,
                     "endColumn": 12,
-                    "endOffset": 46682
+                    "endOffset": 46689
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5609,10 +5609,10 @@
                 "to": {
                     "startLine": 413,
                     "startColumn": 4,
-                    "startOffset": 46687,
+                    "startOffset": 46694,
                     "endLine": 416,
                     "endColumn": 12,
-                    "endOffset": 46921
+                    "endOffset": 46928
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5630,10 +5630,10 @@
                 "to": {
                     "startLine": 417,
                     "startColumn": 4,
-                    "startOffset": 46926,
+                    "startOffset": 46933,
                     "endLine": 420,
                     "endColumn": 12,
-                    "endOffset": 47147
+                    "endOffset": 47154
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5651,10 +5651,10 @@
                 "to": {
                     "startLine": 421,
                     "startColumn": 4,
-                    "startOffset": 47152,
+                    "startOffset": 47159,
                     "endLine": 424,
                     "endColumn": 12,
-                    "endOffset": 47392
+                    "endOffset": 47399
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5672,10 +5672,10 @@
                 "to": {
                     "startLine": 425,
                     "startColumn": 4,
-                    "startOffset": 47397,
+                    "startOffset": 47404,
                     "endLine": 426,
                     "endColumn": 12,
-                    "endOffset": 47522
+                    "endOffset": 47529
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5693,10 +5693,10 @@
                 "to": {
                     "startLine": 427,
                     "startColumn": 4,
-                    "startOffset": 47527,
+                    "startOffset": 47534,
                     "endLine": 428,
                     "endColumn": 12,
-                    "endOffset": 47652
+                    "endOffset": 47659
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5714,10 +5714,10 @@
                 "to": {
                     "startLine": 429,
                     "startColumn": 4,
-                    "startOffset": 47657,
+                    "startOffset": 47664,
                     "endLine": 432,
                     "endColumn": 12,
-                    "endOffset": 47882
+                    "endOffset": 47889
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5735,10 +5735,10 @@
                 "to": {
                     "startLine": 433,
                     "startColumn": 4,
-                    "startOffset": 47887,
+                    "startOffset": 47894,
                     "endLine": 436,
                     "endColumn": 12,
-                    "endOffset": 48130
+                    "endOffset": 48137
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5756,10 +5756,10 @@
                 "to": {
                     "startLine": 437,
                     "startColumn": 4,
-                    "startOffset": 48135,
+                    "startOffset": 48142,
                     "endLine": 440,
                     "endColumn": 12,
-                    "endOffset": 48349
+                    "endOffset": 48356
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5777,10 +5777,10 @@
                 "to": {
                     "startLine": 441,
                     "startColumn": 4,
-                    "startOffset": 48354,
+                    "startOffset": 48361,
                     "endLine": 445,
                     "endColumn": 12,
-                    "endOffset": 48632
+                    "endOffset": 48639
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5798,10 +5798,10 @@
                 "to": {
                     "startLine": 446,
                     "startColumn": 4,
-                    "startOffset": 48637,
+                    "startOffset": 48644,
                     "endLine": 449,
                     "endColumn": 12,
-                    "endOffset": 48840
+                    "endOffset": 48847
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5819,10 +5819,10 @@
                 "to": {
                     "startLine": 450,
                     "startColumn": 4,
-                    "startOffset": 48845,
+                    "startOffset": 48852,
                     "endLine": 452,
                     "endColumn": 12,
-                    "endOffset": 48971
+                    "endOffset": 48978
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5840,10 +5840,10 @@
                 "to": {
                     "startLine": 453,
                     "startColumn": 4,
-                    "startOffset": 48976,
+                    "startOffset": 48983,
                     "endLine": 456,
                     "endColumn": 12,
-                    "endOffset": 49198
+                    "endOffset": 49205
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5861,10 +5861,10 @@
                 "to": {
                     "startLine": 457,
                     "startColumn": 4,
-                    "startOffset": 49203,
+                    "startOffset": 49210,
                     "endLine": 460,
                     "endColumn": 12,
-                    "endOffset": 49444
+                    "endOffset": 49451
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5882,10 +5882,10 @@
                 "to": {
                     "startLine": 461,
                     "startColumn": 4,
-                    "startOffset": 49449,
+                    "startOffset": 49456,
                     "endLine": 464,
                     "endColumn": 12,
-                    "endOffset": 49669
+                    "endOffset": 49676
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5903,10 +5903,10 @@
                 "to": {
                     "startLine": 465,
                     "startColumn": 4,
-                    "startOffset": 49674,
+                    "startOffset": 49681,
                     "endLine": 468,
                     "endColumn": 12,
-                    "endOffset": 49916
+                    "endOffset": 49923
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5924,10 +5924,10 @@
                 "to": {
                     "startLine": 469,
                     "startColumn": 4,
-                    "startOffset": 49921,
+                    "startOffset": 49928,
                     "endLine": 472,
                     "endColumn": 12,
-                    "endOffset": 50137
+                    "endOffset": 50144
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5945,10 +5945,10 @@
                 "to": {
                     "startLine": 473,
                     "startColumn": 4,
-                    "startOffset": 50142,
+                    "startOffset": 50149,
                     "endLine": 476,
                     "endColumn": 12,
-                    "endOffset": 50382
+                    "endOffset": 50389
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5966,10 +5966,10 @@
                 "to": {
                     "startLine": 477,
                     "startColumn": 4,
-                    "startOffset": 50387,
+                    "startOffset": 50394,
                     "endLine": 480,
                     "endColumn": 12,
-                    "endOffset": 50656
+                    "endOffset": 50663
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -5987,10 +5987,10 @@
                 "to": {
                     "startLine": 481,
                     "startColumn": 4,
-                    "startOffset": 50661,
+                    "startOffset": 50668,
                     "endLine": 484,
                     "endColumn": 12,
-                    "endOffset": 50957
+                    "endOffset": 50964
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6008,10 +6008,10 @@
                 "to": {
                     "startLine": 485,
                     "startColumn": 4,
-                    "startOffset": 50962,
+                    "startOffset": 50969,
                     "endLine": 488,
                     "endColumn": 12,
-                    "endOffset": 51281
+                    "endOffset": 51288
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6029,10 +6029,10 @@
                 "to": {
                     "startLine": 489,
                     "startColumn": 4,
-                    "startOffset": 51286,
+                    "startOffset": 51293,
                     "endLine": 492,
                     "endColumn": 12,
-                    "endOffset": 51572
+                    "endOffset": 51579
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6050,10 +6050,10 @@
                 "to": {
                     "startLine": 493,
                     "startColumn": 4,
-                    "startOffset": 51577,
+                    "startOffset": 51584,
                     "endLine": 496,
                     "endColumn": 12,
-                    "endOffset": 51886
+                    "endOffset": 51893
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6071,9 +6071,9 @@
                 "to": {
                     "startLine": 497,
                     "startColumn": 4,
-                    "startOffset": 51891,
+                    "startOffset": 51898,
                     "endColumn": 136,
-                    "endOffset": 52023
+                    "endOffset": 52030
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6090,9 +6090,9 @@
                 "to": {
                     "startLine": 498,
                     "startColumn": 4,
-                    "startOffset": 52028,
+                    "startOffset": 52035,
                     "endColumn": 130,
-                    "endOffset": 52154
+                    "endOffset": 52161
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6109,9 +6109,9 @@
                 "to": {
                     "startLine": 499,
                     "startColumn": 4,
-                    "startOffset": 52159,
+                    "startOffset": 52166,
                     "endColumn": 104,
-                    "endOffset": 52259
+                    "endOffset": 52266
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6128,10 +6128,10 @@
                 "to": {
                     "startLine": 500,
                     "startColumn": 4,
-                    "startOffset": 52264,
+                    "startOffset": 52271,
                     "endLine": 502,
                     "endColumn": 12,
-                    "endOffset": 52463
+                    "endOffset": 52470
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6149,10 +6149,10 @@
                 "to": {
                     "startLine": 503,
                     "startColumn": 4,
-                    "startOffset": 52468,
+                    "startOffset": 52475,
                     "endLine": 505,
                     "endColumn": 12,
-                    "endOffset": 52671
+                    "endOffset": 52678
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6170,10 +6170,10 @@
                 "to": {
                     "startLine": 506,
                     "startColumn": 4,
-                    "startOffset": 52676,
+                    "startOffset": 52683,
                     "endLine": 507,
                     "endColumn": 12,
-                    "endOffset": 52795
+                    "endOffset": 52802
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6191,10 +6191,10 @@
                 "to": {
                     "startLine": 508,
                     "startColumn": 4,
-                    "startOffset": 52800,
+                    "startOffset": 52807,
                     "endLine": 509,
                     "endColumn": 12,
-                    "endOffset": 52919
+                    "endOffset": 52926
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6212,9 +6212,9 @@
                 "to": {
                     "startLine": 510,
                     "startColumn": 4,
-                    "startOffset": 52924,
+                    "startOffset": 52931,
                     "endColumn": 104,
-                    "endOffset": 53024
+                    "endOffset": 53031
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6231,9 +6231,9 @@
                 "to": {
                     "startLine": 511,
                     "startColumn": 4,
-                    "startOffset": 53029,
+                    "startOffset": 53036,
                     "endColumn": 116,
-                    "endOffset": 53141
+                    "endOffset": 53148
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6250,10 +6250,10 @@
                 "to": {
                     "startLine": 512,
                     "startColumn": 4,
-                    "startOffset": 53146,
+                    "startOffset": 53153,
                     "endLine": 514,
                     "endColumn": 12,
-                    "endOffset": 53355
+                    "endOffset": 53362
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6271,10 +6271,10 @@
                 "to": {
                     "startLine": 515,
                     "startColumn": 4,
-                    "startOffset": 53360,
+                    "startOffset": 53367,
                     "endLine": 516,
                     "endColumn": 12,
-                    "endOffset": 53501
+                    "endOffset": 53508
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6292,10 +6292,10 @@
                 "to": {
                     "startLine": 517,
                     "startColumn": 4,
-                    "startOffset": 53506,
+                    "startOffset": 53513,
                     "endLine": 518,
                     "endColumn": 12,
-                    "endOffset": 53641
+                    "endOffset": 53648
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6313,10 +6313,10 @@
                 "to": {
                     "startLine": 519,
                     "startColumn": 4,
-                    "startOffset": 53646,
+                    "startOffset": 53653,
                     "endLine": 520,
                     "endColumn": 12,
-                    "endOffset": 53727
+                    "endOffset": 53734
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6334,10 +6334,10 @@
                 "to": {
                     "startLine": 521,
                     "startColumn": 4,
-                    "startOffset": 53732,
+                    "startOffset": 53739,
                     "endLine": 525,
                     "endColumn": 12,
-                    "endOffset": 54075
+                    "endOffset": 54082
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6355,9 +6355,9 @@
                 "to": {
                     "startLine": 526,
                     "startColumn": 4,
-                    "startOffset": 54080,
+                    "startOffset": 54087,
                     "endColumn": 87,
-                    "endOffset": 54163
+                    "endOffset": 54170
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6374,10 +6374,10 @@
                 "to": {
                     "startLine": 527,
                     "startColumn": 4,
-                    "startOffset": 54168,
+                    "startOffset": 54175,
                     "endLine": 530,
                     "endColumn": 12,
-                    "endOffset": 54393
+                    "endOffset": 54400
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6395,10 +6395,10 @@
                 "to": {
                     "startLine": 531,
                     "startColumn": 4,
-                    "startOffset": 54398,
+                    "startOffset": 54405,
                     "endLine": 536,
                     "endColumn": 12,
-                    "endOffset": 54811
+                    "endOffset": 54818
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6416,10 +6416,10 @@
                 "to": {
                     "startLine": 537,
                     "startColumn": 4,
-                    "startOffset": 54816,
+                    "startOffset": 54823,
                     "endLine": 540,
                     "endColumn": 12,
-                    "endOffset": 55044
+                    "endOffset": 55051
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6437,9 +6437,9 @@
                 "to": {
                     "startLine": 541,
                     "startColumn": 4,
-                    "startOffset": 55049,
+                    "startOffset": 55056,
                     "endColumn": 81,
-                    "endOffset": 55126
+                    "endOffset": 55133
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6456,10 +6456,10 @@
                 "to": {
                     "startLine": 542,
                     "startColumn": 4,
-                    "startOffset": 55131,
+                    "startOffset": 55138,
                     "endLine": 543,
                     "endColumn": 12,
-                    "endOffset": 55224
+                    "endOffset": 55231
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6477,10 +6477,10 @@
                 "to": {
                     "startLine": 544,
                     "startColumn": 4,
-                    "startOffset": 55229,
+                    "startOffset": 55236,
                     "endLine": 554,
                     "endColumn": 12,
-                    "endOffset": 55841
+                    "endOffset": 55848
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6498,9 +6498,9 @@
                 "to": {
                     "startLine": 555,
                     "startColumn": 4,
-                    "startOffset": 55846,
+                    "startOffset": 55853,
                     "endColumn": 99,
-                    "endOffset": 55941
+                    "endOffset": 55948
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6517,10 +6517,10 @@
                 "to": {
                     "startLine": 556,
                     "startColumn": 4,
-                    "startOffset": 55946,
+                    "startOffset": 55953,
                     "endLine": 559,
                     "endColumn": 12,
-                    "endOffset": 56177
+                    "endOffset": 56184
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6538,10 +6538,10 @@
                 "to": {
                     "startLine": 560,
                     "startColumn": 4,
-                    "startOffset": 56182,
+                    "startOffset": 56189,
                     "endLine": 565,
                     "endColumn": 12,
-                    "endOffset": 56601
+                    "endOffset": 56608
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6559,10 +6559,10 @@
                 "to": {
                     "startLine": 566,
                     "startColumn": 4,
-                    "startOffset": 56606,
+                    "startOffset": 56613,
                     "endLine": 569,
                     "endColumn": 12,
-                    "endOffset": 56840
+                    "endOffset": 56847
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6580,9 +6580,9 @@
                 "to": {
                     "startLine": 570,
                     "startColumn": 4,
-                    "startOffset": 56845,
+                    "startOffset": 56852,
                     "endColumn": 93,
-                    "endOffset": 56934
+                    "endOffset": 56941
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6599,9 +6599,9 @@
                 "to": {
                     "startLine": 571,
                     "startColumn": 4,
-                    "startOffset": 56939,
+                    "startOffset": 56946,
                     "endColumn": 88,
-                    "endOffset": 57023
+                    "endOffset": 57030
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6618,10 +6618,10 @@
                 "to": {
                     "startLine": 572,
                     "startColumn": 4,
-                    "startOffset": 57028,
+                    "startOffset": 57035,
                     "endLine": 575,
                     "endColumn": 12,
-                    "endOffset": 57260
+                    "endOffset": 57267
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6639,10 +6639,10 @@
                 "to": {
                     "startLine": 576,
                     "startColumn": 4,
-                    "startOffset": 57265,
+                    "startOffset": 57272,
                     "endLine": 601,
                     "endColumn": 12,
-                    "endOffset": 59211
+                    "endOffset": 59218
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6660,10 +6660,10 @@
                 "to": {
                     "startLine": 602,
                     "startColumn": 4,
-                    "startOffset": 59216,
+                    "startOffset": 59223,
                     "endLine": 605,
                     "endColumn": 12,
-                    "endOffset": 59453
+                    "endOffset": 59460
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6681,10 +6681,10 @@
                 "to": {
                     "startLine": 606,
                     "startColumn": 4,
-                    "startOffset": 59458,
+                    "startOffset": 59465,
                     "endLine": 632,
                     "endColumn": 12,
-                    "endOffset": 61535
+                    "endOffset": 61542
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6702,10 +6702,10 @@
                 "to": {
                     "startLine": 633,
                     "startColumn": 4,
-                    "startOffset": 61540,
+                    "startOffset": 61547,
                     "endLine": 785,
                     "endColumn": 12,
-                    "endOffset": 71217
+                    "endOffset": 71224
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6723,10 +6723,10 @@
                 "to": {
                     "startLine": 786,
                     "startColumn": 4,
-                    "startOffset": 71222,
+                    "startOffset": 71229,
                     "endLine": 807,
                     "endColumn": 12,
-                    "endOffset": 72484
+                    "endOffset": 72491
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6744,10 +6744,10 @@
                 "to": {
                     "startLine": 808,
                     "startColumn": 4,
-                    "startOffset": 72489,
+                    "startOffset": 72496,
                     "endLine": 960,
                     "endColumn": 12,
-                    "endOffset": 82276
+                    "endOffset": 82283
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6765,10 +6765,10 @@
                 "to": {
                     "startLine": 961,
                     "startColumn": 4,
-                    "startOffset": 82281,
+                    "startOffset": 82288,
                     "endLine": 982,
                     "endColumn": 12,
-                    "endOffset": 83557
+                    "endOffset": 83564
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6786,10 +6786,10 @@
                 "to": {
                     "startLine": 983,
                     "startColumn": 4,
-                    "startOffset": 83562,
+                    "startOffset": 83569,
                     "endLine": 989,
                     "endColumn": 12,
-                    "endOffset": 84093
+                    "endOffset": 84100
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6807,10 +6807,10 @@
                 "to": {
                     "startLine": 990,
                     "startColumn": 4,
-                    "startOffset": 84098,
+                    "startOffset": 84105,
                     "endLine": 994,
                     "endColumn": 12,
-                    "endOffset": 84423
+                    "endOffset": 84430
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6828,10 +6828,10 @@
                 "to": {
                     "startLine": 995,
                     "startColumn": 4,
-                    "startOffset": 84428,
+                    "startOffset": 84435,
                     "endLine": 1015,
                     "endColumn": 12,
-                    "endOffset": 85546
+                    "endOffset": 85553
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6849,10 +6849,10 @@
                 "to": {
                     "startLine": 1016,
                     "startColumn": 4,
-                    "startOffset": 85551,
+                    "startOffset": 85558,
                     "endLine": 1020,
                     "endColumn": 12,
-                    "endOffset": 85802
+                    "endOffset": 85809
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6870,10 +6870,10 @@
                 "to": {
                     "startLine": 1021,
                     "startColumn": 4,
-                    "startOffset": 85807,
+                    "startOffset": 85814,
                     "endLine": 1025,
                     "endColumn": 12,
-                    "endOffset": 86038
+                    "endOffset": 86045
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6891,10 +6891,10 @@
                 "to": {
                     "startLine": 1026,
                     "startColumn": 4,
-                    "startOffset": 86043,
+                    "startOffset": 86050,
                     "endLine": 1035,
                     "endColumn": 12,
-                    "endOffset": 86585
+                    "endOffset": 86592
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6912,10 +6912,10 @@
                 "to": {
                     "startLine": 1036,
                     "startColumn": 4,
-                    "startOffset": 86590,
+                    "startOffset": 86597,
                     "endLine": 1044,
                     "endColumn": 12,
-                    "endOffset": 87079
+                    "endOffset": 87086
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6933,10 +6933,10 @@
                 "to": {
                     "startLine": 1045,
                     "startColumn": 4,
-                    "startOffset": 87084,
+                    "startOffset": 87091,
                     "endLine": 1053,
                     "endColumn": 12,
-                    "endOffset": 87684
+                    "endOffset": 87691
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6954,10 +6954,10 @@
                 "to": {
                     "startLine": 1054,
                     "startColumn": 4,
-                    "startOffset": 87689,
+                    "startOffset": 87696,
                     "endLine": 1056,
                     "endColumn": 12,
-                    "endOffset": 87832
+                    "endOffset": 87839
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6975,10 +6975,10 @@
                 "to": {
                     "startLine": 1057,
                     "startColumn": 4,
-                    "startOffset": 87837,
+                    "startOffset": 87844,
                     "endLine": 1063,
                     "endColumn": 12,
-                    "endOffset": 88420
+                    "endOffset": 88427
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -6996,10 +6996,10 @@
                 "to": {
                     "startLine": 1064,
                     "startColumn": 4,
-                    "startOffset": 88425,
+                    "startOffset": 88432,
                     "endLine": 1071,
                     "endColumn": 12,
-                    "endOffset": 88984
+                    "endOffset": 88991
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7017,10 +7017,10 @@
                 "to": {
                     "startLine": 1072,
                     "startColumn": 4,
-                    "startOffset": 88989,
+                    "startOffset": 88996,
                     "endLine": 1078,
                     "endColumn": 12,
-                    "endOffset": 89359
+                    "endOffset": 89366
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7038,9 +7038,9 @@
                 "to": {
                     "startLine": 1079,
                     "startColumn": 4,
-                    "startOffset": 89364,
+                    "startOffset": 89371,
                     "endColumn": 117,
-                    "endOffset": 89477
+                    "endOffset": 89484
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7057,10 +7057,10 @@
                 "to": {
                     "startLine": 1080,
                     "startColumn": 4,
-                    "startOffset": 89482,
+                    "startOffset": 89489,
                     "endLine": 1088,
                     "endColumn": 12,
-                    "endOffset": 90015
+                    "endOffset": 90022
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7078,10 +7078,10 @@
                 "to": {
                     "startLine": 1089,
                     "startColumn": 4,
-                    "startOffset": 90020,
+                    "startOffset": 90027,
                     "endLine": 1091,
                     "endColumn": 12,
-                    "endOffset": 90172
+                    "endOffset": 90179
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7099,10 +7099,10 @@
                 "to": {
                     "startLine": 1092,
                     "startColumn": 4,
-                    "startOffset": 90177,
+                    "startOffset": 90184,
                     "endLine": 1094,
                     "endColumn": 12,
-                    "endOffset": 90316
+                    "endOffset": 90323
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7120,10 +7120,10 @@
                 "to": {
                     "startLine": 1095,
                     "startColumn": 4,
-                    "startOffset": 90321,
+                    "startOffset": 90328,
                     "endLine": 1099,
                     "endColumn": 12,
-                    "endOffset": 90636
+                    "endOffset": 90643
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7141,10 +7141,10 @@
                 "to": {
                     "startLine": 1100,
                     "startColumn": 4,
-                    "startOffset": 90641,
+                    "startOffset": 90648,
                     "endLine": 1103,
                     "endColumn": 12,
-                    "endOffset": 90892
+                    "endOffset": 90899
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7162,10 +7162,10 @@
                 "to": {
                     "startLine": 1104,
                     "startColumn": 4,
-                    "startOffset": 90897,
+                    "startOffset": 90904,
                     "endLine": 1107,
                     "endColumn": 12,
-                    "endOffset": 91062
+                    "endOffset": 91069
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7183,10 +7183,10 @@
                 "to": {
                     "startLine": 1108,
                     "startColumn": 4,
-                    "startOffset": 91067,
+                    "startOffset": 91074,
                     "endLine": 1110,
                     "endColumn": 12,
-                    "endOffset": 91203
+                    "endOffset": 91210
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7204,9 +7204,9 @@
                 "to": {
                     "startLine": 1111,
                     "startColumn": 4,
-                    "startOffset": 91208,
+                    "startOffset": 91215,
                     "endColumn": 63,
-                    "endOffset": 91267
+                    "endOffset": 91274
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7223,10 +7223,10 @@
                 "to": {
                     "startLine": 1112,
                     "startColumn": 4,
-                    "startOffset": 91272,
+                    "startOffset": 91279,
                     "endLine": 1115,
                     "endColumn": 12,
-                    "endOffset": 91549
+                    "endOffset": 91556
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7244,10 +7244,10 @@
                 "to": {
                     "startLine": 1116,
                     "startColumn": 4,
-                    "startOffset": 91554,
+                    "startOffset": 91561,
                     "endLine": 1119,
                     "endColumn": 12,
-                    "endOffset": 91835
+                    "endOffset": 91842
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7265,10 +7265,10 @@
                 "to": {
                     "startLine": 1120,
                     "startColumn": 4,
-                    "startOffset": 91840,
+                    "startOffset": 91847,
                     "endLine": 1129,
                     "endColumn": 12,
-                    "endOffset": 92511
+                    "endOffset": 92518
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7286,10 +7286,10 @@
                 "to": {
                     "startLine": 1130,
                     "startColumn": 4,
-                    "startOffset": 92516,
+                    "startOffset": 92523,
                     "endLine": 1134,
                     "endColumn": 12,
-                    "endOffset": 92775
+                    "endOffset": 92782
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7307,10 +7307,10 @@
                 "to": {
                     "startLine": 1135,
                     "startColumn": 4,
-                    "startOffset": 92780,
+                    "startOffset": 92787,
                     "endLine": 1141,
                     "endColumn": 12,
-                    "endOffset": 93113
+                    "endOffset": 93120
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7328,10 +7328,10 @@
                 "to": {
                     "startLine": 1142,
                     "startColumn": 4,
-                    "startOffset": 93118,
+                    "startOffset": 93125,
                     "endLine": 1147,
                     "endColumn": 12,
-                    "endOffset": 93466
+                    "endOffset": 93473
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7349,9 +7349,9 @@
                 "to": {
                     "startLine": 1148,
                     "startColumn": 4,
-                    "startOffset": 93471,
+                    "startOffset": 93478,
                     "endColumn": 93,
-                    "endOffset": 93560
+                    "endOffset": 93567
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7368,10 +7368,10 @@
                 "to": {
                     "startLine": 1149,
                     "startColumn": 4,
-                    "startOffset": 93565,
+                    "startOffset": 93572,
                     "endLine": 1151,
                     "endColumn": 12,
-                    "endOffset": 93746
+                    "endOffset": 93753
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7389,10 +7389,10 @@
                 "to": {
                     "startLine": 1152,
                     "startColumn": 4,
-                    "startOffset": 93751,
+                    "startOffset": 93758,
                     "endLine": 1155,
                     "endColumn": 12,
-                    "endOffset": 94052
+                    "endOffset": 94059
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7410,10 +7410,10 @@
                 "to": {
                     "startLine": 1156,
                     "startColumn": 4,
-                    "startOffset": 94057,
+                    "startOffset": 94064,
                     "endLine": 1160,
                     "endColumn": 12,
-                    "endOffset": 94314
+                    "endOffset": 94321
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7431,10 +7431,10 @@
                 "to": {
                     "startLine": 1161,
                     "startColumn": 4,
-                    "startOffset": 94319,
+                    "startOffset": 94326,
                     "endLine": 1162,
                     "endColumn": 12,
-                    "endOffset": 94439
+                    "endOffset": 94446
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7452,10 +7452,10 @@
                 "to": {
                     "startLine": 1163,
                     "startColumn": 4,
-                    "startOffset": 94444,
+                    "startOffset": 94451,
                     "endLine": 1164,
                     "endColumn": 12,
-                    "endOffset": 94566
+                    "endOffset": 94573
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7473,10 +7473,10 @@
                 "to": {
                     "startLine": 1165,
                     "startColumn": 4,
-                    "startOffset": 94571,
+                    "startOffset": 94578,
                     "endLine": 1167,
                     "endColumn": 12,
-                    "endOffset": 94805
+                    "endOffset": 94812
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7494,10 +7494,10 @@
                 "to": {
                     "startLine": 1168,
                     "startColumn": 4,
-                    "startOffset": 94810,
+                    "startOffset": 94817,
                     "endLine": 1170,
                     "endColumn": 12,
-                    "endOffset": 95016
+                    "endOffset": 95023
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7515,10 +7515,10 @@
                 "to": {
                     "startLine": 1171,
                     "startColumn": 4,
-                    "startOffset": 95021,
+                    "startOffset": 95028,
                     "endLine": 1172,
                     "endColumn": 12,
-                    "endOffset": 95135
+                    "endOffset": 95142
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7536,10 +7536,10 @@
                 "to": {
                     "startLine": 1173,
                     "startColumn": 4,
-                    "startOffset": 95140,
+                    "startOffset": 95147,
                     "endLine": 1176,
                     "endColumn": 12,
-                    "endOffset": 95328
+                    "endOffset": 95335
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7557,10 +7557,10 @@
                 "to": {
                     "startLine": 1177,
                     "startColumn": 4,
-                    "startOffset": 95333,
+                    "startOffset": 95340,
                     "endLine": 1183,
                     "endColumn": 12,
-                    "endOffset": 95783
+                    "endOffset": 95790
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7578,10 +7578,10 @@
                 "to": {
                     "startLine": 1184,
                     "startColumn": 4,
-                    "startOffset": 95788,
+                    "startOffset": 95795,
                     "endLine": 1186,
                     "endColumn": 12,
-                    "endOffset": 95964
+                    "endOffset": 95971
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7599,10 +7599,10 @@
                 "to": {
                     "startLine": 1187,
                     "startColumn": 4,
-                    "startOffset": 95969,
+                    "startOffset": 95976,
                     "endLine": 1189,
                     "endColumn": 12,
-                    "endOffset": 96086
+                    "endOffset": 96093
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7620,10 +7620,10 @@
                 "to": {
                     "startLine": 1190,
                     "startColumn": 4,
-                    "startOffset": 96091,
+                    "startOffset": 96098,
                     "endLine": 1193,
                     "endColumn": 12,
-                    "endOffset": 96345
+                    "endOffset": 96352
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7641,10 +7641,10 @@
                 "to": {
                     "startLine": 1194,
                     "startColumn": 4,
-                    "startOffset": 96350,
+                    "startOffset": 96357,
                     "endLine": 1195,
                     "endColumn": 12,
-                    "endOffset": 96458
+                    "endOffset": 96465
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7662,10 +7662,10 @@
                 "to": {
                     "startLine": 1196,
                     "startColumn": 4,
-                    "startOffset": 96463,
+                    "startOffset": 96470,
                     "endLine": 1199,
                     "endColumn": 12,
-                    "endOffset": 96645
+                    "endOffset": 96652
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7683,10 +7683,10 @@
                 "to": {
                     "startLine": 1200,
                     "startColumn": 4,
-                    "startOffset": 96650,
+                    "startOffset": 96657,
                     "endLine": 1201,
                     "endColumn": 12,
-                    "endOffset": 96747
+                    "endOffset": 96754
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7704,10 +7704,10 @@
                 "to": {
                     "startLine": 1202,
                     "startColumn": 4,
-                    "startOffset": 96752,
+                    "startOffset": 96759,
                     "endLine": 1207,
                     "endColumn": 12,
-                    "endOffset": 97191
+                    "endOffset": 97198
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7725,10 +7725,10 @@
                 "to": {
                     "startLine": 1208,
                     "startColumn": 4,
-                    "startOffset": 97196,
+                    "startOffset": 97203,
                     "endLine": 1209,
                     "endColumn": 12,
-                    "endOffset": 97315
+                    "endOffset": 97322
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7746,10 +7746,10 @@
                 "to": {
                     "startLine": 1210,
                     "startColumn": 4,
-                    "startOffset": 97320,
+                    "startOffset": 97327,
                     "endLine": 1213,
                     "endColumn": 12,
-                    "endOffset": 97600
+                    "endOffset": 97607
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7767,10 +7767,10 @@
                 "to": {
                     "startLine": 1214,
                     "startColumn": 4,
-                    "startOffset": 97605,
+                    "startOffset": 97612,
                     "endLine": 1225,
                     "endColumn": 12,
-                    "endOffset": 98487
+                    "endOffset": 98494
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7788,10 +7788,10 @@
                 "to": {
                     "startLine": 1226,
                     "startColumn": 4,
-                    "startOffset": 98492,
+                    "startOffset": 98499,
                     "endLine": 1231,
                     "endColumn": 12,
-                    "endOffset": 98781
+                    "endOffset": 98788
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7809,10 +7809,10 @@
                 "to": {
                     "startLine": 1232,
                     "startColumn": 4,
-                    "startOffset": 98786,
+                    "startOffset": 98793,
                     "endLine": 1240,
                     "endColumn": 12,
-                    "endOffset": 99351
+                    "endOffset": 99358
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7830,10 +7830,10 @@
                 "to": {
                     "startLine": 1241,
                     "startColumn": 4,
-                    "startOffset": 99356,
+                    "startOffset": 99363,
                     "endLine": 1251,
                     "endColumn": 12,
-                    "endOffset": 100083
+                    "endOffset": 100090
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7851,10 +7851,10 @@
                 "to": {
                     "startLine": 1252,
                     "startColumn": 4,
-                    "startOffset": 100088,
+                    "startOffset": 100095,
                     "endLine": 1254,
                     "endColumn": 12,
-                    "endOffset": 100255
+                    "endOffset": 100262
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7872,10 +7872,10 @@
                 "to": {
                     "startLine": 1255,
                     "startColumn": 4,
-                    "startOffset": 100260,
+                    "startOffset": 100267,
                     "endLine": 1259,
                     "endColumn": 12,
-                    "endOffset": 100591
+                    "endOffset": 100598
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7893,10 +7893,10 @@
                 "to": {
                     "startLine": 1260,
                     "startColumn": 4,
-                    "startOffset": 100596,
+                    "startOffset": 100603,
                     "endLine": 1271,
                     "endColumn": 12,
-                    "endOffset": 101458
+                    "endOffset": 101465
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7914,10 +7914,10 @@
                 "to": {
                     "startLine": 1272,
                     "startColumn": 4,
-                    "startOffset": 101463,
+                    "startOffset": 101470,
                     "endLine": 1276,
                     "endColumn": 12,
-                    "endOffset": 101736
+                    "endOffset": 101743
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7935,10 +7935,10 @@
                 "to": {
                     "startLine": 1277,
                     "startColumn": 4,
-                    "startOffset": 101741,
+                    "startOffset": 101748,
                     "endLine": 1286,
                     "endColumn": 12,
-                    "endOffset": 102327
+                    "endOffset": 102334
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -7956,10 +7956,10 @@
                 "to": {
                     "startLine": 1287,
                     "startColumn": 4,
-                    "startOffset": 102332,
+                    "startOffset": 102339,
                     "endLine": 1324,
                     "endColumn": 12,
-                    "endOffset": 105189
+                    "endOffset": 105196
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7977,10 +7977,10 @@
                 "to": {
                     "startLine": 1325,
                     "startColumn": 4,
-                    "startOffset": 105194,
+                    "startOffset": 105201,
                     "endLine": 1363,
                     "endColumn": 12,
-                    "endOffset": 108191
+                    "endOffset": 108198
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -7998,9 +7998,9 @@
                 "to": {
                     "startLine": 1364,
                     "startColumn": 4,
-                    "startOffset": 108196,
+                    "startOffset": 108203,
                     "endColumn": 61,
-                    "endOffset": 108253
+                    "endOffset": 108260
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8017,10 +8017,10 @@
                 "to": {
                     "startLine": 1365,
                     "startColumn": 4,
-                    "startOffset": 108258,
+                    "startOffset": 108265,
                     "endLine": 1374,
                     "endColumn": 12,
-                    "endOffset": 108883
+                    "endOffset": 108890
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8038,10 +8038,10 @@
                 "to": {
                     "startLine": 1375,
                     "startColumn": 4,
-                    "startOffset": 108888,
+                    "startOffset": 108895,
                     "endLine": 1383,
                     "endColumn": 12,
-                    "endOffset": 109497
+                    "endOffset": 109504
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8059,9 +8059,9 @@
                 "to": {
                     "startLine": 1384,
                     "startColumn": 4,
-                    "startOffset": 109502,
+                    "startOffset": 109509,
                     "endColumn": 85,
-                    "endOffset": 109583
+                    "endOffset": 109590
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8078,10 +8078,10 @@
                 "to": {
                     "startLine": 1385,
                     "startColumn": 4,
-                    "startOffset": 109588,
+                    "startOffset": 109595,
                     "endLine": 1386,
                     "endColumn": 12,
-                    "endOffset": 109696
+                    "endOffset": 109703
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8099,10 +8099,10 @@
                 "to": {
                     "startLine": 1387,
                     "startColumn": 4,
-                    "startOffset": 109701,
+                    "startOffset": 109708,
                     "endLine": 1390,
                     "endColumn": 12,
-                    "endOffset": 109925
+                    "endOffset": 109932
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8120,10 +8120,10 @@
                 "to": {
                     "startLine": 1391,
                     "startColumn": 4,
-                    "startOffset": 109930,
+                    "startOffset": 109937,
                     "endLine": 1393,
                     "endColumn": 12,
-                    "endOffset": 110085
+                    "endOffset": 110092
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8141,10 +8141,10 @@
                 "to": {
                     "startLine": 1394,
                     "startColumn": 4,
-                    "startOffset": 110090,
+                    "startOffset": 110097,
                     "endLine": 1396,
                     "endColumn": 12,
-                    "endOffset": 110237
+                    "endOffset": 110244
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8162,10 +8162,10 @@
                 "to": {
                     "startLine": 1397,
                     "startColumn": 4,
-                    "startOffset": 110242,
+                    "startOffset": 110249,
                     "endLine": 1399,
                     "endColumn": 12,
-                    "endOffset": 110408
+                    "endOffset": 110415
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8183,10 +8183,10 @@
                 "to": {
                     "startLine": 1400,
                     "startColumn": 4,
-                    "startOffset": 110413,
+                    "startOffset": 110420,
                     "endLine": 1402,
                     "endColumn": 12,
-                    "endOffset": 110575
+                    "endOffset": 110582
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8204,10 +8204,10 @@
                 "to": {
                     "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 110580,
+                    "startOffset": 110587,
                     "endLine": 1406,
                     "endColumn": 12,
-                    "endOffset": 110818
+                    "endOffset": 110825
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8225,10 +8225,10 @@
                 "to": {
                     "startLine": 1407,
                     "startColumn": 4,
-                    "startOffset": 110823,
+                    "startOffset": 110830,
                     "endLine": 1409,
                     "endColumn": 12,
-                    "endOffset": 110988
+                    "endOffset": 110995
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8246,10 +8246,10 @@
                 "to": {
                     "startLine": 1410,
                     "startColumn": 4,
-                    "startOffset": 110993,
+                    "startOffset": 111000,
                     "endLine": 1412,
                     "endColumn": 12,
-                    "endOffset": 111161
+                    "endOffset": 111168
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8267,10 +8267,10 @@
                 "to": {
                     "startLine": 1413,
                     "startColumn": 4,
-                    "startOffset": 111166,
+                    "startOffset": 111173,
                     "endLine": 1415,
                     "endColumn": 12,
-                    "endOffset": 111332
+                    "endOffset": 111339
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8288,10 +8288,10 @@
                 "to": {
                     "startLine": 1416,
                     "startColumn": 4,
-                    "startOffset": 111337,
+                    "startOffset": 111344,
                     "endLine": 1419,
                     "endColumn": 12,
-                    "endOffset": 111606
+                    "endOffset": 111613
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8309,10 +8309,10 @@
                 "to": {
                     "startLine": 1420,
                     "startColumn": 4,
-                    "startOffset": 111611,
+                    "startOffset": 111618,
                     "endLine": 1422,
                     "endColumn": 12,
-                    "endOffset": 111805
+                    "endOffset": 111812
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8330,10 +8330,10 @@
                 "to": {
                     "startLine": 1423,
                     "startColumn": 4,
-                    "startOffset": 111810,
+                    "startOffset": 111817,
                     "endLine": 1426,
                     "endColumn": 12,
-                    "endOffset": 112010
+                    "endOffset": 112017
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8351,10 +8351,10 @@
                 "to": {
                     "startLine": 1427,
                     "startColumn": 4,
-                    "startOffset": 112015,
+                    "startOffset": 112022,
                     "endLine": 1430,
                     "endColumn": 12,
-                    "endOffset": 112340
+                    "endOffset": 112347
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8372,9 +8372,9 @@
                 "to": {
                     "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 112345,
+                    "startOffset": 112352,
                     "endColumn": 83,
-                    "endOffset": 112424
+                    "endOffset": 112431
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8391,9 +8391,9 @@
                 "to": {
                     "startLine": 1432,
                     "startColumn": 4,
-                    "startOffset": 112429,
+                    "startOffset": 112436,
                     "endColumn": 95,
-                    "endOffset": 112520
+                    "endOffset": 112527
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8410,9 +8410,9 @@
                 "to": {
                     "startLine": 1433,
                     "startColumn": 4,
-                    "startOffset": 112525,
+                    "startOffset": 112532,
                     "endColumn": 95,
-                    "endOffset": 112616
+                    "endOffset": 112623
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8429,9 +8429,9 @@
                 "to": {
                     "startLine": 1434,
                     "startColumn": 4,
-                    "startOffset": 112621,
+                    "startOffset": 112628,
                     "endColumn": 97,
-                    "endOffset": 112714
+                    "endOffset": 112721
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8448,9 +8448,9 @@
                 "to": {
                     "startLine": 1435,
                     "startColumn": 4,
-                    "startOffset": 112719,
+                    "startOffset": 112726,
                     "endColumn": 99,
-                    "endOffset": 112814
+                    "endOffset": 112821
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8467,9 +8467,9 @@
                 "to": {
                     "startLine": 1436,
                     "startColumn": 4,
-                    "startOffset": 112819,
+                    "startOffset": 112826,
                     "endColumn": 101,
-                    "endOffset": 112916
+                    "endOffset": 112923
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8486,9 +8486,9 @@
                 "to": {
                     "startLine": 1437,
                     "startColumn": 4,
-                    "startOffset": 112921,
+                    "startOffset": 112928,
                     "endColumn": 101,
-                    "endOffset": 113018
+                    "endOffset": 113025
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8505,9 +8505,9 @@
                 "to": {
                     "startLine": 1438,
                     "startColumn": 4,
-                    "startOffset": 113023,
+                    "startOffset": 113030,
                     "endColumn": 101,
-                    "endOffset": 113120
+                    "endOffset": 113127
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8524,9 +8524,9 @@
                 "to": {
                     "startLine": 1439,
                     "startColumn": 4,
-                    "startOffset": 113125,
+                    "startOffset": 113132,
                     "endColumn": 101,
-                    "endOffset": 113222
+                    "endOffset": 113229
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8543,9 +8543,9 @@
                 "to": {
                     "startLine": 1440,
                     "startColumn": 4,
-                    "startOffset": 113227,
+                    "startOffset": 113234,
                     "endColumn": 101,
-                    "endOffset": 113324
+                    "endOffset": 113331
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8562,9 +8562,9 @@
                 "to": {
                     "startLine": 1441,
                     "startColumn": 4,
-                    "startOffset": 113329,
+                    "startOffset": 113336,
                     "endColumn": 99,
-                    "endOffset": 113424
+                    "endOffset": 113431
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8581,9 +8581,9 @@
                 "to": {
                     "startLine": 1442,
                     "startColumn": 4,
-                    "startOffset": 113429,
+                    "startOffset": 113436,
                     "endColumn": 95,
-                    "endOffset": 113520
+                    "endOffset": 113527
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8600,9 +8600,9 @@
                 "to": {
                     "startLine": 1443,
                     "startColumn": 4,
-                    "startOffset": 113525,
+                    "startOffset": 113532,
                     "endColumn": 111,
-                    "endOffset": 113632
+                    "endOffset": 113639
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8619,9 +8619,9 @@
                 "to": {
                     "startLine": 1444,
                     "startColumn": 4,
-                    "startOffset": 113637,
+                    "startOffset": 113644,
                     "endColumn": 128,
-                    "endOffset": 113761
+                    "endOffset": 113768
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8638,9 +8638,9 @@
                 "to": {
                     "startLine": 1445,
                     "startColumn": 4,
-                    "startOffset": 113766,
+                    "startOffset": 113773,
                     "endColumn": 122,
-                    "endOffset": 113884
+                    "endOffset": 113891
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8657,10 +8657,10 @@
                 "to": {
                     "startLine": 1446,
                     "startColumn": 4,
-                    "startOffset": 113889,
+                    "startOffset": 113896,
                     "endLine": 1447,
                     "endColumn": 12,
-                    "endOffset": 114038
+                    "endOffset": 114045
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8678,10 +8678,10 @@
                 "to": {
                     "startLine": 1448,
                     "startColumn": 4,
-                    "startOffset": 114043,
+                    "startOffset": 114050,
                     "endLine": 1449,
                     "endColumn": 12,
-                    "endOffset": 114192
+                    "endOffset": 114199
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8699,9 +8699,9 @@
                 "to": {
                     "startLine": 1450,
                     "startColumn": 4,
-                    "startOffset": 114197,
+                    "startOffset": 114204,
                     "endColumn": 97,
-                    "endOffset": 114290
+                    "endOffset": 114297
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8718,9 +8718,9 @@
                 "to": {
                     "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 114295,
+                    "startOffset": 114302,
                     "endColumn": 113,
-                    "endOffset": 114404
+                    "endOffset": 114411
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8737,9 +8737,9 @@
                 "to": {
                     "startLine": 1452,
                     "startColumn": 4,
-                    "startOffset": 114409,
+                    "startOffset": 114416,
                     "endColumn": 93,
-                    "endOffset": 114498
+                    "endOffset": 114505
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8756,10 +8756,10 @@
                 "to": {
                     "startLine": 1453,
                     "startColumn": 4,
-                    "startOffset": 114503,
+                    "startOffset": 114510,
                     "endLine": 1454,
                     "endColumn": 12,
-                    "endOffset": 114638
+                    "endOffset": 114645
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8777,10 +8777,10 @@
                 "to": {
                     "startLine": 1455,
                     "startColumn": 4,
-                    "startOffset": 114643,
+                    "startOffset": 114650,
                     "endLine": 1456,
                     "endColumn": 12,
-                    "endOffset": 114772
+                    "endOffset": 114779
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8798,9 +8798,9 @@
                 "to": {
                     "startLine": 1457,
                     "startColumn": 4,
-                    "startOffset": 114777,
+                    "startOffset": 114784,
                     "endColumn": 95,
-                    "endOffset": 114868
+                    "endOffset": 114875
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8817,9 +8817,9 @@
                 "to": {
                     "startLine": 1458,
                     "startColumn": 4,
-                    "startOffset": 114873,
+                    "startOffset": 114880,
                     "endColumn": 111,
-                    "endOffset": 114980
+                    "endOffset": 114987
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8836,9 +8836,9 @@
                 "to": {
                     "startLine": 1459,
                     "startColumn": 4,
-                    "startOffset": 114985,
+                    "startOffset": 114992,
                     "endColumn": 99,
-                    "endOffset": 115080
+                    "endOffset": 115087
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8855,9 +8855,9 @@
                 "to": {
                     "startLine": 1460,
                     "startColumn": 4,
-                    "startOffset": 115085,
+                    "startOffset": 115092,
                     "endColumn": 115,
-                    "endOffset": 115196
+                    "endOffset": 115203
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8874,9 +8874,9 @@
                 "to": {
                     "startLine": 1461,
                     "startColumn": 4,
-                    "startOffset": 115201,
+                    "startOffset": 115208,
                     "endColumn": 95,
-                    "endOffset": 115292
+                    "endOffset": 115299
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8893,9 +8893,9 @@
                 "to": {
                     "startLine": 1462,
                     "startColumn": 4,
-                    "startOffset": 115297,
+                    "startOffset": 115304,
                     "endColumn": 111,
-                    "endOffset": 115404
+                    "endOffset": 115411
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8912,10 +8912,10 @@
                 "to": {
                     "startLine": 1463,
                     "startColumn": 4,
-                    "startOffset": 115409,
+                    "startOffset": 115416,
                     "endLine": 1464,
                     "endColumn": 12,
-                    "endOffset": 115544
+                    "endOffset": 115551
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8933,9 +8933,9 @@
                 "to": {
                     "startLine": 1465,
                     "startColumn": 4,
-                    "startOffset": 115549,
+                    "startOffset": 115556,
                     "endColumn": 135,
-                    "endOffset": 115680
+                    "endOffset": 115687
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8952,10 +8952,10 @@
                 "to": {
                     "startLine": 1466,
                     "startColumn": 4,
-                    "startOffset": 115685,
+                    "startOffset": 115692,
                     "endLine": 1467,
                     "endColumn": 12,
-                    "endOffset": 115844
+                    "endOffset": 115851
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8973,9 +8973,9 @@
                 "to": {
                     "startLine": 1468,
                     "startColumn": 4,
-                    "startOffset": 115849,
+                    "startOffset": 115856,
                     "endColumn": 129,
-                    "endOffset": 115974
+                    "endOffset": 115981
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -8992,10 +8992,10 @@
                 "to": {
                     "startLine": 1469,
                     "startColumn": 4,
-                    "startOffset": 115979,
+                    "startOffset": 115986,
                     "endLine": 1470,
                     "endColumn": 12,
-                    "endOffset": 116132
+                    "endOffset": 116139
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9013,10 +9013,10 @@
                 "to": {
                     "startLine": 1471,
                     "startColumn": 4,
-                    "startOffset": 116137,
+                    "startOffset": 116144,
                     "endLine": 1472,
                     "endColumn": 12,
-                    "endOffset": 116282
+                    "endOffset": 116289
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9034,9 +9034,9 @@
                 "to": {
                     "startLine": 1473,
                     "startColumn": 4,
-                    "startOffset": 116287,
+                    "startOffset": 116294,
                     "endColumn": 140,
-                    "endOffset": 116423
+                    "endOffset": 116430
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9053,10 +9053,10 @@
                 "to": {
                     "startLine": 1474,
                     "startColumn": 4,
-                    "startOffset": 116428,
+                    "startOffset": 116435,
                     "endLine": 1475,
                     "endColumn": 12,
-                    "endOffset": 116567
+                    "endOffset": 116574
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9074,9 +9074,9 @@
                 "to": {
                     "startLine": 1476,
                     "startColumn": 4,
-                    "startOffset": 116572,
+                    "startOffset": 116579,
                     "endColumn": 134,
-                    "endOffset": 116702
+                    "endOffset": 116709
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9093,9 +9093,9 @@
                 "to": {
                     "startLine": 1477,
                     "startColumn": 4,
-                    "startOffset": 116707,
+                    "startOffset": 116714,
                     "endColumn": 111,
-                    "endOffset": 116814
+                    "endOffset": 116821
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9112,9 +9112,9 @@
                 "to": {
                     "startLine": 1478,
                     "startColumn": 4,
-                    "startOffset": 116819,
+                    "startOffset": 116826,
                     "endColumn": 127,
-                    "endOffset": 116942
+                    "endOffset": 116949
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9131,10 +9131,10 @@
                 "to": {
                     "startLine": 1479,
                     "startColumn": 4,
-                    "startOffset": 116947,
+                    "startOffset": 116954,
                     "endLine": 1480,
                     "endColumn": 12,
-                    "endOffset": 117078
+                    "endOffset": 117085
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9152,10 +9152,10 @@
                 "to": {
                     "startLine": 1481,
                     "startColumn": 4,
-                    "startOffset": 117083,
+                    "startOffset": 117090,
                     "endLine": 1482,
                     "endColumn": 12,
-                    "endOffset": 117220
+                    "endOffset": 117227
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9173,10 +9173,10 @@
                 "to": {
                     "startLine": 1483,
                     "startColumn": 4,
-                    "startOffset": 117225,
+                    "startOffset": 117232,
                     "endLine": 1484,
                     "endColumn": 12,
-                    "endOffset": 117362
+                    "endOffset": 117369
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9194,9 +9194,9 @@
                 "to": {
                     "startLine": 1485,
                     "startColumn": 4,
-                    "startOffset": 117367,
+                    "startOffset": 117374,
                     "endColumn": 111,
-                    "endOffset": 117474
+                    "endOffset": 117481
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9213,9 +9213,9 @@
                 "to": {
                     "startLine": 1486,
                     "startColumn": 4,
-                    "startOffset": 117479,
+                    "startOffset": 117486,
                     "endColumn": 139,
-                    "endOffset": 117614
+                    "endOffset": 117621
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9232,10 +9232,10 @@
                 "to": {
                     "startLine": 1487,
                     "startColumn": 4,
-                    "startOffset": 117619,
+                    "startOffset": 117626,
                     "endLine": 1489,
                     "endColumn": 12,
-                    "endOffset": 117815
+                    "endOffset": 117822
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9253,9 +9253,9 @@
                 "to": {
                     "startLine": 1490,
                     "startColumn": 4,
-                    "startOffset": 117820,
+                    "startOffset": 117827,
                     "endColumn": 91,
-                    "endOffset": 117907
+                    "endOffset": 117914
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9272,10 +9272,10 @@
                 "to": {
                     "startLine": 1491,
                     "startColumn": 4,
-                    "startOffset": 117912,
+                    "startOffset": 117919,
                     "endLine": 1493,
                     "endColumn": 12,
-                    "endOffset": 118102
+                    "endOffset": 118109
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9293,10 +9293,10 @@
                 "to": {
                     "startLine": 1494,
                     "startColumn": 4,
-                    "startOffset": 118107,
+                    "startOffset": 118114,
                     "endLine": 1496,
                     "endColumn": 12,
-                    "endOffset": 118286
+                    "endOffset": 118293
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9314,10 +9314,10 @@
                 "to": {
                     "startLine": 1497,
                     "startColumn": 4,
-                    "startOffset": 118291,
+                    "startOffset": 118298,
                     "endLine": 1499,
                     "endColumn": 12,
-                    "endOffset": 118461
+                    "endOffset": 118468
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9335,10 +9335,10 @@
                 "to": {
                     "startLine": 1500,
                     "startColumn": 4,
-                    "startOffset": 118466,
+                    "startOffset": 118473,
                     "endLine": 1503,
                     "endColumn": 12,
-                    "endOffset": 118714
+                    "endOffset": 118721
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9356,10 +9356,10 @@
                 "to": {
                     "startLine": 1504,
                     "startColumn": 4,
-                    "startOffset": 118719,
+                    "startOffset": 118726,
                     "endLine": 1508,
                     "endColumn": 12,
-                    "endOffset": 119005
+                    "endOffset": 119012
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -9377,9 +9377,9 @@
                 "to": {
                     "startLine": 1509,
                     "startColumn": 4,
-                    "startOffset": 119010,
+                    "startOffset": 119017,
                     "endColumn": 67,
-                    "endOffset": 119073
+                    "endOffset": 119080
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9396,9 +9396,9 @@
                 "to": {
                     "startLine": 1510,
                     "startColumn": 4,
-                    "startOffset": 119078,
+                    "startOffset": 119085,
                     "endColumn": 72,
-                    "endOffset": 119146
+                    "endOffset": 119153
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9415,9 +9415,9 @@
                 "to": {
                     "startLine": 1511,
                     "startColumn": 4,
-                    "startOffset": 119151,
+                    "startOffset": 119158,
                     "endColumn": 73,
-                    "endOffset": 119220
+                    "endOffset": 119227
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9434,9 +9434,9 @@
                 "to": {
                     "startLine": 1512,
                     "startColumn": 4,
-                    "startOffset": 119225,
+                    "startOffset": 119232,
                     "endColumn": 72,
-                    "endOffset": 119293
+                    "endOffset": 119300
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9453,9 +9453,9 @@
                 "to": {
                     "startLine": 1513,
                     "startColumn": 4,
-                    "startOffset": 119298,
+                    "startOffset": 119305,
                     "endColumn": 73,
-                    "endOffset": 119367
+                    "endOffset": 119374
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9472,10 +9472,10 @@
                 "to": {
                     "startLine": 1514,
                     "startColumn": 4,
-                    "startOffset": 119372,
+                    "startOffset": 119379,
                     "endLine": 1515,
                     "endColumn": 12,
-                    "endOffset": 119513
+                    "endOffset": 119520
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9493,10 +9493,10 @@
                 "to": {
                     "startLine": 1516,
                     "startColumn": 4,
-                    "startOffset": 119518,
+                    "startOffset": 119525,
                     "endLine": 1517,
                     "endColumn": 12,
-                    "endOffset": 119657
+                    "endOffset": 119664
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9514,10 +9514,10 @@
                 "to": {
                     "startLine": 1518,
                     "startColumn": 4,
-                    "startOffset": 119662,
+                    "startOffset": 119669,
                     "endLine": 1519,
                     "endColumn": 12,
-                    "endOffset": 119795
+                    "endOffset": 119802
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9535,9 +9535,9 @@
                 "to": {
                     "startLine": 1520,
                     "startColumn": 4,
-                    "startOffset": 119800,
+                    "startOffset": 119807,
                     "endColumn": 65,
-                    "endOffset": 119861
+                    "endOffset": 119868
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9554,9 +9554,9 @@
                 "to": {
                     "startLine": 1521,
                     "startColumn": 4,
-                    "startOffset": 119866,
+                    "startOffset": 119873,
                     "endColumn": 89,
-                    "endOffset": 119951
+                    "endOffset": 119958
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9573,9 +9573,9 @@
                 "to": {
                     "startLine": 1522,
                     "startColumn": 4,
-                    "startOffset": 119956,
+                    "startOffset": 119963,
                     "endColumn": 79,
-                    "endOffset": 120031
+                    "endOffset": 120038
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9592,9 +9592,9 @@
                 "to": {
                     "startLine": 1523,
                     "startColumn": 4,
-                    "startOffset": 120036,
+                    "startOffset": 120043,
                     "endColumn": 91,
-                    "endOffset": 120123
+                    "endOffset": 120130
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9611,9 +9611,9 @@
                 "to": {
                     "startLine": 1524,
                     "startColumn": 4,
-                    "startOffset": 120128,
+                    "startOffset": 120135,
                     "endColumn": 97,
-                    "endOffset": 120221
+                    "endOffset": 120228
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9630,10 +9630,10 @@
                 "to": {
                     "startLine": 1525,
                     "startColumn": 4,
-                    "startOffset": 120226,
+                    "startOffset": 120233,
                     "endLine": 1526,
                     "endColumn": 12,
-                    "endOffset": 120331
+                    "endOffset": 120338
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9651,9 +9651,9 @@
                 "to": {
                     "startLine": 1527,
                     "startColumn": 4,
-                    "startOffset": 120336,
+                    "startOffset": 120343,
                     "endColumn": 77,
-                    "endOffset": 120409
+                    "endOffset": 120416
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9670,9 +9670,9 @@
                 "to": {
                     "startLine": 1528,
                     "startColumn": 4,
-                    "startOffset": 120414,
+                    "startOffset": 120421,
                     "endColumn": 105,
-                    "endOffset": 120515
+                    "endOffset": 120522
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9689,9 +9689,9 @@
                 "to": {
                     "startLine": 1529,
                     "startColumn": 4,
-                    "startOffset": 120520,
+                    "startOffset": 120527,
                     "endColumn": 91,
-                    "endOffset": 120607
+                    "endOffset": 120614
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9708,9 +9708,9 @@
                 "to": {
                     "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 120612,
+                    "startOffset": 120619,
                     "endColumn": 103,
-                    "endOffset": 120711
+                    "endOffset": 120718
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9727,9 +9727,9 @@
                 "to": {
                     "startLine": 1531,
                     "startColumn": 4,
-                    "startOffset": 120716,
+                    "startOffset": 120723,
                     "endColumn": 109,
-                    "endOffset": 120821
+                    "endOffset": 120828
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9746,10 +9746,10 @@
                 "to": {
                     "startLine": 1532,
                     "startColumn": 4,
-                    "startOffset": 120826,
+                    "startOffset": 120833,
                     "endLine": 1533,
                     "endColumn": 12,
-                    "endOffset": 120943
+                    "endOffset": 120950
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9767,10 +9767,10 @@
                 "to": {
                     "startLine": 1534,
                     "startColumn": 4,
-                    "startOffset": 120948,
+                    "startOffset": 120955,
                     "endLine": 1537,
                     "endColumn": 12,
-                    "endOffset": 121106
+                    "endOffset": 121113
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9788,10 +9788,10 @@
                 "to": {
                     "startLine": 1538,
                     "startColumn": 4,
-                    "startOffset": 121111,
+                    "startOffset": 121118,
                     "endLine": 1541,
                     "endColumn": 12,
-                    "endOffset": 121263
+                    "endOffset": 121270
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9809,9 +9809,9 @@
                 "to": {
                     "startLine": 1542,
                     "startColumn": 4,
-                    "startOffset": 121268,
+                    "startOffset": 121275,
                     "endColumn": 79,
-                    "endOffset": 121343
+                    "endOffset": 121350
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9828,9 +9828,9 @@
                 "to": {
                     "startLine": 1543,
                     "startColumn": 4,
-                    "startOffset": 121348,
+                    "startOffset": 121355,
                     "endColumn": 99,
-                    "endOffset": 121443
+                    "endOffset": 121450
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9847,9 +9847,9 @@
                 "to": {
                     "startLine": 1544,
                     "startColumn": 4,
-                    "startOffset": 121448,
+                    "startOffset": 121455,
                     "endColumn": 89,
-                    "endOffset": 121533
+                    "endOffset": 121540
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9866,9 +9866,9 @@
                 "to": {
                     "startLine": 1545,
                     "startColumn": 4,
-                    "startOffset": 121538,
+                    "startOffset": 121545,
                     "endColumn": 109,
-                    "endOffset": 121643
+                    "endOffset": 121650
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9885,9 +9885,9 @@
                 "to": {
                     "startLine": 1546,
                     "startColumn": 4,
-                    "startOffset": 121648,
+                    "startOffset": 121655,
                     "endColumn": 91,
-                    "endOffset": 121735
+                    "endOffset": 121742
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9904,10 +9904,10 @@
                 "to": {
                     "startLine": 1547,
                     "startColumn": 4,
-                    "startOffset": 121740,
+                    "startOffset": 121747,
                     "endLine": 1548,
                     "endColumn": 12,
-                    "endOffset": 121835
+                    "endOffset": 121842
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9925,10 +9925,10 @@
                 "to": {
                     "startLine": 1549,
                     "startColumn": 4,
-                    "startOffset": 121840,
+                    "startOffset": 121847,
                     "endLine": 1550,
                     "endColumn": 12,
-                    "endOffset": 121947
+                    "endOffset": 121954
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9946,10 +9946,10 @@
                 "to": {
                     "startLine": 1551,
                     "startColumn": 4,
-                    "startOffset": 121952,
+                    "startOffset": 121959,
                     "endLine": 1552,
                     "endColumn": 12,
-                    "endOffset": 122061
+                    "endOffset": 122068
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9967,10 +9967,10 @@
                 "to": {
                     "startLine": 1553,
                     "startColumn": 4,
-                    "startOffset": 122066,
+                    "startOffset": 122073,
                     "endLine": 1554,
                     "endColumn": 12,
-                    "endOffset": 122177
+                    "endOffset": 122184
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -9988,10 +9988,10 @@
                 "to": {
                     "startLine": 1555,
                     "startColumn": 4,
-                    "startOffset": 122182,
+                    "startOffset": 122189,
                     "endLine": 1556,
                     "endColumn": 12,
-                    "endOffset": 122293
+                    "endOffset": 122300
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10009,9 +10009,9 @@
                 "to": {
                     "startLine": 1557,
                     "startColumn": 4,
-                    "startOffset": 122298,
+                    "startOffset": 122305,
                     "endColumn": 93,
-                    "endOffset": 122387
+                    "endOffset": 122394
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10028,9 +10028,9 @@
                 "to": {
                     "startLine": 1558,
                     "startColumn": 4,
-                    "startOffset": 122392,
+                    "startOffset": 122399,
                     "endColumn": 113,
-                    "endOffset": 122501
+                    "endOffset": 122508
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10047,9 +10047,9 @@
                 "to": {
                     "startLine": 1559,
                     "startColumn": 4,
-                    "startOffset": 122506,
+                    "startOffset": 122513,
                     "endColumn": 111,
-                    "endOffset": 122613
+                    "endOffset": 122620
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10066,10 +10066,10 @@
                 "to": {
                     "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 122618,
+                    "startOffset": 122625,
                     "endLine": 1561,
                     "endColumn": 12,
-                    "endOffset": 122715
+                    "endOffset": 122722
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10087,10 +10087,10 @@
                 "to": {
                     "startLine": 1562,
                     "startColumn": 4,
-                    "startOffset": 122720,
+                    "startOffset": 122727,
                     "endLine": 1563,
                     "endColumn": 12,
-                    "endOffset": 122835
+                    "endOffset": 122842
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10108,10 +10108,10 @@
                 "to": {
                     "startLine": 1564,
                     "startColumn": 4,
-                    "startOffset": 122840,
+                    "startOffset": 122847,
                     "endLine": 1565,
                     "endColumn": 12,
-                    "endOffset": 122957
+                    "endOffset": 122964
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10129,9 +10129,9 @@
                 "to": {
                     "startLine": 1566,
                     "startColumn": 4,
-                    "startOffset": 122962,
+                    "startOffset": 122969,
                     "endColumn": 81,
-                    "endOffset": 123039
+                    "endOffset": 123046
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10148,9 +10148,9 @@
                 "to": {
                     "startLine": 1567,
                     "startColumn": 4,
-                    "startOffset": 123044,
+                    "startOffset": 123051,
                     "endColumn": 103,
-                    "endOffset": 123143
+                    "endOffset": 123150
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10167,9 +10167,9 @@
                 "to": {
                     "startLine": 1568,
                     "startColumn": 4,
-                    "startOffset": 123148,
+                    "startOffset": 123155,
                     "endColumn": 119,
-                    "endOffset": 123263
+                    "endOffset": 123270
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10186,9 +10186,9 @@
                 "to": {
                     "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 123268,
+                    "startOffset": 123275,
                     "endColumn": 125,
-                    "endOffset": 123389
+                    "endOffset": 123396
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10205,9 +10205,9 @@
                 "to": {
                     "startLine": 1570,
                     "startColumn": 4,
-                    "startOffset": 123394,
+                    "startOffset": 123401,
                     "endColumn": 97,
-                    "endOffset": 123487
+                    "endOffset": 123494
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10224,9 +10224,9 @@
                 "to": {
                     "startLine": 1571,
                     "startColumn": 4,
-                    "startOffset": 123492,
+                    "startOffset": 123499,
                     "endColumn": 93,
-                    "endOffset": 123581
+                    "endOffset": 123588
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10243,9 +10243,9 @@
                 "to": {
                     "startLine": 1572,
                     "startColumn": 4,
-                    "startOffset": 123586,
+                    "startOffset": 123593,
                     "endColumn": 87,
-                    "endOffset": 123669
+                    "endOffset": 123676
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10262,9 +10262,9 @@
                 "to": {
                     "startLine": 1573,
                     "startColumn": 4,
-                    "startOffset": 123674,
+                    "startOffset": 123681,
                     "endColumn": 111,
-                    "endOffset": 123781
+                    "endOffset": 123788
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10281,9 +10281,9 @@
                 "to": {
                     "startLine": 1574,
                     "startColumn": 4,
-                    "startOffset": 123786,
+                    "startOffset": 123793,
                     "endColumn": 115,
-                    "endOffset": 123897
+                    "endOffset": 123904
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10300,9 +10300,9 @@
                 "to": {
                     "startLine": 1575,
                     "startColumn": 4,
-                    "startOffset": 123902,
+                    "startOffset": 123909,
                     "endColumn": 121,
-                    "endOffset": 124019
+                    "endOffset": 124026
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10319,9 +10319,9 @@
                 "to": {
                     "startLine": 1576,
                     "startColumn": 4,
-                    "startOffset": 124024,
+                    "startOffset": 124031,
                     "endColumn": 111,
-                    "endOffset": 124131
+                    "endOffset": 124138
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10338,10 +10338,10 @@
                 "to": {
                     "startLine": 1577,
                     "startColumn": 4,
-                    "startOffset": 124136,
+                    "startOffset": 124143,
                     "endLine": 1579,
                     "endColumn": 12,
-                    "endOffset": 124306
+                    "endOffset": 124313
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10359,9 +10359,9 @@
                 "to": {
                     "startLine": 1580,
                     "startColumn": 4,
-                    "startOffset": 124311,
+                    "startOffset": 124318,
                     "endColumn": 115,
-                    "endOffset": 124422
+                    "endOffset": 124429
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10378,9 +10378,9 @@
                 "to": {
                     "startLine": 1581,
                     "startColumn": 4,
-                    "startOffset": 124427,
+                    "startOffset": 124434,
                     "endColumn": 85,
-                    "endOffset": 124508
+                    "endOffset": 124515
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10397,9 +10397,9 @@
                 "to": {
                     "startLine": 1582,
                     "startColumn": 4,
-                    "startOffset": 124513,
+                    "startOffset": 124520,
                     "endColumn": 91,
-                    "endOffset": 124600
+                    "endOffset": 124607
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10416,10 +10416,10 @@
                 "to": {
                     "startLine": 1583,
                     "startColumn": 4,
-                    "startOffset": 124605,
+                    "startOffset": 124612,
                     "endLine": 1584,
                     "endColumn": 12,
-                    "endOffset": 124712
+                    "endOffset": 124719
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10437,10 +10437,10 @@
                 "to": {
                     "startLine": 1585,
                     "startColumn": 4,
-                    "startOffset": 124717,
+                    "startOffset": 124724,
                     "endLine": 1586,
                     "endColumn": 12,
-                    "endOffset": 124836
+                    "endOffset": 124843
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10458,9 +10458,9 @@
                 "to": {
                     "startLine": 1587,
                     "startColumn": 4,
-                    "startOffset": 124841,
+                    "startOffset": 124848,
                     "endColumn": 66,
-                    "endOffset": 124903
+                    "endOffset": 124910
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10477,10 +10477,10 @@
                 "to": {
                     "startLine": 1588,
                     "startColumn": 4,
-                    "startOffset": 124908,
+                    "startOffset": 124915,
                     "endLine": 1589,
                     "endColumn": 12,
-                    "endOffset": 125029
+                    "endOffset": 125036
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10498,9 +10498,9 @@
                 "to": {
                     "startLine": 1590,
                     "startColumn": 4,
-                    "startOffset": 125034,
+                    "startOffset": 125041,
                     "endColumn": 67,
-                    "endOffset": 125097
+                    "endOffset": 125104
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10517,10 +10517,10 @@
                 "to": {
                     "startLine": 1591,
                     "startColumn": 4,
-                    "startOffset": 125102,
+                    "startOffset": 125109,
                     "endLine": 1592,
                     "endColumn": 12,
-                    "endOffset": 125225
+                    "endOffset": 125232
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10538,10 +10538,10 @@
                 "to": {
                     "startLine": 1593,
                     "startColumn": 4,
-                    "startOffset": 125230,
+                    "startOffset": 125237,
                     "endLine": 1594,
                     "endColumn": 12,
-                    "endOffset": 125369
+                    "endOffset": 125376
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10559,10 +10559,10 @@
                 "to": {
                     "startLine": 1595,
                     "startColumn": 4,
-                    "startOffset": 125374,
+                    "startOffset": 125381,
                     "endLine": 1596,
                     "endColumn": 12,
-                    "endOffset": 125497
+                    "endOffset": 125504
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10580,9 +10580,9 @@
                 "to": {
                     "startLine": 1597,
                     "startColumn": 4,
-                    "startOffset": 125502,
+                    "startOffset": 125509,
                     "endColumn": 68,
-                    "endOffset": 125566
+                    "endOffset": 125573
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10599,9 +10599,9 @@
                 "to": {
                     "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 125571,
+                    "startOffset": 125578,
                     "endColumn": 94,
-                    "endOffset": 125661
+                    "endOffset": 125668
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10618,9 +10618,9 @@
                 "to": {
                     "startLine": 1599,
                     "startColumn": 4,
-                    "startOffset": 125666,
+                    "startOffset": 125673,
                     "endColumn": 114,
-                    "endOffset": 125776
+                    "endOffset": 125783
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10637,9 +10637,9 @@
                 "to": {
                     "startLine": 1600,
                     "startColumn": 4,
-                    "startOffset": 125781,
+                    "startOffset": 125788,
                     "endColumn": 112,
-                    "endOffset": 125889
+                    "endOffset": 125896
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10656,9 +10656,9 @@
                 "to": {
                     "startLine": 1601,
                     "startColumn": 4,
-                    "startOffset": 125894,
+                    "startOffset": 125901,
                     "endColumn": 98,
-                    "endOffset": 125988
+                    "endOffset": 125995
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10675,9 +10675,9 @@
                 "to": {
                     "startLine": 1602,
                     "startColumn": 4,
-                    "startOffset": 125993,
+                    "startOffset": 126000,
                     "endColumn": 108,
-                    "endOffset": 126097
+                    "endOffset": 126104
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10694,9 +10694,9 @@
                 "to": {
                     "startLine": 1603,
                     "startColumn": 4,
-                    "startOffset": 126102,
+                    "startOffset": 126109,
                     "endColumn": 110,
-                    "endOffset": 126208
+                    "endOffset": 126215
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10713,9 +10713,9 @@
                 "to": {
                     "startLine": 1604,
                     "startColumn": 4,
-                    "startOffset": 126213,
+                    "startOffset": 126220,
                     "endColumn": 110,
-                    "endOffset": 126319
+                    "endOffset": 126326
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10732,9 +10732,9 @@
                 "to": {
                     "startLine": 1605,
                     "startColumn": 4,
-                    "startOffset": 126324,
+                    "startOffset": 126331,
                     "endColumn": 100,
-                    "endOffset": 126420
+                    "endOffset": 126427
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10751,9 +10751,9 @@
                 "to": {
                     "startLine": 1606,
                     "startColumn": 4,
-                    "startOffset": 126425,
+                    "startOffset": 126432,
                     "endColumn": 104,
-                    "endOffset": 126525
+                    "endOffset": 126532
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10770,10 +10770,10 @@
                 "to": {
                     "startLine": 1607,
                     "startColumn": 4,
-                    "startOffset": 126530,
+                    "startOffset": 126537,
                     "endLine": 1608,
                     "endColumn": 12,
-                    "endOffset": 126637
+                    "endOffset": 126644
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10791,10 +10791,10 @@
                 "to": {
                     "startLine": 1609,
                     "startColumn": 4,
-                    "startOffset": 126642,
+                    "startOffset": 126649,
                     "endLine": 1610,
                     "endColumn": 12,
-                    "endOffset": 126767
+                    "endOffset": 126774
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10812,9 +10812,9 @@
                 "to": {
                     "startLine": 1611,
                     "startColumn": 4,
-                    "startOffset": 126772,
+                    "startOffset": 126779,
                     "endColumn": 90,
-                    "endOffset": 126858
+                    "endOffset": 126865
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10831,9 +10831,9 @@
                 "to": {
                     "startLine": 1612,
                     "startColumn": 4,
-                    "startOffset": 126863,
+                    "startOffset": 126870,
                     "endColumn": 122,
-                    "endOffset": 126981
+                    "endOffset": 126988
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10850,10 +10850,10 @@
                 "to": {
                     "startLine": 1613,
                     "startColumn": 4,
-                    "startOffset": 126986,
+                    "startOffset": 126993,
                     "endLine": 1614,
                     "endColumn": 12,
-                    "endOffset": 127093
+                    "endOffset": 127100
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10871,9 +10871,9 @@
                 "to": {
                     "startLine": 1615,
                     "startColumn": 4,
-                    "startOffset": 127098,
+                    "startOffset": 127105,
                     "endColumn": 85,
-                    "endOffset": 127179
+                    "endOffset": 127186
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10890,9 +10890,9 @@
                 "to": {
                     "startLine": 1616,
                     "startColumn": 4,
-                    "startOffset": 127184,
+                    "startOffset": 127191,
                     "endColumn": 103,
-                    "endOffset": 127283
+                    "endOffset": 127290
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10909,10 +10909,10 @@
                 "to": {
                     "startLine": 1617,
                     "startColumn": 4,
-                    "startOffset": 127288,
+                    "startOffset": 127295,
                     "endLine": 1618,
                     "endColumn": 12,
-                    "endOffset": 127391
+                    "endOffset": 127398
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10930,10 +10930,10 @@
                 "to": {
                     "startLine": 1619,
                     "startColumn": 4,
-                    "startOffset": 127396,
+                    "startOffset": 127403,
                     "endLine": 1620,
                     "endColumn": 12,
-                    "endOffset": 127491
+                    "endOffset": 127498
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10951,10 +10951,10 @@
                 "to": {
                     "startLine": 1621,
                     "startColumn": 4,
-                    "startOffset": 127496,
+                    "startOffset": 127503,
                     "endLine": 1622,
                     "endColumn": 12,
-                    "endOffset": 127609
+                    "endOffset": 127616
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10972,10 +10972,10 @@
                 "to": {
                     "startLine": 1623,
                     "startColumn": 4,
-                    "startOffset": 127614,
+                    "startOffset": 127621,
                     "endLine": 1624,
                     "endColumn": 12,
-                    "endOffset": 127713
+                    "endOffset": 127720
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -10993,10 +10993,10 @@
                 "to": {
                     "startLine": 1625,
                     "startColumn": 4,
-                    "startOffset": 127718,
+                    "startOffset": 127725,
                     "endLine": 1626,
                     "endColumn": 12,
-                    "endOffset": 127817
+                    "endOffset": 127824
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11014,10 +11014,10 @@
                 "to": {
                     "startLine": 1627,
                     "startColumn": 4,
-                    "startOffset": 127822,
+                    "startOffset": 127829,
                     "endLine": 1628,
                     "endColumn": 12,
-                    "endOffset": 127943
+                    "endOffset": 127950
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11035,9 +11035,9 @@
                 "to": {
                     "startLine": 1629,
                     "startColumn": 4,
-                    "startOffset": 127948,
+                    "startOffset": 127955,
                     "endColumn": 87,
-                    "endOffset": 128031
+                    "endOffset": 128038
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11054,9 +11054,9 @@
                 "to": {
                     "startLine": 1630,
                     "startColumn": 4,
-                    "startOffset": 128036,
+                    "startOffset": 128043,
                     "endColumn": 89,
-                    "endOffset": 128121
+                    "endOffset": 128128
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11073,9 +11073,9 @@
                 "to": {
                     "startLine": 1631,
                     "startColumn": 4,
-                    "startOffset": 128126,
+                    "startOffset": 128133,
                     "endColumn": 109,
-                    "endOffset": 128231
+                    "endOffset": 128238
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11092,9 +11092,9 @@
                 "to": {
                     "startLine": 1632,
                     "startColumn": 4,
-                    "startOffset": 128236,
+                    "startOffset": 128243,
                     "endColumn": 83,
-                    "endOffset": 128315
+                    "endOffset": 128322
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11111,9 +11111,9 @@
                 "to": {
                     "startLine": 1633,
                     "startColumn": 4,
-                    "startOffset": 128320,
+                    "startOffset": 128327,
                     "endColumn": 83,
-                    "endOffset": 128399
+                    "endOffset": 128406
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11130,9 +11130,9 @@
                 "to": {
                     "startLine": 1634,
                     "startColumn": 4,
-                    "startOffset": 128404,
+                    "startOffset": 128411,
                     "endColumn": 53,
-                    "endOffset": 128453
+                    "endOffset": 128460
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11149,9 +11149,9 @@
                 "to": {
                     "startLine": 1635,
                     "startColumn": 4,
-                    "startOffset": 128458,
+                    "startOffset": 128465,
                     "endColumn": 63,
-                    "endOffset": 128517
+                    "endOffset": 128524
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11168,9 +11168,9 @@
                 "to": {
                     "startLine": 1636,
                     "startColumn": 4,
-                    "startOffset": 128522,
+                    "startOffset": 128529,
                     "endColumn": 105,
-                    "endOffset": 128623
+                    "endOffset": 128630
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11187,9 +11187,9 @@
                 "to": {
                     "startLine": 1637,
                     "startColumn": 4,
-                    "startOffset": 128628,
+                    "startOffset": 128635,
                     "endColumn": 109,
-                    "endOffset": 128733
+                    "endOffset": 128740
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11206,9 +11206,9 @@
                 "to": {
                     "startLine": 1638,
                     "startColumn": 4,
-                    "startOffset": 128738,
+                    "startOffset": 128745,
                     "endColumn": 83,
-                    "endOffset": 128817
+                    "endOffset": 128824
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11225,9 +11225,9 @@
                 "to": {
                     "startLine": 1639,
                     "startColumn": 4,
-                    "startOffset": 128822,
+                    "startOffset": 128829,
                     "endColumn": 119,
-                    "endOffset": 128937
+                    "endOffset": 128944
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml",
@@ -11244,10 +11244,10 @@
                 "to": {
                     "startLine": 1640,
                     "startColumn": 4,
-                    "startOffset": 128942,
+                    "startOffset": 128949,
                     "endLine": 1643,
                     "endColumn": 12,
-                    "endOffset": 129155
+                    "endOffset": 129162
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11265,10 +11265,10 @@
                 "to": {
                     "startLine": 1644,
                     "startColumn": 4,
-                    "startOffset": 129160,
+                    "startOffset": 129167,
                     "endLine": 1647,
                     "endColumn": 12,
-                    "endOffset": 129362
+                    "endOffset": 129369
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11286,10 +11286,10 @@
                 "to": {
                     "startLine": 1648,
                     "startColumn": 4,
-                    "startOffset": 129367,
+                    "startOffset": 129374,
                     "endLine": 1650,
                     "endColumn": 12,
-                    "endOffset": 129521
+                    "endOffset": 129528
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11307,10 +11307,10 @@
                 "to": {
                     "startLine": 1651,
                     "startColumn": 4,
-                    "startOffset": 129526,
+                    "startOffset": 129533,
                     "endLine": 1659,
                     "endColumn": 12,
-                    "endOffset": 130088
+                    "endOffset": 130095
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11328,10 +11328,10 @@
                 "to": {
                     "startLine": 1660,
                     "startColumn": 4,
-                    "startOffset": 130093,
+                    "startOffset": 130100,
                     "endLine": 1665,
                     "endColumn": 12,
-                    "endOffset": 130449
+                    "endOffset": 130456
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11349,10 +11349,10 @@
                 "to": {
                     "startLine": 1666,
                     "startColumn": 4,
-                    "startOffset": 130454,
+                    "startOffset": 130461,
                     "endLine": 1668,
                     "endColumn": 12,
-                    "endOffset": 130578
+                    "endOffset": 130585
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11370,10 +11370,10 @@
                 "to": {
                     "startLine": 1669,
                     "startColumn": 4,
-                    "startOffset": 130583,
+                    "startOffset": 130590,
                     "endLine": 1678,
                     "endColumn": 12,
-                    "endOffset": 131322
+                    "endOffset": 131329
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11391,10 +11391,10 @@
                 "to": {
                     "startLine": 1679,
                     "startColumn": 4,
-                    "startOffset": 131327,
+                    "startOffset": 131334,
                     "endLine": 1682,
                     "endColumn": 12,
-                    "endOffset": 131502
+                    "endOffset": 131509
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",
@@ -11412,10 +11412,10 @@
                 "to": {
                     "startLine": 1683,
                     "startColumn": 4,
-                    "startOffset": 131507,
+                    "startOffset": 131514,
                     "endLine": 1688,
                     "endColumn": 12,
-                    "endOffset": 131943
+                    "endOffset": 131950
                 },
                 "from": {
                     "file": "/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/values/values.xml",

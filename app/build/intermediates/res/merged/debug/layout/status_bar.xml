@@ -15,7 +15,7 @@
         android:id="@+id/status_bar_icon"
         android:layout_width="@dimen/status_bar_album_art"
         android:layout_height="@dimen/status_bar_album_art"
-        android:background="@drawable/status_bg"
+        android:background="@color/transparent"
         android:scaleType="center"
         android:src="@drawable/ic_launcher"
         android:visibility="gone" />
@@ -52,8 +52,8 @@
 
     <ImageButton
         android:id="@+id/status_bar_next"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="@dimen/status_bar_album_art"
+        android:layout_height="@dimen/status_bar_album_art"
         android:background="@color/transparent"
         android:contentDescription="@string/cd_next"
         android:src="@drawable/apollo_holo_dark_next" />

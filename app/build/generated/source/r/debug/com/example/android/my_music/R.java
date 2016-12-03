@@ -2355,10 +2355,12 @@ containing a value of this type.
         public static final int ic_skip_next_48dp=0x7f02006c;
         public static final int ic_skip_previous_48dp=0x7f02006d;
         public static final int ic_trending_neutral_24dp=0x7f02006e;
-        public static final int notification_template_icon_bg=0x7f020072;
-        public static final int notify_panel_notification_icon_bg=0x7f02006f;
-        public static final int side_nav_bar=0x7f020070;
-        public static final int status_bg=0x7f020071;
+        public static final int icon=0x7f02006f;
+        public static final int icon2=0x7f020070;
+        public static final int notification_template_icon_bg=0x7f020074;
+        public static final int notify_panel_notification_icon_bg=0x7f020071;
+        public static final int side_nav_bar=0x7f020072;
+        public static final int status_bg=0x7f020073;
     }
     public static final class id {
         public static final int RelativeLayout=0x7f0d0083;

@@ -628,10 +628,12 @@ int drawable ic_shuffle_24dp 0x7f02006b
 int drawable ic_skip_next_48dp 0x7f02006c
 int drawable ic_skip_previous_48dp 0x7f02006d
 int drawable ic_trending_neutral_24dp 0x7f02006e
-int drawable notification_template_icon_bg 0x7f020072
-int drawable notify_panel_notification_icon_bg 0x7f02006f
-int drawable side_nav_bar 0x7f020070
-int drawable status_bg 0x7f020071
+int drawable icon 0x7f02006f
+int drawable icon2 0x7f020070
+int drawable notification_template_icon_bg 0x7f020074
+int drawable notify_panel_notification_icon_bg 0x7f020071
+int drawable side_nav_bar 0x7f020072
+int drawable status_bg 0x7f020073
 int id RelativeLayout 0x7f0d0083
 int id action0 0x7f0d0094
 int id action_add 0x7f0d00be

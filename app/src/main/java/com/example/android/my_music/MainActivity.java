@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -667,9 +668,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     showToast("Playlist already exist");
 
                                 }
-//                                ArrayList<String> playlist_List= musicDB.getPlaylists();
-//                                java.util.Collections.sort(playlist_List);
-//                                rePopulateList(playlist_List, Playlist_String);
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -683,6 +681,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AlertDialog alertDialog = alertDialogBuilder.create();
         // show it
         alertDialog.show();
+        alertDialog.getButton(alertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+        alertDialog.getButton(alertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
     }
 
     private Boolean showAlertBoxDelete(final String playlistName,final ListView listView, final int pos){
