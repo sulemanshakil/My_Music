@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String SP_Tag_Tree = "tree";
 
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    @Override
+//    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+//    @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -702,8 +702,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showAlertBoxAppend(final int pos,final ArrayList<Song> songList,final ListView listView ){
         final CharSequence[] myPlayList;
         //Create sequence of items
-        if(mItem.getItemId()==R.id.nav_Playlist){myPlayList= new CharSequence[]{"Append", "Delete"};
-        }else{myPlayList = new CharSequence[]{"Append"};}
+
+        if(mItem==null){
+            myPlayList = new CharSequence[]{"Append"};
+        }else{
+            if(mItem.getItemId()==R.id.nav_Playlist){myPlayList= new CharSequence[]{"Append", "Delete"};
+            }else{myPlayList = new CharSequence[]{"Append"};}
+        }
+
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setItems(myPlayList, new DialogInterface.OnClickListener() {
@@ -717,9 +723,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     ArrayList<Song> songList1=musicDB.getSongsInPlaylistByName(PlaylistSelected);
                    // Log.e("item","Delete "+songList1.size());
 
-                    for(Song song:songList1) {
-                        Log.e("Song", "" + song.getTitle());
-                    }
+                 //   for(Song song:songList1) {
+                     //   Log.e("Song", "" + song.getTitle());
+                 //   }
                     setlistner(listView, songList1);
                     return;
                 }
@@ -1066,8 +1072,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void setlistner(final ListView listView,final ArrayList<Song> songList){
-        //  MovieListAdapter adapter=(MovieListAdapter)listView.getAdapter();
-    //    final ArrayList<String> songNamesList= ((MovieListAdapter)listView.getAdapter()).getValues();
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
