@@ -335,9 +335,7 @@ public class MusicService extends Service  {
         }
 
         if(bm==null) {
-            Random ran = new Random();
-            int x = ran.nextInt(14) + 1;
-            int resID = getResources().getIdentifier("albumcover" + x, "drawable", getApplicationContext().getPackageName());
+            int resID = getResources().getIdentifier("blackicon", "drawable", getApplicationContext().getPackageName());
             bm = BitmapFactory.decodeResource(getResources(), resID);
         }
         return bm;
