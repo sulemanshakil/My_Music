@@ -401,7 +401,7 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
 
         if(AlbumArtBitmap==null) {
             Random ran = new Random();
-            int x = ran.nextInt(4) + 1;
+            int x = ran.nextInt(14) + 1;
             int resID = getResources().getIdentifier("albumcover" + x, "drawable", getActivity().getPackageName());
             AlbumArtBitmap = BitmapFactory.decodeResource(getResources(), resID);
             AlbumArtBitmap1 = BitmapFactory.decodeResource(getResources(),resID);
@@ -508,9 +508,8 @@ public class FragmentB extends android.support.v4.app.Fragment implements View.O
             ImageView imageViewBackground = (ImageView) rootView.findViewById(R.id.imageViewBackground);
             Animation fadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in_anim);
             imageViewBackground.setImageBitmap(bitmap);
-            imageViewBackground.setAlpha(0.35f);
+            imageViewBackground.setAlpha(0.45f);
             imageViewBackground.startAnimation(fadeInAnimation);
-
         }
     }
 

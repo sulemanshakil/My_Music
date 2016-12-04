@@ -7,7 +7,7 @@
             android:title="All Songs" />
         <item
             android:id="@+id/nav_Artist"
-            android:title="Artist" />
+            android:title="Artists" />
         <item
             android:id="@+id/nav_Albums"
             android:title="Albums" />

@@ -44,7 +44,7 @@ ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifes
 activity#com.example.android.my_music.MainActivity
 ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:15:9-25:20
 	android:label
-		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:17:13-38
 	android:launchMode
 		ADDED from /Users/sulemanshakil/Desktop/Git/My_Music/app/src/main/AndroidManifest.xml:18:13-48
 	android:theme

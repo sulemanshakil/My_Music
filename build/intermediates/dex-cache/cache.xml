@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="e344f582c8236cfb7620e529bd56873509621e9e">
+        sha1="8bd72829fa58602a2921efda19b536437906493c">
         <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_89c638e459e9d869d0f9a0c7cf9ece28995c9b40/classes.dex" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="4b645305ae822ad065ead4f80e88a86ec71558cc">
+        sha1="bd0d76cb455be5eb860f3fcf9ac1059c7b728822">
         <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_60f3f4a940b614db37a455fcb25944566194c69f/classes.dex" />
     </item>
 

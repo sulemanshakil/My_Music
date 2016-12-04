@@ -828,8 +828,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_all_songs) {
             // Handle the all songs action
+            getSupportActionBar().setTitle("All Songs");
             populateSongs();
         } else if (id == R.id.nav_Artist) {
+            getSupportActionBar().setTitle("Artists");
 
             final ArrayList<String> artistList = new ArrayList<>();
             for (Song song:songList_all){
@@ -841,7 +843,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             rePopulateList(artistList,Artist_string);
 
         } else if (id == R.id.nav_Albums) {
-
+            getSupportActionBar().setTitle("Albums");
             final ArrayList<String> albumList = new ArrayList<>();
             for (Song song:songList_all){
                 if(!albumList.contains(song.getAlbum())) {
@@ -852,7 +854,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             rePopulateList(albumList,Albums_string);
 
         } else if (id == R.id.nav_Genres) {
-
+            getSupportActionBar().setTitle("Genres");
             final ArrayList<String> genresList = new ArrayList<>();
             for (Song song:songList_all){
                 if(!genresList.contains(song.getGenres())) {
@@ -863,7 +865,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             rePopulateList(genresList,Genres_string);
 
         } else if (id == R.id.nav_My_Files) {
-
+            getSupportActionBar().setTitle("Files");
             mAdapter = new DirectoryListAdapter(getApplicationContext(),mFiles);
             listView2.setAdapter(mAdapter);
             listView2.setVisibility(View.VISIBLE);
@@ -941,15 +943,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
 
         } else if (id == R.id.nav_Playlist) {
+            getSupportActionBar().setTitle("Playlists");
             MusicDbHelper mDbHelper = new MusicDbHelper(getApplicationContext());
             ArrayList<String> playlist_List= mDbHelper.getPlaylists();
             java.util.Collections.sort(playlist_List);
             rePopulateList(playlist_List,Playlist_String);
 
         }else if (id == R.id.nav_Favourites) {
+            getSupportActionBar().setTitle("Favourites");
             populateFavouriteSongs();
 
         }else if (id == R.id.nav_Recently_Played) {
+            getSupportActionBar().setTitle("Recently Played");
             populateRecentlyPayed();
 
         }/*else if (id == R.id.nav_Settings) {
