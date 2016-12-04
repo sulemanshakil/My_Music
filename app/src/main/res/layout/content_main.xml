@@ -7,7 +7,7 @@
     android:background="@color/shuffle_grey"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.my_music.MainActivity"
+    tools:context="com.example.android.my_music.com.music.android.my_music.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <ListView
