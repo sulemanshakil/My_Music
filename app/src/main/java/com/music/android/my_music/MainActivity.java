@@ -1,11 +1,14 @@
 package com.music.android.my_music;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.media.AudioManager;
@@ -17,8 +20,11 @@ import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -75,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String SP_Tag_Recently_Played = "recent_playlist";
     private static final String SP_Tag_Playlist = "playlist_data";
     private static final String SP_Tag_Tree = "tree";
+    private static final int REQUEST_WRITE_STORAGE = 112;
 
 
 //    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -82,95 +89,133 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        boolean hasPermission = (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+        if (!hasPermission) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    REQUEST_WRITE_STORAGE);
+            Toast.makeText(this, "This app needs permission to excess songs. Please consider granting it this permission", Toast.LENGTH_LONG).show();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        songList_all = new ArrayList<>();
-        getSongList();
-        populateSongs();  //populate
+        }else {
+            setContentView(R.layout.activity_main);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            songList_all = new ArrayList<>();
+            getSongList();
+            populateSongs();  //populate
 
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+            final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.setDrawerListener(toggle);
+            toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
 
-        mSlidingUpPanelLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
-        mSlidingUpPanelLayout.setPanelSlideListener(new PanelSlideListener() {
-            @Override
-            public void onPanelSlide(View panel, float slideOffset) {
-                Log.i(TAG, "onPanelSlide, offset " + slideOffset);
-            }
-
-            @Override
-            public void onPanelExpanded(View panel) {
-                Log.i(TAG, "onPanelExpanded");
-                drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-            }
-
-            @Override
-            public void onPanelCollapsed(View panel) {
-                Log.i(TAG, "onPanelCollapsed");
-                drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-            }
-
-            @Override
-            public void onPanelAnchored(View panel) {
-                Log.i(TAG, "onPanelAnchored");
-            }
-
-            @Override
-            public void onPanelHidden(View panel) {
-                Log.i(TAG, "onPanelHidden");
-            }
-        });
-
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        android.support.v4.app.FragmentManager fragmentManager= getSupportFragmentManager();
-        viewPagerAdapter = new ViewPagerAdapter(fragmentManager);
-        viewPager.setAdapter(viewPagerAdapter);
-        viewPager.setCurrentItem(1);
-        viewPager.setOffscreenPageLimit(2);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position == 0) {
-                    final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
-                    mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
-                } else if (position == 1) {
-                    final FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
-                    mSlidingUpPanelLayout.setDragView(fragmentB.rootView.findViewById(R.id.linearlayloutfragb));
-                } else {
-                    //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
-                    //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
+            mSlidingUpPanelLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+            mSlidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+            mSlidingUpPanelLayout.setPanelSlideListener(new PanelSlideListener() {
+                @Override
+                public void onPanelSlide(View panel, float slideOffset) {
+                    Log.i(TAG, "onPanelSlide, offset " + slideOffset);
                 }
-            }
 
-            @Override
-            public void onPageScrollStateChanged(int state) {
+                @Override
+                public void onPanelExpanded(View panel) {
+                    Log.i(TAG, "onPanelExpanded");
+                    drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                }
 
-            }
-        });
+                @Override
+                public void onPanelCollapsed(View panel) {
+                    Log.i(TAG, "onPanelCollapsed");
+                    drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                }
 
-        getSupportActionBar().setTitle("All Songs");
+                @Override
+                public void onPanelAnchored(View panel) {
+                    Log.i(TAG, "onPanelAnchored");
+                }
 
-        String[] mPaths = Environment.getExternalStorageDirectory().getPath().split("/");
-        String P1 = "/" + mPaths[1];
-        new buildTree().execute(P1);
+                @Override
+                public void onPanelHidden(View panel) {
+                    Log.i(TAG, "onPanelHidden");
+                }
+            });
+
+            viewPager = (ViewPager) findViewById(R.id.pager);
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            viewPagerAdapter = new ViewPagerAdapter(fragmentManager);
+            viewPager.setAdapter(viewPagerAdapter);
+            viewPager.setCurrentItem(1);
+            viewPager.setOffscreenPageLimit(2);
+            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                }
+
+                @Override
+                public void onPageSelected(int position) {
+                    if (position == 0) {
+                        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+                        mSlidingUpPanelLayout.setDragView(recyclerListFragment.rootView.findViewById(R.id.textView4));
+                    } else if (position == 1) {
+                        final FragmentB fragmentB = (FragmentB) viewPagerAdapter.getRegisteredFragment(1);
+                        mSlidingUpPanelLayout.setDragView(fragmentB.rootView.findViewById(R.id.linearlayloutfragb));
+                    } else {
+                        //    final FragmentC fragmentC = (FragmentC) viewPagerAdapter.getRegisteredFragment(2);
+                        //    mSlidingUpPanelLayout.setDragView(fragmentC.rootView.findViewById(R.id.textView4));
+                    }
+                }
+
+                @Override
+                public void onPageScrollStateChanged(int state) {
+
+                }
+            });
+
+            getSupportActionBar().setTitle("All Songs");
+
+            String[] mPaths = Environment.getExternalStorageDirectory().getPath().split("/");
+            String P1 = "/" + mPaths[1];
+            new buildTree().execute(P1);
+        }
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode)
+        {
+            case REQUEST_WRITE_STORAGE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    Intent intent = new Intent(this,MainActivity.class);
+                    startActivityForResult(intent, 0);
+                    //reload my activity with permission granted or use the features what required the permission
+                } else
+                {
+                    Toast.makeText(this, "The app was not allowed to read from your storage. Hence, it cannot excess Songs. Please consider granting it this permission", Toast.LENGTH_LONG).show();
+                 //   Intent intent = new Intent(this,MainActivity.class);
+                 //   startActivityForResult(intent, 0);
+                    Runnable r = new Runnable() {
+                        @Override
+                        public void run() {
+                          System.exit(0);
+                        }
+                    };
+                    (new Handler()).postDelayed(r,5000);
+
+                }
+            }
+        }
+
+    }
     public void restoreAtPause() {
         mSlidingUpPanelLayout.getPanelState();
         if(mSlidingUpPanelLayout.getPanelState()==SlidingUpPanelLayout.PanelState.HIDDEN){
@@ -251,9 +296,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStop() {
         super.onStop();
-        final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
-        final RecyclerListAdapter adapter =(RecyclerListAdapter)recyclerListFragment.recyclerView.getAdapter();
-        adapter.saveSongs();
+        boolean hasPermission = (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+        if (!hasPermission) {
+
+        }else {
+            if(viewPager!=null) {
+                final RecyclerListFragment recyclerListFragment = (RecyclerListFragment) viewPagerAdapter.getRegisteredFragment(0);
+                final RecyclerListAdapter adapter = (RecyclerListAdapter) recyclerListFragment.recyclerView.getAdapter();
+                adapter.saveSongs();
+            }
+        }
     }
 
     public void setUpRecyclerClickListener(){
@@ -613,7 +666,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                             }
                                         } else {
                                             showToast("Playlist already exist");
-                                            Log.e("Playlist already ", "exist by this name");
+                                        //    Log.e("Playlist already ", "exist by this name");
                                         }
                                     }
                                 };
@@ -631,6 +684,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AlertDialog alertDialog = alertDialogBuilder.create();
         // show it
         alertDialog.show();
+        alertDialog.getButton(alertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+        alertDialog.getButton(alertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
     }
 
     private void showAlertBox() {

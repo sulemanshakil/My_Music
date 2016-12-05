@@ -3,201 +3,111 @@
 
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/org.immutables/gson/2.2.10/df85a2ea972bf70e277b4e57f48a0dfaff386ab7/gson-2.2.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="df85a2ea972bf70e277b4e57f48a0dfaff386ab7">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/gson-2.2.10_4c3eeee7c6d9ea15da7cb1641e1b4a4c7f9e3cfc.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_92d5a55b5ce90e57a1f2f40b98de5753c1c61083/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_5aaba58009622fc081608a39153bb1206a9fa267/classes.dex" />
+        sha1="15d95a1ebdc606a72203c98b02c16499f0635aa7">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\instant-run_9efd357f4b0e3caefaddf7b10718d7f2babf4f0d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/com.android.support-design-23.1.1_92d5a55b5ce90e57a1f2f40b98de5753c1c61083.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/gson-2.5_910c19436b1f6f6c7eda5904eaceacdf6e841774.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_4817614eff69adfc254b0819c2143f6e7be9cec4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/3.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6ca08eae09a2083fd5b430ce2a1faf86721a46bf">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.sothree.slidinguppanel-library-3.2.0_7cf056604bc9e87e8d8bebaa75e1fd8f1582cc9e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/org.immutables/gson/2.2.10/df85a2ea972bf70e277b4e57f48a0dfaff386ab7/gson-2.2.10.jar"
+        jar="C:\Users\Suleman Shakil\.gradle\caches\modules-2\files-2.1\org.immutables\gson\2.2.10\df85a2ea972bf70e277b4e57f48a0dfaff386ab7\gson-2.2.10.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="df85a2ea972bf70e277b4e57f48a0dfaff386ab7">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.2.10_4c3eeee7c6d9ea15da7cb1641e1b4a4c7f9e3cfc/classes.dex" />
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\gson-2.2.10_9fd68bad36a7058cf698a113f27035a819113904.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_a27bb0ad36a79c7c90842e1f7777fa1488bbde6c/classes.dex" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_1d45ba3cbd6f85f66dd2143a92cb2c7ad86b5ce6.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-23.1.1_a27bb0ad36a79c7c90842e1f7777fa1488bbde6c.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="4dabda56c83d6a253a49c2c6843d940d10a64bf3">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_89c638e459e9d869d0f9a0c7cf9ece28995c9b40/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.1.1_4817614eff69adfc254b0819c2143f6e7be9cec4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/3.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6ca08eae09a2083fd5b430ce2a1faf86721a46bf">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/com.sothree.slidinguppanel-library-3.2.0_7cf056604bc9e87e8d8bebaa75e1fd8f1582cc9e.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
+        jar="C:\Users\Suleman Shakil\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.5\686c608d1805b6d4d425ec4459e88164ffc85870\gson-2.5.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.5_910c19436b1f6f6c7eda5904eaceacdf6e841774/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_03644a19c56f65c3446792128eafa27fc09fd952/classes.dex" />
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\gson-2.5_225aad4066be49e8e5ea1ca6f0421103974e3427.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_df5c1cc965fb5b54e8930bc0419d70f2a6d97a32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="97907786c1e50b4bb183083fac474d77d7dc0ecb">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_58b5ee2b76b3e3a84f7a6b5a808b37715285c9dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_aa5c5cff6a92560fa20d72dfd632fd3c7d00957e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_ca5e4de29fafd481b25d58a86e8ab83d15852e46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Suleman Shakil\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/library-2.4.0_5aaba58009622fc081608a39153bb1206a9fa267.jar" />
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\library-2.4.0_701e7aa64c1dded19953a2236a9631fce7d773e8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.sothree.slidinguppanel\library\3.2.0\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/support-annotations-23.1.1_d099a81152d0a231be2fc56aa56c806fc4bec00f.jar" />
+        sha1="6ca08eae09a2083fd5b430ce2a1faf86721a46bf">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\com.sothree.slidinguppanel-library-3.2.0_415235e61476b6a03b75ccfa87873ad80b84d066.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_244930f4bdac456f3d6f02578369adc67eb439ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-23.1.1_03644a19c56f65c3446792128eafa27fc09fd952.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_d099a81152d0a231be2fc56aa56c806fc4bec00f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_c2a96e7a895a5c6fd110653b564bfef59517bdf3/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/pre-dexed/release/internal_impl-23.1.1_c2a96e7a895a5c6fd110653b564bfef59517bdf3.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8b515abe00b35025f25fa57f3e9ce5d0af195291">
-        <dex dex="/Users/sulemanshakil/Desktop/Git/My_Music/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_60f3f4a940b614db37a455fcb25944566194c69f/classes.dex" />
+        <dex dex="C:\Users\Suleman Shakil\AndroidStudioProjects\My_Music\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_906ff93a098ed844d98fe3192edf43e966088587.jar" />
     </item>
 
 </items>
